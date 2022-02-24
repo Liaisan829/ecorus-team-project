@@ -30,6 +30,7 @@ export const Slider = () => {
                         prevEl:".swiper-button-prev-custom",
                         nextEl:".swiper-button-next-custom"
                     }}
+                    loop={true}
                     slidesPerView={1}
                     onSlideChange={() => console.log('slide change')}
                     onSwiper={(swiper) => console.log(swiper)}
