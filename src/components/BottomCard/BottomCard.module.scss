@@ -23,10 +23,16 @@
   }
 
   &__info {
-    
+
     .cardButton {
       width: 48px;
       height: 48px;
+      border: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 46px;
+
     }
   }
 }
