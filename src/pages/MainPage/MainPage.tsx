@@ -1,9 +1,12 @@
+import { observer } from "mobx-react";
+import { useStores } from "../../utils/use-stores-hook";
 import { BaseLayout } from "../../components/BaseLayout/BaseLayout";
 import { Slider } from "../../components/Swiper/Slider";
 import { BottomCard } from "../../components/BottomCard/BottomCard";
+import { LoginModal } from "../../components/Modals/LoginModal/LoginModal";
+import ecomarket from "../../svg-icons/ecomarket.svg";
 import collpoints from "../../svg-icons/collpoints.svg";
 import styles from "./MainPage.module.scss";
-import ecomarket from "../../svg-icons/ecomarket.svg";
 
 export const MainPage = () => {
 

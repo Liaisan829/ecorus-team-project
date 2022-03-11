@@ -4,12 +4,22 @@ import { NavLink } from "react-router-dom";
 import { Icon } from "../ui/Icon/Icon";
 import logo from "../../svg-icons/logo.svg";
 import { CustomLink } from "../ui/СustomLink/CustomLink";
+import { observer } from "mobx-react";
+import { useStores } from "../../utils/use-stores-hook";
+import { LoginModal } from "../Modals/LoginModal/LoginModal";
 
 interface Props {
   children: ReactNode;
 }
 
-export const BaseLayout: FC<Props> = ({ children }) => {
+export const BaseLayout: FC<Props> = observer(({ children }) => {
+
+  const { modalStore: { setCurrentModal } } = useStores();
+
+  const openModal = () => {
+    setCurrentModal(LoginModal);
+  };
+
   return (
     <>
       <header className={styles.header}>
@@ -34,7 +44,7 @@ export const BaseLayout: FC<Props> = ({ children }) => {
             </div>
             <div className={styles.actions__link}>
               <Icon name="goIn" width="24" height="24" />
-              <p>Войти</p>
+              <button onClick={openModal}>Войти</button>
             </div>
           </div>
         </section>
@@ -62,4 +72,4 @@ export const BaseLayout: FC<Props> = ({ children }) => {
       </footer>
     </>
   );
-};
+});
