@@ -1,4 +1,5 @@
 import { FC, ReactNode } from "react";
+import { Icon } from "../../ui/Icon/Icon";
 import styles from "./Modal.module.scss";
 
 interface Props {
@@ -12,7 +13,7 @@ export const Modal: FC<Props> = ({ title, onClose, children }) => {
       <div className={styles.overlay}>
         <div>
           {title}
-          <button onClick={onClose}>X</button>
+          <button onClick={onClose}><Icon name = "close" width={18} height={18}/></button>
         </div>
 
         <div>

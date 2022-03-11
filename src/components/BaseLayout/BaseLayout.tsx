@@ -7,6 +7,7 @@ import { CustomLink } from "../ui/СustomLink/CustomLink";
 import { observer } from "mobx-react";
 import { useStores } from "../../utils/use-stores-hook";
 import { LoginModal } from "../Modals/LoginModal/LoginModal";
+import { Button } from "../ui/Button/Button";
 
 interface Props {
   children: ReactNode;
@@ -44,7 +45,12 @@ export const BaseLayout: FC<Props> = observer(({ children }) => {
             </div>
             <div className={styles.actions__link}>
               <Icon name="goIn" width="24" height="24" />
-              <button onClick={openModal}>Войти</button>
+              <Button
+                type="button"
+                onClick={openModal}
+                buttonText="Войти"
+                buttonColor={"#B3EDC8"}
+              />
             </div>
           </div>
         </section>

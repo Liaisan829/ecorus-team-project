@@ -23,8 +23,11 @@ export const Card: FC<CardProps> = (props) => {
         <div className={styles.section__info}>
           <h1>{props.cardHeadline}</h1>
           <p>{props.cardText}</p>
-          <Button type={props.type} onClick={onServiceConditionClick} buttonText={props.buttonText}
-                  buttonColor={"#07C88E"} />
+          <Button
+            type={props.type}
+            onClick={onServiceConditionClick}
+            buttonText={props.buttonText}
+            buttonColor={"#07C88E"} />
         </div>
         <img src={props.img} alt="serviceCondition" />
       </div>
