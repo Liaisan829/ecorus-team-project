@@ -12,7 +12,6 @@ ReactDOM.render(
     <Provider {...mainStore}>
       <App />
       
-      <ModalConstructor/>
     </Provider>
   </React.StrictMode>,
   document.getElementById("root")
