@@ -23,6 +23,8 @@ export const LoginModal = observer(() => {
 
   const onLoginClick = () => {
     console.log("pressed login button");
+    clearCurrentModal();
+    //редирект на главную страницу с лк в хедере или в личный кабинет
   };
 
   const onPartnerButtonClick = () => {
@@ -42,30 +44,38 @@ export const LoginModal = observer(() => {
                 }}
         >
 
-          <Form className={styles.modal_container}>
-            <Field name="phone" placeholder="Телефон"/>
-            <Field name="password" placeholder="Пароль" />
-            <Button type="submit"
-                    disabled={false}
-                    onClick={onLoginClick}
-                    theme={"green"}
-                    children = {"Войти"}
-            />
+          {({ errors, touched }) => (
 
-            <div className={styles.modal_container__row}>
-              <Button
-                type="button"
-                disabled={false}
-                onClick={onLoginClick}
-                theme={""}
-                children = {"Войти с помощью"}/>
-              <Button
-                type="button"
-                disabled={false}
-                onClick={onLoginClick}
-                theme={""}
-                children = {"Регистрация"}/>
-            </div>
+            <Form className={styles.modal_container}>
+              <Field name="phone" placeholder="Телефон" />
+              {errors.phone && touched.phone ? (
+                <div>{errors.phone}</div>
+              ) : null}
+              <Field name="password" placeholder="Пароль" />
+              {errors.password && touched.password ? (
+                <div>{errors.password}</div>
+              ) : null}
+              <Button type="submit"
+                      disabled={false}
+                      onClick={onLoginClick}
+                      theme={"green"}
+                      children={"Войти"}
+              />
+
+              <div className={styles.modal_container__row}>
+                <Button
+                  type="button"
+                  disabled={false}
+                  onClick={onLoginClick}
+                  theme={""}
+                  children={"Войти с помощью"} />
+                <Button
+                  type="button"
+                  disabled={false}
+                  onClick={onLoginClick}
+                  theme={""}
+                  children={"Регистрация"} />
+              </div>
 
               <Button type="button"
                       onClick={onPartnerButtonClick}
@@ -73,7 +83,7 @@ export const LoginModal = observer(() => {
                       theme={"grey"}
                       children={"Вход для партнеров"}
               />
-          </Form>
+            </Form>)}
 
         </Formik>
       </div>
