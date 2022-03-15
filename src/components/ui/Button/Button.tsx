@@ -8,18 +8,20 @@ interface ButtonProps {
   onClick: () => void,
   theme: string,
   disabled: boolean,
+  color?: string
 }
 classNames();
 
 const cx = cn.bind(styles);
 
-export const Button: FC<ButtonProps> = ({ type, onClick, children , theme, disabled}) => {
+export const Button: FC<ButtonProps> = ({ type, onClick, children , theme, disabled, color}) => {
   return (
     <>
       <button
         type={type}
         disabled={disabled}
         onClick={onClick}
+        color={color}
         className={cx(styles.button, {
           buttonGreen: theme === 'green',
           buttonGrey: theme === 'grey',
