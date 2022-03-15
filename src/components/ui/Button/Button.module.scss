@@ -6,6 +6,7 @@
   @include secondary-text;
   padding: 12px 22px;
   cursor: pointer;
+  background: none;
 
   &Green {
     @extend .button;
@@ -22,6 +23,7 @@
   &Default {
     @extend .button;
     color: black;
+    padding: 0;
   }
 }
 
