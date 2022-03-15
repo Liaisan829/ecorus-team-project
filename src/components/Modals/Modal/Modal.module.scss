@@ -11,8 +11,16 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background:rgba(0,0,0,.8);
+  background: rgba(0, 0, 0, .8);
   z-index: 4;
+
+  input {
+    height: 60px;
+    width: 380px;
+    border-radius: 8px;
+    border: 1px solid $c-light-grey;
+    margin-bottom: 24px;
+  }
 
   &__popup {
     background: $c-white;
@@ -23,7 +31,8 @@
     &__top {
       display: flex;
       justify-content: space-between;
-      margin-bottom: 48px;
+      margin-bottom: 35px;
+      @include modalText;
     }
   }
 }
@@ -32,9 +41,19 @@
   display: flex;
   flex-direction: column;
 
+  &__row {
+    display: flex;
+    justify-content: space-between;
+    padding: 16px 0 32px;
+  }
 }
 
-.modal_container:first-child{
+.modal_container:first-child {
   border: none;
-
 }
+
+button {
+  border: none;
+  background: none;
+}
+
