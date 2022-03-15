@@ -21,7 +21,7 @@ export const Button: FC<ButtonProps> = ({ type, onClick, children , theme, disab
         type={type}
         disabled={disabled}
         onClick={onClick}
-        color={color}
+        style={{ "color": `${color}` }}
         className={cx(styles.button, {
           buttonGreen: theme === 'green',
           buttonGrey: theme === 'grey',

@@ -20,6 +20,7 @@
     border-radius: 8px;
     border: 1px solid $c-light-grey;
     margin-bottom: 24px;
+    padding-left: 16px;
   }
 
   &__popup {
@@ -55,4 +56,5 @@
 button {
   border: none;
   background: none;
+  cursor: pointer;
 }

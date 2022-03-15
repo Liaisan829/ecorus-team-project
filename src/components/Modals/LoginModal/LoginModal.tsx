@@ -68,7 +68,9 @@ export const LoginModal = observer(() => {
                   disabled={false}
                   onClick={onLoginClick}
                   theme={""}
-                  children={"Войти с помощью"} />
+                  color={"#07C88E"}
+                  children={"Войти с помощью"}
+                />
                 <Button
                   type="button"
                   disabled={false}
@@ -82,7 +84,6 @@ export const LoginModal = observer(() => {
                       onClick={onPartnerButtonClick}
                       disabled={false}
                       theme={"grey"}
-                      color={"#07C88E"}
                       children={"Вход для партнеров"}
               />
             </Form>)}
