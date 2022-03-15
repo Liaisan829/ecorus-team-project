@@ -1,41 +1,26 @@
-import { FC, ReactNode, useRef, useState } from "react";
+import { FC, ReactNode } from "react";
 import styles from "./Modal.module.scss";
-import { Portal } from "../../../portal/Portal";
-import { useModalClose } from "../../../utils/use-modal-close";
 
 interface Props {
-  visible: boolean;
+  title: ReactNode;
   onClose: () => void;
 }
 
-export const Modal: FC<Props> = ({ visible, onClose, children }) => {
-
-  const ref = useRef();
-  useModalClose(ref, () => onClose);
-
-  const onCloseModal = (event: any) => {
-    if(event.target.className === styles.overlay) {
-      onClose();
-    }
-  }
-
-  if(!visible) return null;
-
+export const Modal: FC<Props> = ({ title, onClose, children }) => {
   return (
-    visible && (
-      <Portal elem={'elem'} className={'portal-root'}>
-        <div className={styles.overlay} onClick={(event) => onCloseModal(event)}>
-          {children}
+    <>
+      <div className={styles.overlay}>
+        <div className={styles.overlay__popup}>
+          <div className={styles.overlay__popup__top}>
+            {title}
+            <button onClick={onClose}>X</button>
+          </div>
+
+          <div>
+            {children}
+          </div>
         </div>
-      </Portal>
-    )
+      </div>
+    </>
   );
 };
-{/*<div>*/
-}
-{/*  {title}*/
-}
-{/*  <button onClick={onClose}><Icon name = "close" width={18} height={18}/></button>*/
-}
-{/*</div>*/
-}

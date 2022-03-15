@@ -1,24 +1,28 @@
-import styles from "./BaseLayout.module.scss";
-import { FC, ReactNode, useState } from "react";
+import { FC, ReactNode } from "react";
 import { NavLink } from "react-router-dom";
 import { Icon } from "../ui/Icon/Icon";
-import logo from "../../svg-icons/logo.svg";
 import { CustomLink } from "../ui/СustomLink/CustomLink";
 import { Button } from "../ui/Button/Button";
-import { Modal } from "../Modals/Modal/Modal";
+import { observer } from "mobx-react";
+import { useStores } from "../../utils/use-stores-hook";
+import logo from "../../svg-icons/logo.svg";
+import styles from "./BaseLayout.module.scss";
 import { LoginModal } from "../Modals/LoginModal/LoginModal";
 
 interface Props {
   children: ReactNode;
 }
 
-export const BaseLayout: FC<Props> =({ children }) => {
+export const BaseLayout: FC<Props> = observer(({ children }) => {
 
-  const [visible, setVisible] = useState(false);
+  const { modalStore: { setCurrentModal } } = useStores();
+
+  const openModal = () => {
+    setCurrentModal(LoginModal);
+  };
 
   return (
     <>
-      <Modal visible={visible} onClose={() => {setVisible(false)}} children={LoginModal(() => setVisible(false))}/>
 
       <header className={styles.header}>
         <section className={styles.header__container}>
@@ -44,10 +48,11 @@ export const BaseLayout: FC<Props> =({ children }) => {
               <Icon name="goIn" width="24" height="24" />
               <Button
                 type="button"
-                onClick={()=>setVisible(true)}
-                buttonText="Войти"
-                buttonColor={"#B3EDC8"}
-              />
+                onClick={openModal}
+                disabled={false}
+                theme=''
+              >Войти
+              </Button>
             </div>
           </div>
         </section>
@@ -75,4 +80,4 @@ export const BaseLayout: FC<Props> =({ children }) => {
       </footer>
     </>
   );
-};
+});

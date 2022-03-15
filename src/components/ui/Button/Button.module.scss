@@ -1,11 +1,27 @@
 @import "../../../styles/mixins";
 
 .button {
-  background: $c-green;
   border-radius: 8px;
   border: none;
   @include secondary-text;
-  color: $c-white;
   padding: 12px 22px;
   cursor: pointer;
+
+  &Green {
+    @extend .button;
+    background: $c-green;
+    color: $c-white;
+  }
+
+  &Grey {
+    @extend .button;
+    background: $c-light-grey;
+    color: $c-dark;
+  }
+
+  &Default {
+    @extend .button;
+    color: black;
+  }
 }
+

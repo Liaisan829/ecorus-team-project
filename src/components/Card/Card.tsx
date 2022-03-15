@@ -11,7 +11,7 @@ interface CardProps {
   img: any
 }
 
-export const Card: FC<CardProps> = (props) => {
+export const Card: FC<CardProps> = ({cardText, cardHeadline, buttonText, img, type, bgColor}) => {
 
   const onServiceConditionClick = () => {
     //console.log("pressed the service condition button");
@@ -19,17 +19,18 @@ export const Card: FC<CardProps> = (props) => {
 
   return (
     <>
-      <div className={styles.section} style={{ "backgroundColor": `${props.bgColor}` }}>
+      <div className={styles.section} style={{ "backgroundColor": `${bgColor}` }}>
         <div className={styles.section__info}>
-          <h1>{props.cardHeadline}</h1>
-          <p>{props.cardText}</p>
+          <h1>{cardHeadline}</h1>
+          <p>{cardText}</p>
           <Button
-            type={props.type}
+            type={type}
             onClick={onServiceConditionClick}
-            buttonText={props.buttonText}
-            buttonColor={"#07C88E"} />
+            disabled={false}
+            theme={"green"}
+            children={buttonText}/>
         </div>
-        <img src={props.img} alt="serviceCondition" />
+        <img src={img} alt="serviceCondition" />
       </div>
     </>
   );

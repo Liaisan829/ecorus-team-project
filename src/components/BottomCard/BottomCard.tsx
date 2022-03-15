@@ -26,8 +26,9 @@ export const BottomCard: FC<BottomCardProps> = (props) => {
             <Button
               type={props.type}
               onClick={onBottomButtonClick}
-              buttonColor={"rgba(0, 0, 0, 0.12)"}
-              buttonImg={<Icon name="buttonArrow" width="24" height="24" />}
+              theme="grey"
+              children={<Icon name="buttonArrow" width="24" height="24" />}
+              disabled={false}
             />
           </div>
         </div>
