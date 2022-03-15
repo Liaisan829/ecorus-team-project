@@ -1,7 +1,6 @@
 import { FC } from "react";
-import classNames from "classnames/bind";
-import styles from "./Button.module.scss";
 import cn from "classnames/bind";
+import styles from "./Button.module.scss";
 
 interface ButtonProps {
   type: any,
@@ -10,7 +9,6 @@ interface ButtonProps {
   disabled: boolean,
   color?: string
 }
-classNames();
 
 const cx = cn.bind(styles);
 

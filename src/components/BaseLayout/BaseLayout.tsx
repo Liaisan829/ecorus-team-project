@@ -45,13 +45,14 @@ export const BaseLayout: FC<Props> = observer(({ children }) => {
               <p>Казань</p>
             </div>
             <div className={styles.actions__link}>
-              <Icon name="goIn" width="24" height="24" />
               <Button
                 type="button"
                 onClick={openModal}
                 disabled={false}
-                theme=''
-              >Войти
+                theme=""
+              >
+                <Icon name="goIn" width="24" height="24" />
+                Войти
               </Button>
             </div>
           </div>

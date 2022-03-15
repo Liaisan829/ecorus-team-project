@@ -4,18 +4,16 @@ import { Field, Form, Formik } from "formik";
 import { Modal } from "../Modal/Modal";
 import { useStores } from "../../../utils/use-stores-hook";
 import { Button } from "../../ui/Button/Button";
-import { LoginWithCodeModal } from "../LoginReceiveCodeModal/LoginWithCodeModal";
 import { LoginSchema } from "../../../schemas/LoginSchema" ;
 import styles from "../Modal/Modal.module.scss";
 import { Navigate } from "react-router";
-import { LoginForPartnersModal } from "../ForPartnersModal/LoginForPartnersModal";
 
-export const LoginModal = observer(() => {
+export const SignUpForPartnersModal = observer(() => {
   const { modalStore: { clearCurrentModal, setCurrentModal } } = useStores();
   const [isValid, setValid] = useState(true);//чтобы при неверном disable true сделать кнопку
 
-  const onLoginClick = () => {
-    console.log("pressed login button");
+  const onReceiveCodeClick = () => {
+    console.log("pressed receive code button");
     clearCurrentModal();
     // if(isValid){
     //   <Navigate to="/" replace={true}/>
@@ -25,23 +23,19 @@ export const LoginModal = observer(() => {
 
   const onLoginWithCodeClick = () => {
     clearCurrentModal();
-    setCurrentModal(LoginWithCodeModal);
+    setCurrentModal(SignUpForPartnersModal);
   };
 
   const onSignUpClick = () => {
     clearCurrentModal();
-    setCurrentModal(LoginWithCodeModal);
-  };
-
-  const onPartnerButtonClick = () => {
-    clearCurrentModal();
-    setCurrentModal(LoginForPartnersModal);
+    setCurrentModal(SignUpForPartnersModal);
   };
 
   return (
     <Modal title="Вход" onClose={clearCurrentModal}>
       <Formik initialValues={{
-        phone: "",
+        partners: "",
+        email: "",
         password: ""
       }}
               validationSchema={LoginSchema}
@@ -53,9 +47,13 @@ export const LoginModal = observer(() => {
         {({ errors, touched }) => (
 
           <Form className={styles.modal_container}>
-            <Field name="phone" placeholder="Телефон" />
-            {errors.phone && touched.phone ? (
-              <div className={styles.modal_container__error}>{errors.phone}</div>
+            <Field name="partners" placeholder="Наименование организации"/>
+            {errors.password && touched.partners ? (
+              <div className={styles.modal_container__error}>{errors.partners}</div>
+            ) : null}
+            <Field name="email" type = "email" placeholder="Email" />
+            {errors.email && touched.email ? (
+              <div className={styles.modal_container__error}>{errors.email}</div>
             ) : null}
             <Field name="password" placeholder="Пароль" />
             {errors.password && touched.password ? (
@@ -63,9 +61,9 @@ export const LoginModal = observer(() => {
             ) : null}
             <Button type="submit"
                     disabled={false}
-                    onClick={onLoginClick}
+                    onClick={onReceiveCodeClick}
                     theme={"green"}
-                    children={"Войти"}
+                    children={"Получить код"}
             />
 
             <div className={styles.modal_container__row}>
@@ -87,12 +85,6 @@ export const LoginModal = observer(() => {
               />
             </div>
 
-            <Button type="button"
-                    onClick={onPartnerButtonClick}
-                    disabled={false}
-                    theme={"grey"}
-                    children={"Вход для партнеров"}
-            />
           </Form>)}
       </Formik>
 

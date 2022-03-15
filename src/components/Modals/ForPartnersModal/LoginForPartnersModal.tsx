@@ -4,13 +4,12 @@ import { Field, Form, Formik } from "formik";
 import { Modal } from "../Modal/Modal";
 import { useStores } from "../../../utils/use-stores-hook";
 import { Button } from "../../ui/Button/Button";
-import { LoginWithCodeModal } from "../LoginReceiveCodeModal/LoginWithCodeModal";
 import { LoginSchema } from "../../../schemas/LoginSchema" ;
 import styles from "../Modal/Modal.module.scss";
 import { Navigate } from "react-router";
-import { LoginForPartnersModal } from "../ForPartnersModal/LoginForPartnersModal";
+import { SignUpForPartnersModal } from "./SignUpForPartnersModal";
 
-export const LoginModal = observer(() => {
+export const LoginForPartnersModal = observer(() => {
   const { modalStore: { clearCurrentModal, setCurrentModal } } = useStores();
   const [isValid, setValid] = useState(true);//чтобы при неверном disable true сделать кнопку
 
@@ -25,23 +24,18 @@ export const LoginModal = observer(() => {
 
   const onLoginWithCodeClick = () => {
     clearCurrentModal();
-    setCurrentModal(LoginWithCodeModal);
+    setCurrentModal(SignUpForPartnersModal);
   };
 
   const onSignUpClick = () => {
     clearCurrentModal();
-    setCurrentModal(LoginWithCodeModal);
-  };
-
-  const onPartnerButtonClick = () => {
-    clearCurrentModal();
-    setCurrentModal(LoginForPartnersModal);
+    setCurrentModal(SignUpForPartnersModal);
   };
 
   return (
     <Modal title="Вход" onClose={clearCurrentModal}>
       <Formik initialValues={{
-        phone: "",
+        email: "",
         password: ""
       }}
               validationSchema={LoginSchema}
@@ -53,9 +47,9 @@ export const LoginModal = observer(() => {
         {({ errors, touched }) => (
 
           <Form className={styles.modal_container}>
-            <Field name="phone" placeholder="Телефон" />
-            {errors.phone && touched.phone ? (
-              <div className={styles.modal_container__error}>{errors.phone}</div>
+            <Field name="email" type = "email" placeholder="Email" />
+            {errors.email && touched.email ? (
+              <div className={styles.modal_container__error}>{errors.email}</div>
             ) : null}
             <Field name="password" placeholder="Пароль" />
             {errors.password && touched.password ? (
@@ -87,12 +81,6 @@ export const LoginModal = observer(() => {
               />
             </div>
 
-            <Button type="button"
-                    onClick={onPartnerButtonClick}
-                    disabled={false}
-                    theme={"grey"}
-                    children={"Вход для партнеров"}
-            />
           </Form>)}
       </Formik>
 
