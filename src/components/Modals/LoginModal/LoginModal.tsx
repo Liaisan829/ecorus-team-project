@@ -5,9 +5,10 @@ import { Modal } from "../Modal/Modal";
 import { useStores } from "../../../utils/use-stores-hook";
 import { Button } from "../../ui/Button/Button";
 import styles from "../Modal/Modal.module.scss";
+import LoginWithCodeModal from "../LoginWithCodeModal/LoginWithCodeModal";
 
 export const LoginModal = observer(() => {
-  const { modalStore: { clearCurrentModal } } = useStores();
+  const { modalStore: { clearCurrentModal, setCurrentModal } } = useStores();
 
   const LoginSchema = Yup.object().shape({
     phone: Yup.string()
@@ -26,6 +27,18 @@ export const LoginModal = observer(() => {
     clearCurrentModal();
     //редирект на главную страницу с лк в хедере или в личный кабинет
   };
+
+  const onLoginWithCodeClick = () => {
+    console.log("pressed login with button");
+    clearCurrentModal();
+    setCurrentModal(LoginWithCodeModal);
+  }
+
+  const onSignUpClick = () => {
+    console.log("pressed signUp button");
+    clearCurrentModal();
+
+  }
 
   const onPartnerButtonClick = () => {
     console.log("pressed partner login button");
@@ -66,7 +79,7 @@ export const LoginModal = observer(() => {
                 <Button
                   type="button"
                   disabled={false}
-                  onClick={onLoginClick}
+                  onClick={onLoginWithCodeClick}
                   theme={""}
                   color={"#07C88E"}
                   children={"Войти с помощью"}
@@ -74,7 +87,7 @@ export const LoginModal = observer(() => {
                 <Button
                   type="button"
                   disabled={false}
-                  onClick={onLoginClick}
+                  onClick={onSignUpClick}
                   theme={""}
                   color={"#07C88E"}
                   children={"Регистрация"} />
