@@ -67,14 +67,12 @@ export const LoginModal = observer(() => {
                 children = {"Регистрация"}/>
             </div>
 
-            <div>
               <Button type="button"
                       onClick={onPartnerButtonClick}
                       disabled={false}
                       theme={"grey"}
                       children={"Вход для партнеров"}
               />
-            </div>
           </Form>
 
         </Formik>
