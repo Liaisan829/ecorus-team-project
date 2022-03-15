@@ -36,3 +36,10 @@
   line-height: 40px;
   color: $c-dark;
 }
+
+@mixin modalText{
+  font-family: Inter, sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 28px;
+}

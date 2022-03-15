@@ -7,7 +7,7 @@ interface ButtonProps {
   type: any,
   onClick: () => void,
   theme: string,
-  disabled: boolean
+  disabled: boolean,
 }
 classNames();
 
