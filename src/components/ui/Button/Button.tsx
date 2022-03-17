@@ -7,7 +7,7 @@ interface ButtonProps {
   onClick: () => void,
   theme: string,
   disabled: boolean,
-  color?: string
+  color?: string,
 }
 
 const cx = cn.bind(styles);
