@@ -50,6 +50,7 @@ export const BaseLayout: FC<Props> = observer(({ children }) => {
                 onClick={openModal}
                 disabled={false}
                 theme=""
+                color={"rgba(0, 11, 38, 0.64)"}
               >
                 <Icon name="goIn" width="24" height="24" />
                 Войти
