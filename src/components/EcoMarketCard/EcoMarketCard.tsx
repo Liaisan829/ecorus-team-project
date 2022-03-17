@@ -1,13 +1,14 @@
 import {FC} from 'react';
 import styles from './EcoMarketCard.module.scss';
-import {Icon} from "../ui/Icon/Icon";
+import currency from '../../svg-icons/currency.svg';
 
 interface CardProps {
     brand: string
     img: any,
     name: string
     gender: string,
-    price: string
+    price: string,
+
 }
 
 export const EcoMarketCard: FC<CardProps> = ({brand, img, name, gender, price}) => {
@@ -22,10 +23,9 @@ export const EcoMarketCard: FC<CardProps> = ({brand, img, name, gender, price}) 
                 <p>{gender}</p>
             </div>
             <div className={styles.section__price}>
-                <Icon name="currency" width={24} height={24}/>
+                <img src={currency} alt="currency"/>
                 <p>{price}</p>
             </div>
-
         </div>
     )
 }
