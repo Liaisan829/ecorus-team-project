@@ -58,7 +58,6 @@ export const LoginWithCodeModal = observer(() => {
             <div className={styles.modal_container__row}>
               <Button
                 type="button"
-                disabled={false}
                 onClick={onAlreadyLoggedClick}
                 theme={""}
                 color={"#07C88E"}
@@ -68,7 +67,6 @@ export const LoginWithCodeModal = observer(() => {
 
             <Button type="button"
                     onClick={onPartnerButtonClick}
-                    disabled={false}
                     theme={"grey"}
                     children={"Вход для партнеров"}
             />
