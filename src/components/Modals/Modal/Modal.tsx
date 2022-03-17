@@ -1,7 +1,7 @@
 import { FC, ReactNode } from "react";
-import styles from "./Modal.module.scss";
-import {Icon} from "../../ui/Icon/Icon";
+import { Icon } from "../../ui/Icon/Icon";
 import { Button } from "../../ui/Button/Button";
+import styles from "./Modal.module.scss";
 
 interface Props {
   title: ReactNode;
@@ -21,7 +21,7 @@ export const Modal: FC<Props> = ({ title, onClose, children }) => {
               theme=""
               disabled={false}
             >
-              <Icon name="close" width={24} height={24}/>
+              <Icon name="close" width={24} height={24} />
             </Button>
           </div>
 

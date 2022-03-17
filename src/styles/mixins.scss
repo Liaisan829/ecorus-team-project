@@ -16,7 +16,7 @@
 
 @mixin primary-text{
   @include regular-style;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 22px;
   color: $c-grey;
 }
@@ -35,13 +35,6 @@
   font-size: 32px;
   line-height: 40px;
   color: $c-dark;
-}
-
-@mixin modalText{
-  font-family: Inter, sans-serif;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 28px;
 }
 
 @mixin modalText{

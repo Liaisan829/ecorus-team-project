@@ -1,25 +1,18 @@
 import { observer } from "mobx-react";
-import { useState } from "react";
 import { Field, Form, Formik } from "formik";
 import { Modal } from "../Modal/Modal";
 import { useStores } from "../../../utils/use-stores-hook";
 import { Button } from "../../ui/Button/Button";
 import { LoginSchema } from "../../../schemas/LoginSchema" ;
-import styles from "../Modal/Modal.module.scss";
-import { Navigate } from "react-router";
 import { SignUpForPartnersModal } from "./SignUpForPartnersModal";
+import styles from "../Modal/Modal.module.scss";
 
 export const LoginForPartnersModal = observer(() => {
   const { modalStore: { clearCurrentModal, setCurrentModal } } = useStores();
-  const [isValid, setValid] = useState(true);//чтобы при неверном disable true сделать кнопку
 
   const onLoginClick = () => {
     console.log("pressed login button");
     clearCurrentModal();
-    // if(isValid){
-    //   <Navigate to="/" replace={true}/>
-    // }
-    //редирект на главную страницу с лк в хедере или в личный кабинет
   };
 
   const onLoginWithCodeClick = () => {
@@ -42,9 +35,10 @@ export const LoginForPartnersModal = observer(() => {
               onSubmit={values => {
                 console.log(values);
               }}
+              validateOnMount
       >
 
-        {({ errors, touched }) => (
+        {({ errors, touched, dirty, isValid }) => (
 
           <Form className={styles.modal_container}>
             <Field name="email" type = "email" placeholder="Email" />
@@ -56,7 +50,7 @@ export const LoginForPartnersModal = observer(() => {
               <div className={styles.modal_container__error}>{errors.password}</div>
             ) : null}
             <Button type="submit"
-                    disabled={false}
+                    disabled={!dirty}
                     onClick={onLoginClick}
                     theme={"green"}
                     children={"Войти"}
