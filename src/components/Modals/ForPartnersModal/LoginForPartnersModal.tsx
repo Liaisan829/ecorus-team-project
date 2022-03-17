@@ -12,7 +12,7 @@ export const LoginForPartnersModal = observer(() => {
 
   const onLoginClick = () => {
     console.log("pressed login button");
-    clearCurrentModal();
+    // clearCurrentModal();
   };
 
   const onLoginWithCodeClick = () => {
