@@ -1,10 +1,13 @@
 import {ModalStore} from "./ModalStore";
+import { CheckboxStore } from "./CheckboxStore";
 
 export class MainStore {
-  modalStore: ModalStore
+  modalStore: ModalStore;
+  checkboxStore: CheckboxStore;
 
   constructor() {
     this.modalStore = new ModalStore(this);
+    this.checkboxStore = new CheckboxStore();
   }
 }
 

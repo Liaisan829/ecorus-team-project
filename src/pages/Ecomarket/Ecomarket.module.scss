@@ -1,17 +1,47 @@
 @import '../../styles/mixins';
 
+.ecomarket {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 40px;
+
+  &__filterButtons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+.filter {
+  width: 282px;
+  border: 1px solid $c-light-grey;
+  border-radius: 16px;
+  float: left;
+  margin-right: 30px;
+
+  &__block {
+    padding: 24px 0 24px 24px;
+
+    h3 {
+      margin-bottom: 13px;
+    }
+  }
+}
+
 .productCards {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
-  width: 900px;
+  width: 870px;
 }
 
 .promocodeCard {
   border-radius: 24px;
   width: 275px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 
   &__info {
     display: flex;
