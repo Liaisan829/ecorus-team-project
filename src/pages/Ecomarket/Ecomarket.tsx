@@ -12,6 +12,7 @@ import hoodie from '../../svg-icons/ecoMarket/hoodie.svg';
 import currency from '../../svg-icons/currency.svg';
 import styles from './Ecomarket.module.scss';
 import { CheckboxNew } from "../../components/ui/CheckboxNew/CheckboxNew";
+import {QrModal} from "../../components/Modals/QrModal/QrModal";
 
 const onGetPromocodeClick = () => {
     console.log("click");
@@ -23,8 +24,13 @@ const onButtonClick = () => {
 
 export const Ecomarket = observer(() => {
 
+    const { modalStore: {setCurrentModal } } = useStores();
 
+    const onGetQRGet = () => {
+        setCurrentModal(QrModal);
+    }
     const {checkboxStore: {genders, goodsType, brands}} = useStores();
+
     return (
         <>
             <BaseLayout>
@@ -123,6 +129,7 @@ export const Ecomarket = observer(() => {
                         name={"Nike Air Max 2021"}
                         gender={"Мужская обувь"}
                         price={"1000"}
+                        onClick={onGetQRGet}
                     />
                     <EcoMarketCard
                         brand={"NIKE"}
@@ -130,6 +137,7 @@ export const Ecomarket = observer(() => {
                         name={"Nike Air Max 90 Premium"}
                         gender={"Мужская обувь"}
                         price={"750"}
+                        onClick={onGetQRGet}
                     />
                     <EcoMarketCard
                         brand={"Adidas"}
@@ -137,6 +145,7 @@ export const Ecomarket = observer(() => {
                         name={"Adidas Alphabounce RC"}
                         gender={"Мужская обувь"}
                         price={"1200"}
+                        onClick={onGetQRGet}
                     />
                     <EcoMarketCard
                         brand={"H&M"}
@@ -144,6 +153,7 @@ export const Ecomarket = observer(() => {
                         name={"Nike Air Max 2021"}
                         gender={"Мужская обувь"}
                         price={"1000"}
+                        onClick={onGetQRGet}
                     />
                     <EcoMarketCard
                         brand={"NIKE"}
@@ -151,6 +161,7 @@ export const Ecomarket = observer(() => {
                         name={"Nike Air Force 1 Low"}
                         gender={"Мужская обувь"}
                         price={"2100"}
+                        onClick={onGetQRGet}
                     />
                 </section>
             </BaseLayout>

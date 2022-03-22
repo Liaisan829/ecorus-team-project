@@ -1,6 +1,7 @@
 import {FC} from 'react';
 import styles from './EcoMarketCard.module.scss';
 import currency from '../../svg-icons/currency.svg';
+import { Button } from '../ui/Button/Button';
 
 interface CardProps {
     brand: string
@@ -8,16 +9,18 @@ interface CardProps {
     name: string
     gender: string,
     price: string,
-
+    onClick: () => void
 }
 
-export const EcoMarketCard: FC<CardProps> = ({brand, img, name, gender, price}) => {
+export const EcoMarketCard: FC<CardProps> = ({brand, img, name, gender, price, onClick}) => {
     return (
         <div className={styles.section}>
             <div className={styles.section__brand}>
                 <p>{brand}</p>
             </div>
-            <img src={img} alt="item"/>
+            <Button type="button" onClick={onClick} theme="">
+                <img src={img} alt="item"/>
+            </Button>
             <div className={styles.section__text}>
                 <h6>{name}</h6>
                 <p>{gender}</p>

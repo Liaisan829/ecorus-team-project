@@ -10,7 +10,6 @@ interface Props {
 
 export const Modal: FC<Props> = ({ title, onClose, children }) => {
   return (
-    <>
       <div className={styles.overlay}>
         <div className={styles.overlay__popup}>
           <div className={styles.overlay__popup__top}>
@@ -30,6 +29,5 @@ export const Modal: FC<Props> = ({ title, onClose, children }) => {
           </div>
         </div>
       </div>
-    </>
   );
 };
