@@ -1,16 +1,12 @@
 import {observer} from "mobx-react";
 import {useStores} from "../../../utils/use-stores-hook";
 import {Button} from "../../ui/Button/Button";
-import {FC} from "react";
 import {qrGenerator} from "./QrGenerator";
 import QRCode from 'react-qr-code';
 import styles from './QrModal.module.scss';
 
-interface Props {
-    productLink: string;
-}
 
-export const QrModal: FC<Props> = observer(({productLink}) => {
+export const QrModal = observer(() => {
     const {modalStore: {clearCurrentModal}} = useStores();
     const article = qrGenerator();
 

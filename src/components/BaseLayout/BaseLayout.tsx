@@ -1,5 +1,6 @@
 import { FC, ReactNode } from "react";
 import { NavLink } from "react-router-dom";
+import { LoginModal } from "../Modals/LoginModal/LoginModal";
 import { Icon } from "../ui/Icon/Icon";
 import { CustomLink } from "../ui/СustomLink/CustomLink";
 import { Button } from "../ui/Button/Button";
@@ -7,7 +8,6 @@ import { observer } from "mobx-react";
 import { useStores } from "../../utils/use-stores-hook";
 import logo from "../../svg-icons/logo.svg";
 import styles from "./BaseLayout.module.scss";
-import { LoginModal } from "../Modals/LoginModal/LoginModal";
 
 interface Props {
   children: ReactNode;
@@ -23,7 +23,6 @@ export const BaseLayout: FC<Props> = observer(({ children }) => {
 
   return (
     <>
-
       <header className={styles.header}>
         <section className={styles.header__container}>
           <nav>

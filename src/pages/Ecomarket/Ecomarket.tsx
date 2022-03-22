@@ -1,9 +1,10 @@
 import { observer } from "mobx-react";
 import { useStores } from "../../utils/use-stores-hook";
-import { Checkbox } from "../../components/ui/Checkbox/Checkbox";
 import {BaseLayout} from "../../components/BaseLayout/BaseLayout";
 import {EcoMarketCard} from "../../components/EcoMarketCard/EcoMarketCard";
 import {Button} from "../../components/ui/Button/Button";
+import { CheckboxNew } from "../../components/ui/CheckboxNew/CheckboxNew";
+import {QrModal} from "../../components/Modals/QrModal/QrModal";
 import sneak1 from '../../svg-icons/ecoMarket/sneak1.svg';
 import sneak2 from '../../svg-icons/ecoMarket/sneak2.svg';
 import sneak3 from '../../svg-icons/ecoMarket/sneak3.svg';
@@ -11,8 +12,6 @@ import sneak4 from '../../svg-icons/ecoMarket/sneak4.svg';
 import hoodie from '../../svg-icons/ecoMarket/hoodie.svg';
 import currency from '../../svg-icons/currency.svg';
 import styles from './Ecomarket.module.scss';
-import { CheckboxNew } from "../../components/ui/CheckboxNew/CheckboxNew";
-import {QrModal} from "../../components/Modals/QrModal/QrModal";
 
 const onGetPromocodeClick = () => {
     console.log("click");
