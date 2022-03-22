@@ -6,6 +6,10 @@
   align-items: center;
 
   &__input {
+    display: none;
+  }
+
+  &__span {
     content: '';
     display: inline-block;
     width: 18px;
@@ -13,17 +17,20 @@
     border: 1px solid $c-grey;
     border-radius: 4px;
     margin-right: 9px;
-    background: $c-white;  }
+    background: $c-white;
+  }
 
-  //
-  //&__input:checked + span:before {
-  //  border: 1px solid $c-green;
-  //  background-color: $c-green;
-  //  background-image: url("../../../svg-icons/checkbox.svg");
-  //  background-repeat: no-repeat;
-  //  background-position: center center;
-  //}
-
+  &__activeSpan {
+    width: 18px;
+    height: 18px;
+    border-radius: 4px;
+    margin-right: 9px;
+    border: 1px solid $c-green;
+    background-color: $c-green;
+    background-image: url("../../../svg-icons/checkbox.svg");
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
 
   &__text {
     @include primary-text;
@@ -32,6 +39,6 @@
 
   &__activeText {
     @include primary-text;
-    font-weight: 600;
+    font-weight: 500;
   }
 }

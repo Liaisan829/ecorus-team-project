@@ -13,7 +13,7 @@ export const CheckboxNew: FC<CheckboxNew> = ({ text }) => {
     <>
       <label className={styles.checkbox}>
         <input type="checkbox" className={styles.checkbox__input} onClick={() => setChecked(!checked)} />
-        <span/>
+        <span className={checked ? styles.checkbox__activeSpan : styles.checkbox__span}/>
         <p className={checked ? styles.checkbox__activeText : styles.checkbox__text}>{text}</p>
       </label>
     </>
