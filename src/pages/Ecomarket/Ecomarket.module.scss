@@ -19,13 +19,21 @@
   border: 1px solid $c-light-grey;
   border-radius: 16px;
   float: left;
-  margin-right: 30px;
+  margin-right: 45px;
 
   &__block {
     padding: 24px 0 24px 24px;
 
     h3 {
       margin-bottom: 13px;
+      @include secondary-text;
+      font-weight: 500;
+      color:$c-dark-grey;
+      margin-top: 24px;
+
+      &:first-child{
+        margin-top: 0;
+      }
     }
   }
 }
@@ -34,7 +42,7 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-between;
   width: 870px;
 }
 

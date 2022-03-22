@@ -11,6 +11,7 @@ import sneak4 from '../../svg-icons/ecoMarket/sneak4.svg';
 import hoodie from '../../svg-icons/ecoMarket/hoodie.svg';
 import currency from '../../svg-icons/currency.svg';
 import styles from './Ecomarket.module.scss';
+import { CheckboxModel } from "../../stores/CheckboxStore";
 
 const onGetPromocodeClick = () => {
     console.log("click");
@@ -21,6 +22,11 @@ const onButtonClick = () => {
 }
 
 export const Ecomarket = observer(() => {
+
+    const onCheckboxClick = (goodType:Array<CheckboxModel>) => {
+
+    }
+
     const {checkboxStore: {genders, goodsType, brands}} = useStores();
     return (
         <>
@@ -30,21 +36,21 @@ export const Ecomarket = observer(() => {
                     <div className={styles.ecomarket__filterButtons}>
                         <Button
                           type={"button"}
-                          theme={"grey"}
+                          theme={"eco"}
                           onClick={onButtonClick}
                           children={"По популярности"}
                         />
 
                         <Button
                           type={"button"}
-                          theme={"grey"}
+                          theme={"eco"}
                           onClick={onButtonClick}
                           children={"По цене"}
                         />
 
                         <Button
                           type={"button"}
-                          theme={"grey"}
+                          theme={"eco"}
                           onClick={onButtonClick}
                           children={"По новизне"}
                         />
@@ -58,28 +64,27 @@ export const Ecomarket = observer(() => {
                             <Checkbox
                               id={index}
                               text={gender.text}
-                              // onCheckboxClick={}
-                              clicked={gender.clicked}
+
                             />
                         ))}
 
                         <h3>Тип товара</h3>
+
                         {goodsType.map((goodType, index)=>(
                           <Checkbox
                             id={index}
                             text={goodType.text}
-                            // onCheckboxClick={}
-                            clicked={goodType.clicked}
+
                           />
                         ))}
 
                         <h3>Брэнд</h3>
+
                         {brands.map((brand, index)=>(
                           <Checkbox
                             id={index}
                             text={brand.text}
-                            // onCheckboxClick={}
-                            clicked={brand.clicked}
+
                           />
                         ))}
                     </form>

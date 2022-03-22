@@ -28,5 +28,22 @@
     color: black;
     padding: 0;
   }
+
+  &Eco {
+    @extend .button;
+    background: $c-light-grey;
+    border-radius: 61px;
+    color: $c-dark-grey;
+    margin-left: 12px;
+
+    &:focus, &:hover {
+      background: $c-dark-grey;
+      color: $c-white;
+    }
+
+    &:first-child{
+      margin-left: 0;
+    }
+  }
 }
 

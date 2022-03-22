@@ -1,65 +1,78 @@
 import { observable } from "mobx";
 
-interface CheckboxModel {
+export interface CheckboxModel {
+  id: number,
   text: string,
-  clicked: boolean
+  checked: boolean
 }
 
 export class CheckboxStore {
   @observable genders: Array<CheckboxModel> = [
     {
+      id: 1,
       text: "Мужской",
-      clicked: false
+      checked: false
     },
     {
+      id: 2,
       text: "Женский",
-      clicked: false
+      checked: false
     }
   ];
 
   @observable goodsType: Array<CheckboxModel> = [
     {
+      id: 1,
       text: "Выбрать все",
-      clicked: false
+      checked: false
     },
     {
+      id: 2,
       text: "Одежда",
-      clicked: false
+      checked: false
     },
     {
+      id: 3,
       text: "Обувь",
-      clicked: false
+      checked: false
     },
     {
+      id: 4,
       text: "Аксессуары",
-      clicked: false
+      checked: false
     }
   ];
 
   @observable brands: Array<CheckboxModel> = [
     {
+      id: 1,
       text: "Выбрать все",
-      clicked: false
+      checked: false
     },
     {
+      id: 2,
       text: "H&M",
-      clicked: false
+      checked: false
     },
     {
+      id: 3,
       text: "P&B",
-      clicked: false
+      checked: false
     },
     {
+      id: 4,
       text: "Adidas",
-      clicked: false
+      checked: false
     },
     {
+      id: 5,
       text: "Nike",
-      clicked: false
+      checked: false
     },
     {
+      id: 6,
       text: "Reebok",
-      clicked: false
+      checked: false
     }
   ];
 }
