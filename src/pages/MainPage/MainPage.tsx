@@ -17,12 +17,10 @@ export const MainPage = () => {
         <BottomCard
           cardHeadline="Пункты сбора"
           cardText="Посмотри, где в твоем городе можно сдать вторсырье на переработку"
-          type="button"
           img={collpoints} />
         <BottomCard
           cardHeadline="Экомаркет"
           cardText="Используй заработанные экокоины для покупки товаров из переработанных материалов "
-          type="button"
           img={ecomarket} />
       </div>
     </BaseLayout>

@@ -6,11 +6,10 @@ import styles from "./BottomCard.module.scss";
 interface BottomCardProps {
   cardHeadline: string,
   cardText: string,
-  type: string,
   img: any
 }
 
-export const BottomCard: FC<BottomCardProps> = (props) => {
+export const BottomCard: FC<BottomCardProps> = ({cardHeadline, cardText, img}) => {
 
   const onBottomButtonClick = () => {
     // console.log("click")
@@ -20,19 +19,20 @@ export const BottomCard: FC<BottomCardProps> = (props) => {
     <>
       <div className={styles.informBlock}>
         <div className={styles.informBlock__info}>
-          <h1>{props.cardHeadline}</h1>
-          <p>{props.cardText}</p>
+          <h1>{cardHeadline}</h1>
+          <p>{cardText}</p>
           <div className={styles.cardButton}>
             <Button
-              type={props.type}
+              type="button"
               onClick={onBottomButtonClick}
               theme="grey"
-              children={<Icon name="buttonArrow" width="24" height="24" />}
               disabled={false}
-            />
+            >
+              <Icon name="buttonArrow" width="24" height="24" />
+            </Button>
           </div>
         </div>
-        <img src={props.img} alt="image" />
+        <img src={img} alt="image" />
       </div>
     </>
   );

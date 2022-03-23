@@ -12,6 +12,7 @@ import sneak4 from '../../svg-icons/ecoMarket/sneak4.svg';
 import hoodie from '../../svg-icons/ecoMarket/hoodie.svg';
 import currency from '../../svg-icons/currency.svg';
 import styles from './Ecomarket.module.scss';
+import {useState} from "react";
 
 const onGetPromocodeClick = () => {
     console.log("click");
@@ -25,7 +26,7 @@ export const Ecomarket = observer(() => {
 
     const { modalStore: {setCurrentModal } } = useStores();
 
-    const onGetQRGet = () => {
+    const onGetQR = () => {
         setCurrentModal(QrModal);
     }
     const {checkboxStore: {genders, goodsType, brands}} = useStores();
@@ -69,7 +70,7 @@ export const Ecomarket = observer(() => {
                         ))}
 
                         {/*{genders.map((gender, index)=>(*/}
-                        {/*    <Checkbox*/}
+                        {/*    <CheckboxNew*/}
                         {/*      id={index}*/}
                         {/*      text={gender.text}*/}
                         {/*    />*/}
@@ -128,7 +129,7 @@ export const Ecomarket = observer(() => {
                         name={"Nike Air Max 2021"}
                         gender={"Мужская обувь"}
                         price={"1000"}
-                        onClick={onGetQRGet}
+                        onClick={onGetQR}
                     />
                     <EcoMarketCard
                         brand={"NIKE"}
@@ -136,7 +137,7 @@ export const Ecomarket = observer(() => {
                         name={"Nike Air Max 90 Premium"}
                         gender={"Мужская обувь"}
                         price={"750"}
-                        onClick={onGetQRGet}
+                        onClick={onGetQR}
                     />
                     <EcoMarketCard
                         brand={"Adidas"}
@@ -144,15 +145,15 @@ export const Ecomarket = observer(() => {
                         name={"Adidas Alphabounce RC"}
                         gender={"Мужская обувь"}
                         price={"1200"}
-                        onClick={onGetQRGet}
+                        onClick={onGetQR}
                     />
                     <EcoMarketCard
                         brand={"H&M"}
                         img={hoodie}
                         name={"Nike Air Max 2021"}
-                        gender={"Мужская обувь"}
+                        gender={"Мужская одежда"}
                         price={"1000"}
-                        onClick={onGetQRGet}
+                        onClick={onGetQR}
                     />
                     <EcoMarketCard
                         brand={"NIKE"}
@@ -160,7 +161,7 @@ export const Ecomarket = observer(() => {
                         name={"Nike Air Force 1 Low"}
                         gender={"Мужская обувь"}
                         price={"2100"}
-                        onClick={onGetQRGet}
+                        onClick={onGetQR}
                     />
                 </section>
             </BaseLayout>

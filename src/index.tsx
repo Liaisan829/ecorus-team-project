@@ -7,6 +7,7 @@ import App from "./App";
 import { ModalConstructor } from "./components/Modals/ModalConstructor/ModalConstructor";
 import "./index.scss";
 
+
 ReactDOM.render(
   <React.StrictMode>
     <Provider {...mainStore}>
