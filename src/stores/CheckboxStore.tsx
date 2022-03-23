@@ -1,54 +1,68 @@
+import { observable } from "mobx";
+
 export interface CheckboxModel {
   id: number,
   text: string,
+  checked: boolean
 }
 
-export const Genders: Array<CheckboxModel> = [
-  {
-    id: 1,
-    text: "Мужской"
-  },
-  {
-    id: 2,
-    text: "Женский"
-  }
-];
+export class CheckboxStore {
+  @observable genders: Array<CheckboxModel> = [
+    {
+      id: 1,
+      text: "Мужской",
+      checked: false
+    },
+    {
+      id: 2,
+      text: "Женский",
+      checked: false
+    }
+  ];
 
-export const GoodsType: Array<CheckboxModel> = [
-  {
-    id: 2,
-    text: "Одежда"
-  },
-  {
-    id: 3,
-    text: "Обувь"
-  },
-  {
-    id: 4,
-    text: "Аксессуары"
-  }
-];
+  @observable goodsType: Array<CheckboxModel> = [
+    {
+      id: 2,
+      text: "Одежда",
+      checked: false
+    },
+    {
+      id: 3,
+      text: "Обувь",
+      checked: false
+    },
+    {
+      id: 4,
+      text: "Аксессуары",
+      checked: false
+    }
+  ];
 
-export const Brands: Array<CheckboxModel> = [
-  {
-    id: 2,
-    text: "H&M"
-  },
-  {
-    id: 3,
-    text: "P&B"
-  },
-  {
-    id: 4,
-    text: "Adidas"
-  },
-  {
-    id: 5,
-    text: "Nike"
-  },
-  {
-    id: 6,
-    text: "Reebok"
-  }
-];
-
+  @observable brands: Array<CheckboxModel> = [
+    {
+      id: 2,
+      text: "H&M",
+      checked: false
+    },
+    {
+      id: 3,
+      text: "P&B",
+      checked: false
+    },
+    {
+      id: 4,
+      text: "Adidas",
+      checked: false
+    },
+    {
+      id: 5,
+      text: "Nike",
+      checked: false
+    },
+    {
+      id: 6,
+      text: "Reebok",
+      checked: false
+    }
+  ];
+}

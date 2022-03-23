@@ -1,11 +1,9 @@
-import { useEffect, useState } from "react";
 import { useStores } from "../../utils/use-stores-hook";
 import { BaseLayout } from "../../components/BaseLayout/BaseLayout";
 import { EcoMarketCard } from "../../components/EcoMarketCard/EcoMarketCard";
 import { Button } from "../../components/ui/Button/Button";
 import { CheckboxNew } from "../../components/ui/CheckboxNew/CheckboxNew";
 import { QrModal } from "../../components/Modals/QrModal/QrModal";
-import { Genders, GoodsType, Brands, CheckboxModel } from "../../stores/CheckboxStore";
 import sneak1 from "../../svg-icons/ecoMarket/sneak1.svg";
 import sneak2 from "../../svg-icons/ecoMarket/sneak2.svg";
 import sneak3 from "../../svg-icons/ecoMarket/sneak3.svg";
@@ -25,39 +23,12 @@ const onButtonClick = () => {
 export const Ecomarket = () => {
 
   const { modalStore: { setCurrentModal } } = useStores();
-  const [isCheck, setIsCheck] = useState<number[]>([]);
-  const [isCheckedAll, setIsCheckedAll] = useState(false);
-  const [genders, setGenders] = useState<Array<CheckboxModel>>([]);
-  const [goodsType, setGoodsType] = useState<Array<CheckboxModel>>([]);
-  const [brands, setBrands] = useState<Array<CheckboxModel>>([]);
-
-  useEffect(() => {
-    setGenders(Genders);
-    setGoodsType(GoodsType);
-    setBrands(Brands);
-  }, [genders, goodsType, brands]);
+  const { checkboxStore: { genders, goodsType, brands } } = useStores();
 
   const onGetQRGet = () => {
     setCurrentModal(QrModal);
   };
 
-  const handleSelectAll = () => {
-    console.log("dd");
-    setIsCheckedAll(!isCheckedAll);
-    setIsCheck(goodsType.map(li => li.id));
-    if (isCheckedAll) {
-      setIsCheck([]);
-    }
-  };
-
-  const handleSelect = (e: any) => {
-    const { id, isChecked } = e.target;
-    console.log("s");
-    setIsCheck([...isCheck, id]);
-    if (!isChecked) {
-      setIsCheck(isCheck.filter(item => item !== id));
-    }
-  };
 
   return (
     <>
@@ -95,46 +66,31 @@ export const Ecomarket = () => {
 
             {genders.map((gender) => (
               <CheckboxNew
-                isChecked={isCheck.includes(gender.id)}
-                id={gender.id}
                 text={gender.text}
-                handleClick={handleSelect}
               />
             ))}
 
             <h3>Тип товара</h3>
 
             <CheckboxNew
-              isChecked={isCheckedAll}
-              id={1}
               text={"Выбрать все"}
-              handleClick={handleSelectAll}
             />
 
             {goodsType.map((goodsType) => (
               <CheckboxNew
-                isChecked={isCheck.includes(goodsType.id)}
-                id={goodsType.id}
                 text={goodsType.text}
-                handleClick={handleSelect}
               />
             ))}
 
             <h3>Брэнд</h3>
 
             <CheckboxNew
-              isChecked={isCheckedAll}
-              id={1}
               text={"Выбрать все"}
-              handleClick={handleSelectAll}
             />
 
             {brands.map((brand) => (
               <CheckboxNew
-                isChecked={isCheck.includes(brand.id)}
-                id={brand.id}
                 text={brand.text}
-                handleClick={handleSelect}
               />
             ))}
 
