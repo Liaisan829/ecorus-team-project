@@ -20,6 +20,8 @@
   border-radius: 16px;
   float: left;
   margin-right: 45px;
+  position: sticky;
+  top: 5px;
 
   &__block {
     padding: 24px 0 24px 24px;
