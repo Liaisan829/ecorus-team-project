@@ -8,6 +8,7 @@ import { LoginSchema } from "../../../schemas/LoginSchema" ;
 import { LoginForPartnersModal } from "../ForPartnersModal/LoginForPartnersModal";
 import styles from "../Modal/Modal.module.scss";
 
+
 export const LoginModal = observer(() => {
   const { modalStore: { clearCurrentModal, setCurrentModal } } = useStores();
 
@@ -27,6 +28,7 @@ export const LoginModal = observer(() => {
     setCurrentModal(LoginForPartnersModal);
   };
 
+
   return (
     <Modal title="Вход" onClose={clearCurrentModal}>
       <Formik initialValues={{
@@ -42,12 +44,12 @@ export const LoginModal = observer(() => {
 
         {({ errors, touched, isValid, dirty, isSubmitting }) => (
           <Form className={styles.modal_container}>
-            <Field name="phone" placeholder="Телефон" />
+            <Field name="phone" placeholder="Телефон"  />
             {errors.phone && touched.phone ? (
               <div className={styles.modal_container__error}>{errors.phone}</div>
             ) : null}
 
-            <Field name="password" placeholder="Пароль" />
+            <Field name="password" placeholder="Пароль"/>
             {errors.password && touched.password ? (
               <div className={styles.modal_container__error}>{errors.password}</div>
             ) : null}
