@@ -1,10 +1,12 @@
 import {BaseLayout} from "../../components/BaseLayout/BaseLayout";
-import styles from "./CollectionPoints.module.scss";
+import Map from "../../components/Map/Map";
 
 export const CollectionPoints = () => {
     return(
-        <BaseLayout>
-            hello from coll points
-        </BaseLayout>
+        <>
+            <BaseLayout>
+                <Map/>
+            </BaseLayout>
+        </>
     )
 }
