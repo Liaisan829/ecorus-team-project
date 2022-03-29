@@ -10,7 +10,7 @@ const Map: FC<Props> = ({ children }) => {
         <div>
             <MapContainer
                 center={[55.792910, 49.122429]}
-                zoom={3}
+                zoom={13}
                 zoomControl={false}
                 style={{ height: '100vh', width: '100%', display:'flex', flexDirection:'column-reverse'}}
             >

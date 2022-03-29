@@ -40,6 +40,8 @@ export const LoginModal = observer(() => {
                 console.log(values);
               }}
               validateOnMount
+              validateOnBlur
+              validateOnChange
       >
 
         {({ errors, touched, isValid, dirty, isSubmitting }) => (
