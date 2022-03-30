@@ -12,15 +12,22 @@ import hoodie from "../../svg-icons/ecoMarket/hoodie.svg";
 import currency from "../../svg-icons/currency.svg";
 import styles from "./Ecomarket.module.scss";
 import { useState } from "react";
-import { Brands, CheckboxModel, Genders, GoodsType } from "../../stores/FilterStore";
-import { ProductModel, Products } from "../../stores/ProductStore";
+import {
+  allBrands,
+  allGenders,
+  allTypes,
+  Product
+} from "../../stores/FilterStore";
 
 export const Ecomarket = () => {
 
   const { modalStore: { setCurrentModal } } = useStores();
-  const [genders, setGenders] = useState<Array<CheckboxModel>>(Genders);
-  const [goodsType, setGoodsType] = useState<Array<CheckboxModel>>(GoodsType);
-  const [brands, setBrands] = useState<Array<CheckboxModel>>(Brands);
+  const [genders, setGenders] = useState(allGenders);
+  const [types, setTypes] = useState(allTypes);
+  const [brands, setBrands] = useState(allBrands);
+  const [clicked, setClicked] = useState(false);
+  const [allProductsTypes, setAllProductsTypes] = useState(false);
+  const [allProductsBrand, setAllProductsBrand] = useState(false);
 
   interface ProductModel {
     brand: string,
@@ -43,6 +50,28 @@ export const Ecomarket = () => {
     console.log("click");
     setCurrentModal(QrModal);
   };
+
+  const checkStatusProducts = (index: number, setProducts: any, products: Product[]) => {
+    setClicked(!clicked);
+    setProducts(
+      products.map((product: Product, currentIndex: number) =>
+        currentIndex === index ? {...product, checked: !product.checked} : product
+      )
+    )
+    filterData();
+  }
+
+
+  const checkStatusAllProducts = (isAllProducts: boolean, setAllProducts: any, setProducts:any, products:Product[]) => {
+    setClicked(!clicked);
+    setAllProducts(!isAllProducts)
+    setProducts(
+      products.map((product:Product) =>
+        isAllProducts ? {...product, checked: false} :
+          {...product, checked: true}
+      )
+    )
+  }
 
   const products: Array<ProductModel> = [
     {
@@ -131,38 +160,48 @@ export const Ecomarket = () => {
 
           <h3>Пол</h3>
 
-          {genders.map((gender) => (
-            <Checkbox
-              key={gender.name}
-              text={gender.name}
-            />
-          ))}
+          {genders.map((gender, index) =>(
+              <Checkbox
+                key={gender.name}
+                isChecked={gender.checked}
+                checkHandler={() => checkStatusProducts(index, setGenders, genders)}
+                title={gender.name}
+                index={index}
+              />
+            )
+          )}
 
           <h3>Тип товара</h3>
 
           <Checkbox
-            text={"Выбрать все"}
+            isChecked={allProductsTypes}
+            checkHandler={() => checkStatusAllProducts(allProductsTypes, setAllProductsTypes, setTypes, types)}
+            title={"Выбрать все"}
           />
-
-          {goodsType.map((goodType) => (
+          {types.map((type, index)=>
             <Checkbox
-              key={goodType.name}
-              text={goodType.name}
-            />
-          ))}
+              key={type.name}
+              isChecked={type.checked}
+              checkHandler={() => checkStatusProducts(index, setTypes, types)}
+              title={type.name}
+              index={index} />
+          )}
 
           <h3>Брэнд</h3>
 
           <Checkbox
-            text={"Выбрать все"}
+            isChecked={allProductsBrand}
+            checkHandler={() => checkStatusAllProducts(allProductsBrand, setAllProductsBrand, setBrands, brands)}
+            title={"Выбрать все"}
           />
-
-          {brands.map((brand) => (
+          {brands.map((brand, index)=>
             <Checkbox
               key={brand.name}
-              text={brand.name}
-            />
-          ))}
+              isChecked={brand.checked}
+              checkHandler={() => checkStatusProducts(index, setBrands, brands)}
+              title={brand.name}
+              index={index} />
+          )}
         </aside>
 
         <section className={styles.productCards}>
@@ -185,25 +224,30 @@ export const Ecomarket = () => {
             </div>
           </div>
 
-          {products.map(product => (
-            <EcoMarketCard
-              key={product.name}
-              brand={product.brand}
-              name={product.name}
-              img={product.img}
-              gender={product.gender}
-              price={product.price}
-              onClick={product.onClick}
-            />
-          ))}
-
-          {/*<h1>Filtered data</h1>*/}
-          {/*{filteredData.map(data => (*/}
+          {/*{products.map(product => (*/}
           {/*  <EcoMarketCard*/}
-          {/*    key={data.name}*/}
-          {/*    */}
+          {/*    key={product.name}*/}
+          {/*    brand={product.brand}*/}
+          {/*    name={product.name}*/}
+          {/*    img={product.img}*/}
+          {/*    gender={product.gender}*/}
+          {/*    price={product.price}*/}
+          {/*    onClick={product.onClick}*/}
           {/*  />*/}
           {/*))}*/}
+
+          <h1>Filtered data</h1>
+          {filteredData.map(data => (
+            <EcoMarketCard
+              key={data.name}
+              brand={data.brand}
+              name={data.name}
+              img={data.img}
+              gender={data.gender}
+              price={data.price}
+              onClick={data.onClick}
+            />
+          ))}
         </section>
       </BaseLayout>
     </>
