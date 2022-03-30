@@ -1,9 +1,9 @@
 @import "../../styles/mixins";
 
-.header{
+.header {
   border-bottom: 1px solid $c-light-grey;
 
-  &__container{
+  &__container {
     max-width: 1200px;
     width: 100%;
     display: flex;
@@ -13,57 +13,65 @@
   }
 }
 
-nav{
+nav {
   display: flex;
+
   img {
     padding-top: 27px;
   }
-  .link{
+
+  .link {
     @include regular-text;
     text-decoration: none;
     margin-left: 26px;
   }
-  .logo{
+
+  .logo {
     width: 94px;
     height: 18px;
     padding-right: 50px;
   }
 }
 
-.actions{
+.actions {
   display: flex;
   flex-direction: row;
   align-items: center;
-  &__link{
+
+  &__link {
     display: flex;
     flex-direction: row;
     align-items: center;
-    p{
+
+    p {
       @include regular-text;
     }
   }
-  &__link:last-child{
+
+  &__link:last-child {
     padding-left: 51px;
   }
-  img{
+
+  img {
     padding-right: 8px;
   }
 }
 
-.main{
+.main {
   margin-top: 40px;
-  &__container{
+
+  &__container {
     max-width: 1200px;
     width: 100%;
     margin: 0 auto;
   }
 }
 
-.footer{
+.footer {
   border-top: 1px solid $c-light-grey;
   padding: 30px;
 
-  &__container{
+  &__container {
     max-width: 1200px;
     width: 100%;
     display: flex;
@@ -72,15 +80,17 @@ nav{
     margin: 0 auto;
   }
 
-  &__contact{
+  &__contact {
     display: flex;
     align-items: center;
-    a{
+
+    a {
       text-decoration: none;
       @include secondary-text
     }
   }
-  &__contact:last-child{
+
+  &__contact:last-child {
     margin-left: 31px;
   }
 }

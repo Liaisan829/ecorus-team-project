@@ -1,38 +1,14 @@
 import styles from "./Checkbox.module.scss";
 import { FC, useState } from "react";
 
-// interface CheckboxNew {
-//   text: string,
-//   index?: string,
-//   checkHandler?: () => {}
-// }
-//
-// export const CheckboxNew: FC<CheckboxNew> = ({ text, index, checkHandler }) => {
-//   const [checked, setChecked] = useState(false);
-//   return (
-//     <>
-//       <label className={styles.checkbox}>
-//         <input type="checkbox"
-//                id={`${index}`}
-//                className={styles.checkbox__input}
-//                onClick={() => setChecked(!checked)}
-//         />
-//         <span />
-//         <span className={checked ? styles.checkbox__activeSpan : styles.checkbox__span} />
-//         <p className={checked ? styles.checkbox__activeText : styles.checkbox__text}>{text}</p>
-//       </label>
-//     </>
-//   );
-// };
-
-
 interface Props{
   text: string;
-  checked: boolean
-  onChange:any
+  onChange?:any
 }
 
-export const Checkbox:FC<Props> = ({text, checked, onChange}) => {
+export const Checkbox:FC<Props> = ({text, onChange}) => {
+
+  const [clicked, setClicked] = useState<boolean>(false);
 
   return(
     <>
@@ -41,12 +17,12 @@ export const Checkbox:FC<Props> = ({text, checked, onChange}) => {
           className={styles.checkbox__input}
           key={text}
           value={text}
-          onChange={onChange}
+          onChange={()=>setClicked(!clicked)}
           type="checkbox"
-          checked={checked}
+          checked={clicked}
         />
-        <span className={checked ? styles.checkbox__activeSpan : styles.checkbox__span}/>
-        <p className={checked ? styles.checkbox__activeText : styles.checkbox__text}>{text}</p>
+        <span className={clicked ? styles.checkbox__activeSpan : styles.checkbox__span}/>
+        <p className={clicked ? styles.checkbox__activeText : styles.checkbox__text}>{text}</p>
       </label>
     </>
   )

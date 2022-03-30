@@ -7,12 +7,12 @@ interface Props { }
 const Map: FC<Props> = ({ children }) => {
 
     return (
-        <div>
+        <>
             <MapContainer
                 center={[55.792910, 49.122429]}
                 zoom={13}
                 zoomControl={false}
-                style={{ height: '100vh', width: '100%', display:'flex', flexDirection:'column-reverse'}}
+                className={styles.mapContainer}
             >
                 <div className={styles.parent_content}>
                     <TileLayer
@@ -27,7 +27,7 @@ const Map: FC<Props> = ({ children }) => {
                 <ZoomControl/>
 
             </MapContainer>
-        </div>
+        </>
     )
 }
 

@@ -6,7 +6,13 @@
   align-items: center;
 
   &__input {
-    display: none;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
   }
 
   &__span {
@@ -39,6 +45,6 @@
 
   &__activeText {
     @include primary-text;
-    font-weight: 500;
+    font-weight: 600;
   }
 }

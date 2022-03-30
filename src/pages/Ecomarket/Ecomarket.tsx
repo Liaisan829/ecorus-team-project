@@ -13,53 +13,54 @@ import currency from "../../svg-icons/currency.svg";
 import styles from "./Ecomarket.module.scss";
 import { useState } from "react";
 
-const onGetPromocodeClick = () => {
-  console.log("click");
-};
+interface CheckboxModel {
+  name: string,
+  isChecked: boolean
+}
 
-const onButtonClick = () => {
-  console.log("click");
-};
+const genders: Array<CheckboxModel> = [
+  { name: "Мужской", isChecked: false },
+  { name: "Женский", isChecked: false }
+];
+
+const goodsType: Array<CheckboxModel> = [
+  { name: "Одежда", isChecked: false },
+  { name: "Обувь", isChecked: false },
+  { name: "Аксессуары", isChecked: false }
+];
+
+const brands: Array<CheckboxModel> = [
+  { name: "H&M", isChecked: false },
+  { name: "P&B", isChecked: false },
+  { name: "Adidas", isChecked: false },
+  { name: "Nike", isChecked: false },
+  { name: "Rebook", isChecked: false }
+];
 
 export const Ecomarket = () => {
 
   const { modalStore: { setCurrentModal } } = useStores();
-  const [checked, setChecked] = useState<boolean>(false);
+  const [checkedAll, setCheckedAll] = useState<boolean>(false);
+  const [products, setProducts] = useState([]);
 
-  // const { checkboxStore: { genders, goodsType, brands } } = useStores();
-
-  interface CheckboxModel {
-    name: string,
-    isChecked: boolean
-  }
-
-  const goodsType: Array<CheckboxModel> = [
-    { name: "Одежда", isChecked: false },
-    { name: "Обувь", isChecked: false },
-    { name: "Аксессуары", isChecked: false }
-  ];
-
-  const checkOneHandler = (event: any) => {
-    // goodsType.filter(goodType => goodType.name === event.target.value).map(filteredCheckbox => {
-    //   filteredCheckbox.isChecked = event.target.checked
-    //   setChecked(filteredCheckbox.isChecked);
-    //   console.log(filteredCheckbox, filteredCheckbox.isChecked, checked);
-    // });
-
-    console.log(event.target.checked);
-    setChecked(event.target.checked);
-    console.log(checked);
+  const onGetPromocodeClick = () => {
+    console.log("click");
   };
 
-  const checkAllHandler = (event: any) => {
-    goodsType.map((goodType => {
-      goodType.isChecked = event.target.checked;
-    }));
+  const onButtonClick = () => {
+    console.log("click");
   };
 
   const onGetQRGet = () => {
     setCurrentModal(QrModal);
   };
+
+  // const checkAllHandler = (event: any) => {
+  //   goodsType.map(goodType => {
+  //       goodType.isChecked = event.target.checked;
+  //       setCheckedAll(goodType.isChecked);
+  //     });
+  // };
 
   return (
     <>
@@ -91,76 +92,41 @@ export const Ecomarket = () => {
         </div>
 
         <aside className={styles.filter}>
-          {/*<form className={styles.filter__block}>*/}
 
-          {/*  <h3>Пол</h3>*/}
+          <h3>Пол</h3>
 
-          {/*  {genders.map((gender) => (*/}
-          {/*    <CheckboxNew*/}
-          {/*      text={gender.text}*/}
-          {/*    />*/}
-          {/*  ))}*/}
-
-          {/*  <h3>Тип товара</h3>*/}
-
-          {/*  <CheckboxNew*/}
-          {/*    text={"Выбрать все"}*/}
-          {/*  />*/}
-
-          {/*  {goodsType.map((goodsType) => (*/}
-          {/*    <CheckboxNew*/}
-          {/*      text={goodsType.text}*/}
-          {/*    />*/}
-          {/*  ))}*/}
-
-          {/*  <h3>Брэнд</h3>*/}
-
-          {/*  <CheckboxNew*/}
-          {/*    text={"Выбрать все"}*/}
-          {/*  />*/}
-
-          {/*  {brands.map((brand) => (*/}
-          {/*    <CheckboxNew*/}
-          {/*      text={brand.text}*/}
-          {/*    />*/}
-          {/*  ))}*/}
-
-          {/*</form>*/}
+          {genders.map((gender) => (
+            <Checkbox
+              key={gender.name}
+              text={gender.name}
+            />
+          ))}
 
           <h3>Тип товара</h3>
 
           <Checkbox
-            checked={false}
-            onChange={checkAllHandler}
             text={"Выбрать все"}
           />
 
-          <Checkbox
-            checked={checked}
-            onChange={checkOneHandler}
-            text={"Одежда"}
-          />
+          {goodsType.map((goodType) => (
+            <Checkbox
+              key={goodType.name}
+              text={goodType.name}
+            />
+          ))}
+
+          <h3>Брэнд</h3>
 
           <Checkbox
-            checked={checked}
-            onChange={checkOneHandler}
-            text={"Обувь"}
+            text={"Выбрать все"}
           />
 
-          <Checkbox
-            checked={checked}
-            onChange={checkOneHandler}
-            text={"Аксессураы"}
-          />
-
-          {/*{goodsType.map((goodsType) => (*/}
-          {/*  <Checkbox*/}
-          {/*    text={goodsType.name}*/}
-          {/*    checked={checked}*/}
-          {/*    onChange={checkOneHandler}*/}
-          {/*  />*/}
-          {/*))}*/}
-
+          {brands.map((brand) => (
+            <Checkbox
+              key={brand.name}
+              text={brand.name}
+            />
+          ))}
         </aside>
 
         <section className={styles.productCards}>
