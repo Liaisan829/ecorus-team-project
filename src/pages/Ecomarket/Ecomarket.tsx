@@ -12,36 +12,24 @@ import hoodie from "../../svg-icons/ecoMarket/hoodie.svg";
 import currency from "../../svg-icons/currency.svg";
 import styles from "./Ecomarket.module.scss";
 import { useState } from "react";
-
-interface CheckboxModel {
-  name: string,
-  isChecked: boolean
-}
-
-const genders: Array<CheckboxModel> = [
-  { name: "Мужской", isChecked: false },
-  { name: "Женский", isChecked: false }
-];
-
-const goodsType: Array<CheckboxModel> = [
-  { name: "Одежда", isChecked: false },
-  { name: "Обувь", isChecked: false },
-  { name: "Аксессуары", isChecked: false }
-];
-
-const brands: Array<CheckboxModel> = [
-  { name: "H&M", isChecked: false },
-  { name: "P&B", isChecked: false },
-  { name: "Adidas", isChecked: false },
-  { name: "Nike", isChecked: false },
-  { name: "Rebook", isChecked: false }
-];
+import { Brands, CheckboxModel, Genders, GoodsType } from "../../stores/FilterStore";
+import { ProductModel, Products } from "../../stores/ProductStore";
 
 export const Ecomarket = () => {
 
   const { modalStore: { setCurrentModal } } = useStores();
-  const [checkedAll, setCheckedAll] = useState<boolean>(false);
-  const [products, setProducts] = useState([]);
+  const [genders, setGenders] = useState<Array<CheckboxModel>>(Genders);
+  const [goodsType, setGoodsType] = useState<Array<CheckboxModel>>(GoodsType);
+  const [brands, setBrands] = useState<Array<CheckboxModel>>(Brands);
+
+  interface ProductModel {
+    brand: string,
+    img: any,
+    name: string,
+    gender: string,
+    price: string,
+    onClick: any
+  }
 
   const onGetPromocodeClick = () => {
     console.log("click");
@@ -52,15 +40,63 @@ export const Ecomarket = () => {
   };
 
   const onGetQRGet = () => {
+    console.log("click");
     setCurrentModal(QrModal);
   };
 
-  // const checkAllHandler = (event: any) => {
-  //   goodsType.map(goodType => {
-  //       goodType.isChecked = event.target.checked;
-  //       setCheckedAll(goodType.isChecked);
-  //     });
-  // };
+  const products: Array<ProductModel> = [
+    {
+      brand: "NIKE",
+      img: sneak1,
+      name: "Nike Air Max 2022",
+      gender: "Мужская обувь",
+      price: "1000",
+      onClick: { onGetQRGet }
+    },
+    {
+      brand: "NIKE",
+      img: sneak2,
+      name: "Nike Air Max 90 Premium",
+      gender: "Мужская обувь",
+      price: "750",
+      onClick: { onGetQRGet }
+    },
+    {
+      brand: "Adidas",
+      img: sneak3,
+      name: "Adidas Alphabounce RC",
+      gender: "Мужская обувь",
+      price: "1200",
+      onClick: { onGetQRGet }
+    },
+    {
+      brand: "H&M",
+      img: hoodie,
+      name: "Nike Air Max 2021",
+      gender: "Мужское худи",
+      price: "1000",
+      onClick: { onGetQRGet }
+    },
+    {
+      brand: "NIKE",
+      img: sneak4,
+      name: "Nike Air Force 1 Low",
+      gender: "Мужская обувь",
+      price: "2100",
+      onClick: { onGetQRGet }
+    }
+  ];
+
+  let filteredData = products;
+
+  const filterData = () => {
+    const brand = "H&M";
+    const type = "Обувь";
+
+    filteredData = products.filter(item => {
+      return item.brand === brand && item.gender.toLowerCase().includes(type.toLowerCase());
+    });
+  };
 
   return (
     <>
@@ -148,46 +184,26 @@ export const Ecomarket = () => {
               />
             </div>
           </div>
-          <EcoMarketCard
-            brand={"NIKE"}
-            img={sneak1}
-            name={"Nike Air Max 2021"}
-            gender={"Мужская обувь"}
-            price={"1000"}
-            onClick={onGetQRGet}
-          />
-          <EcoMarketCard
-            brand={"NIKE"}
-            img={sneak2}
-            name={"Nike Air Max 90 Premium"}
-            gender={"Мужская обувь"}
-            price={"750"}
-            onClick={onGetQRGet}
-          />
-          <EcoMarketCard
-            brand={"Adidas"}
-            img={sneak3}
-            name={"Adidas Alphabounce RC"}
-            gender={"Мужская обувь"}
-            price={"1200"}
-            onClick={onGetQRGet}
-          />
-          <EcoMarketCard
-            brand={"H&M"}
-            img={hoodie}
-            name={"Nike Air Max 2021"}
-            gender={"Мужская обувь"}
-            price={"1000"}
-            onClick={onGetQRGet}
-          />
-          <EcoMarketCard
-            brand={"NIKE"}
-            img={sneak4}
-            name={"Nike Air Force 1 Low"}
-            gender={"Мужская обувь"}
-            price={"2100"}
-            onClick={onGetQRGet}
-          />
+
+          {products.map(product => (
+            <EcoMarketCard
+              key={product.name}
+              brand={product.brand}
+              name={product.name}
+              img={product.img}
+              gender={product.gender}
+              price={product.price}
+              onClick={product.onClick}
+            />
+          ))}
+
+          {/*<h1>Filtered data</h1>*/}
+          {/*{filteredData.map(data => (*/}
+          {/*  <EcoMarketCard*/}
+          {/*    key={data.name}*/}
+          {/*    */}
+          {/*  />*/}
+          {/*))}*/}
         </section>
       </BaseLayout>
     </>
