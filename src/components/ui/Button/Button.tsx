@@ -4,7 +4,7 @@ import styles from "./Button.module.scss";
 
 interface ButtonProps {
   type: any,
-  onClick: () => void,
+  onClick?: () => void,
   theme: string,
   disabled?: boolean,
   color?: string,

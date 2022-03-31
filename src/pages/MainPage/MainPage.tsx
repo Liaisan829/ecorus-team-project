@@ -9,16 +9,18 @@ export const MainPage = () => {
 
   return (
     <BaseLayout>
-      <Slider />
-      <div className={styles.cardsFlex}>
-        <BottomCard
-          cardHeadline="Пункты сбора"
-          cardText="Посмотри, где в твоем городе можно сдать вторсырье на переработку"
-          img={collpoints} />
-        <BottomCard
-          cardHeadline="Экомаркет"
-          cardText="Используй заработанные экокоины для покупки товаров из переработанных материалов "
-          img={ecomarket} />
+      <div className = {styles.container}>
+        <Slider />
+        <div className={styles.cardsFlex}>
+          <BottomCard
+            cardHeadline="Пункты сбора"
+            cardText="Посмотри, где в твоем городе можно сдать вторсырье на переработку"
+            img={collpoints} />
+          <BottomCard
+            cardHeadline="Экомаркет"
+            cardText="Используй заработанные экокоины для покупки товаров из переработанных материалов "
+            img={ecomarket} />
+        </div>
       </div>
     </BaseLayout>
   );

@@ -60,9 +60,9 @@ export const BaseLayout: FC<Props> = observer(({ children }) => {
       </header>
 
       <main className={styles.main}>
-        <div className={styles.main__container}>
-          {children}
-        </div>
+        {/*<div className={styles.main__container}>*/}
+        {children}
+        {/*</div>*/}
       </main>
 
       <footer className={styles.footer}>

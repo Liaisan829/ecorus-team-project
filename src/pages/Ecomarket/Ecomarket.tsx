@@ -55,23 +55,23 @@ export const Ecomarket = () => {
     setClicked(!clicked);
     setProducts(
       products.map((product: Product, currentIndex: number) =>
-        currentIndex === index ? {...product, checked: !product.checked} : product
+        currentIndex === index ? { ...product, checked: !product.checked } : product
       )
-    )
+    );
     filterData();
-  }
+  };
 
 
-  const checkStatusAllProducts = (isAllProducts: boolean, setAllProducts: any, setProducts:any, products:Product[]) => {
+  const checkStatusAllProducts = (isAllProducts: boolean, setAllProducts: any, setProducts: any, products: Product[]) => {
     setClicked(!clicked);
-    setAllProducts(!isAllProducts)
+    setAllProducts(!isAllProducts);
     setProducts(
-      products.map((product:Product) =>
-        isAllProducts ? {...product, checked: false} :
-          {...product, checked: true}
+      products.map((product: Product) =>
+        isAllProducts ? { ...product, checked: false } :
+          { ...product, checked: true }
       )
-    )
-  }
+    );
+  };
 
   const products: Array<ProductModel> = [
     {
@@ -130,125 +130,127 @@ export const Ecomarket = () => {
   return (
     <>
       <BaseLayout>
-        <div className={styles.ecomarket}>
-          <h1>ЭкоМаркет</h1>
-          <div className={styles.ecomarket__filterButtons}>
-            <Button
-              type={"button"}
-              theme={"eco"}
-              onClick={onButtonClick}
-              children={"По популярности"}
-            />
-
-            <Button
-              type={"button"}
-              theme={"eco"}
-              onClick={onButtonClick}
-              children={"По цене"}
-            />
-
-            <Button
-              type={"button"}
-              theme={"eco"}
-              onClick={onButtonClick}
-              children={"По новизне"}
-            />
-          </div>
-        </div>
-
-        <aside className={styles.filter}>
-
-          <h3>Пол</h3>
-
-          {genders.map((gender, index) =>(
-              <Checkbox
-                key={gender.name}
-                isChecked={gender.checked}
-                checkHandler={() => checkStatusProducts(index, setGenders, genders)}
-                title={gender.name}
-                index={index}
-              />
-            )
-          )}
-
-          <h3>Тип товара</h3>
-
-          <Checkbox
-            isChecked={allProductsTypes}
-            checkHandler={() => checkStatusAllProducts(allProductsTypes, setAllProductsTypes, setTypes, types)}
-            title={"Выбрать все"}
-          />
-          {types.map((type, index)=>
-            <Checkbox
-              key={type.name}
-              isChecked={type.checked}
-              checkHandler={() => checkStatusProducts(index, setTypes, types)}
-              title={type.name}
-              index={index} />
-          )}
-
-          <h3>Брэнд</h3>
-
-          <Checkbox
-            isChecked={allProductsBrand}
-            checkHandler={() => checkStatusAllProducts(allProductsBrand, setAllProductsBrand, setBrands, brands)}
-            title={"Выбрать все"}
-          />
-          {brands.map((brand, index)=>
-            <Checkbox
-              key={brand.name}
-              isChecked={brand.checked}
-              checkHandler={() => checkStatusProducts(index, setBrands, brands)}
-              title={brand.name}
-              index={index} />
-          )}
-        </aside>
-
-        <section className={styles.productCards}>
-          <div className={styles.promocodeCard}>
-            <div className={styles.promocodeCard__info}>
-              <div className={styles.promocodeCard__info__text}>
-                <div className={styles.promocodeCard__info__balance}>
-                  <p>На вашем балансе</p>
-                  <img src={currency} alt="currency" />
-                  <h6>200</h6>
-                </div>
-                <p>Вы можете обменять их на скидку 200 руб.</p>
-              </div>
+        <div className={styles.container}>
+          <div className={styles.ecomarket}>
+            <h1>ЭкоМаркет</h1>
+            <div className={styles.ecomarket__filterButtons}>
               <Button
-                type="submit"
-                onClick={onGetPromocodeClick}
-                theme={"green"}
-                children={"Получить промокод"}
+                type={"button"}
+                theme={"eco"}
+                onClick={onButtonClick}
+                children={"По популярности"}
+              />
+
+              <Button
+                type={"button"}
+                theme={"eco"}
+                onClick={onButtonClick}
+                children={"По цене"}
+              />
+
+              <Button
+                type={"button"}
+                theme={"eco"}
+                onClick={onButtonClick}
+                children={"По новизне"}
               />
             </div>
           </div>
 
-          {/*{products.map(product => (*/}
-          {/*  <EcoMarketCard*/}
-          {/*    key={product.name}*/}
-          {/*    brand={product.brand}*/}
-          {/*    name={product.name}*/}
-          {/*    img={product.img}*/}
-          {/*    gender={product.gender}*/}
-          {/*    price={product.price}*/}
-          {/*    onClick={product.onClick}*/}
-          {/*  />*/}
-          {/*))}*/}
+          <aside className={styles.filter}>
 
-          <h1>Filtered data</h1>
-          {filteredData.map(data => (
-            <EcoMarketCard
-              key={data.name}
-              brand={data.brand}
-              name={data.name}
-              img={data.img}
-              gender={data.gender}
-              price={data.price}
-              onClick={data.onClick}
+            <h3>Пол</h3>
+
+            {genders.map((gender, index) => (
+                <Checkbox
+                  key={gender.name}
+                  isChecked={gender.checked}
+                  checkHandler={() => checkStatusProducts(index, setGenders, genders)}
+                  title={gender.name}
+                  index={index}
+                />
+              )
+            )}
+
+            <h3>Тип товара</h3>
+
+            <Checkbox
+              isChecked={allProductsTypes}
+              checkHandler={() => checkStatusAllProducts(allProductsTypes, setAllProductsTypes, setTypes, types)}
+              title={"Выбрать все"}
             />
-          ))}
-        </section>
+            {types.map((type, index) =>
+              <Checkbox
+                key={type.name}
+                isChecked={type.checked}
+                checkHandler={() => checkStatusProducts(index, setTypes, types)}
+                title={type.name}
+                index={index} />
+            )}
+
+            <h3>Брэнд</h3>
+
+            <Checkbox
+              isChecked={allProductsBrand}
+              checkHandler={() => checkStatusAllProducts(allProductsBrand, setAllProductsBrand, setBrands, brands)}
+              title={"Выбрать все"}
+            />
+            {brands.map((brand, index) =>
+              <Checkbox
+                key={brand.name}
+                isChecked={brand.checked}
+                checkHandler={() => checkStatusProducts(index, setBrands, brands)}
+                title={brand.name}
+                index={index} />
+            )}
+          </aside>
+
+          <section className={styles.productCards}>
+            <div className={styles.promocodeCard}>
+              <div className={styles.promocodeCard__info}>
+                <div className={styles.promocodeCard__info__text}>
+                  <div className={styles.promocodeCard__info__balance}>
+                    <p>На вашем балансе</p>
+                    <img src={currency} alt="currency" />
+                    <h6>200</h6>
+                  </div>
+                  <p>Вы можете обменять их на скидку 200 руб.</p>
+                </div>
+                <Button
+                  type="submit"
+                  onClick={onGetPromocodeClick}
+                  theme={"green"}
+                  children={"Получить промокод"}
+                />
+              </div>
+            </div>
+
+            {products.map(product => (
+              <EcoMarketCard
+                key={product.name}
+                brand={product.brand}
+                name={product.name}
+                img={product.img}
+                gender={product.gender}
+                price={product.price}
+                onClick={product.onClick}
+              />
+            ))}
+
+            {/*<h1>Filtered data</h1>*/}
+            {/*{filteredData.map(data => (*/}
+            {/*  <EcoMarketCard*/}
+            {/*    key={data.name}*/}
+            {/*    brand={data.brand}*/}
+            {/*    name={data.name}*/}
+            {/*    img={data.img}*/}
+            {/*    gender={data.gender}*/}
+            {/*    price={data.price}*/}
+            {/*    onClick={data.onClick}*/}
+            {/*  />*/}
+            {/*))}*/}
+          </section>
+        </div>
       </BaseLayout>
     </>
   );

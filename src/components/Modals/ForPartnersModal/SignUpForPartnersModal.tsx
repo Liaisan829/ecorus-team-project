@@ -5,6 +5,7 @@ import { useStores } from "../../../utils/use-stores-hook";
 import { Button } from "../../ui/Button/Button";
 import { LoginSchema } from "../../../schemas/LoginSchema" ;
 import styles from "../Modal/Modal.module.scss";
+import { LoginForPartnersModal } from "./LoginForPartnersModal";
 
 export const SignUpForPartnersModal = observer(() => {
   const { modalStore: { clearCurrentModal, setCurrentModal } } = useStores();
@@ -17,8 +18,8 @@ export const SignUpForPartnersModal = observer(() => {
     setCurrentModal(SignUpForPartnersModal);
   };
 
-  const onSignUpClick = () => {
-    setCurrentModal(SignUpForPartnersModal);
+  const onPartnerButtonClick = () => {
+    setCurrentModal(LoginForPartnersModal);
   };
 
   return (
@@ -39,7 +40,7 @@ export const SignUpForPartnersModal = observer(() => {
 
           <Form className={styles.modal_container}>
             <Field name="partners" placeholder="Наименование организации" />
-            {errors.password && touched.partners ? (
+            {errors.partners && touched.partners ? (
               <div className={styles.modal_container__error}>{errors.partners}</div>
             ) : null}
             <Field name="email" type="email" placeholder="Email" />
@@ -63,16 +64,14 @@ export const SignUpForPartnersModal = observer(() => {
                 onClick={onLoginWithCodeClick}
                 theme={""}
                 color={"#07C88E"}
-                children={"Войти с помощью смс"}
-              />
-              <Button
-                type="button"
-                onClick={onSignUpClick}
-                theme={""}
-                color={"#07C88E"}
-                children={"Регистрация"}
+                children={"Я уже зарегистрировался(-ась)"}
               />
             </div>
+            <Button type="button"
+                    onClick={onPartnerButtonClick}
+                    theme={"grey"}
+                    children={"Вход для партнеров"}
+            />
 
           </Form>)}
       </Formik>

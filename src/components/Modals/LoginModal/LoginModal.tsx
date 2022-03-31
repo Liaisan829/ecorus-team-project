@@ -7,6 +7,7 @@ import { LoginWithCodeModal } from "../LoginReceiveCodeModal/LoginWithCodeModal"
 import { LoginSchema } from "../../../schemas/LoginSchema" ;
 import { LoginForPartnersModal } from "../ForPartnersModal/LoginForPartnersModal";
 import styles from "../Modal/Modal.module.scss";
+import { SignUpModal } from "../SignUpModal/SignUpModal";
 
 
 export const LoginModal = observer(() => {
@@ -21,7 +22,7 @@ export const LoginModal = observer(() => {
   };
 
   const onSignUpClick = () => {
-    setCurrentModal(LoginWithCodeModal);
+    setCurrentModal(SignUpModal);
   };
 
   const onPartnerButtonClick = () => {
@@ -51,7 +52,7 @@ export const LoginModal = observer(() => {
               <div className={styles.modal_container__error}>{errors.phone}</div>
             ) : null}
 
-            <Field name="password" placeholder="Пароль"/>
+            <Field name="password" type = "password" placeholder="Пароль"/>
             {errors.password && touched.password ? (
               <div className={styles.modal_container__error}>{errors.password}</div>
             ) : null}

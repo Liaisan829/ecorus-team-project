@@ -10,6 +10,9 @@ export const LoginSchema = Yup.object().shape({
     .matches(/((?=.*d)(?=.*[a-z])(?=.*[A-Z]).)/g,
       "Пароль должен содержать заглавные и строчные латинские  буквы, а также цифру")
     .min(4, "Минимальная длина пароля 4 символа"),
+  repassword: Yup.string().
+    required("Повторите пароль")
+    .oneOf([Yup.ref('password'), null], 'Passwords must match'),
   code: Yup.number()
     .required("Введите код")
     .min(4, "Введите действительный код"),
@@ -17,5 +20,8 @@ export const LoginSchema = Yup.object().shape({
     .required("Введите почту")
     .email("Введите действительную почту"),
   partners: Yup.string()
-    .required("Введите наименование организации")
+    .required("Введите наименование организации"),
+  username: Yup.string()
+    .required("Введите имя")
+    .min(2, "Минимальная длина 2 символа")
 });
