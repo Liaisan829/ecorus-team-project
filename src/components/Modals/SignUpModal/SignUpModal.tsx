@@ -7,8 +7,6 @@ import styles from "../Modal/Modal.module.scss";
 import axios from "axios";
 import * as Yup from "yup";
 
-/*s2Ssdfv*/
-
 export const SignUpModal = observer(() => {
   const { modalStore: { clearCurrentModal } } = useStores();
 
@@ -28,8 +26,6 @@ export const SignUpModal = observer(() => {
       .catch((err)=>{
         console.log(err);
       })
-
-    clearCurrentModal();
   };
 
   const formik = useFormik({

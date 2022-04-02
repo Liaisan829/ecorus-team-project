@@ -119,12 +119,13 @@ export const Ecomarket = () => {
   let filteredData = products;
 
   const filterData = () => {
-    const brand = "H&M";
+    const brand = "Adidas";
     const type = "Обувь";
 
     filteredData = products.filter(item => {
-      return item.brand === brand && item.gender.toLowerCase().includes(type.toLowerCase());
+       item.brand === brand && item.gender.toLowerCase().includes(type.toLowerCase());
     });
+    return filteredData;
   };
 
   return (

@@ -7,9 +7,8 @@ export const LoginSchema = Yup.object().shape({
       "Неверный формат номера"),
   password: Yup.string()
     .required("Введите пароль")
-    .matches(/((?=.*d)(?=.*[a-z])(?=.*[A-Z]).)/g,
-      "Пароль должен содержать заглавные и строчные латинские  буквы, а также цифру")
-    .min(4, "Минимальная длина пароля 4 символа"),
+    .matches(/^(?=.*[0-9])(?=.*[a-z]).{3,10}$/g,
+      "Пароль должен содержать строчные латинские  буквы, а также цифру"),
   repassword: Yup.string().
     required("Повторите пароль")
     .oneOf([Yup.ref('password'), null], 'Passwords must match'),

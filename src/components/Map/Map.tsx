@@ -11,7 +11,7 @@ const Map: FC<Props> = ({ children }) => {
       <MapContainer
         center={[55.792910, 49.122429]}
         zoom={13}
-        zoomControl={false}
+        zoomControl={true}
         scrollWheelZoom={false}
         className={styles.mapContainer}
       >
@@ -25,7 +25,6 @@ const Map: FC<Props> = ({ children }) => {
             </Popup>
           </Marker>
         </div>
-        <ZoomControl />
 
       </MapContainer>
     </>
