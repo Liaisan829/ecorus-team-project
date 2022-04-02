@@ -32,8 +32,8 @@ export const Slider = () => {
           }}
           loop={true}
           slidesPerView={1}
-          onSlideChange={() => console.log("slide change")}
-          onSwiper={(swiper) => console.log(swiper)}
+          onSlideChange={() => {}}
+          onSwiper={() => {}}
         >
           <SwiperSlide>
             <Card
