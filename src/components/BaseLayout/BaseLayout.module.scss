@@ -42,14 +42,15 @@ nav {
     display: flex;
     flex-direction: row;
     align-items: center;
+    text-decoration: none;
 
     p {
       @include regular-text;
     }
   }
 
-  &__link:last-child {
-    padding-left: 51px;
+  &__link:not(last-child) {
+    padding-right: 40px;
   }
 
   img {

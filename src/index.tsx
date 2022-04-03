@@ -6,7 +6,9 @@ import mainStore from "./stores/MainStore";
 import App from "./App";
 import { ModalConstructor } from "./components/Modals/ModalConstructor/ModalConstructor";
 import "./index.scss";
+import axios from "axios";
 
+axios.defaults.baseURL = "https://ecoapp.cloud.technokratos.com/eco-rus/api/v1/";
 
 ReactDOM.render(
   <React.StrictMode>

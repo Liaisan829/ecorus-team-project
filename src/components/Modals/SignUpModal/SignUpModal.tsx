@@ -10,8 +10,6 @@ import * as Yup from "yup";
 export const SignUpModal = observer(() => {
   const { modalStore: { clearCurrentModal } } = useStores();
 
-  axios.defaults.baseURL = "https://ecoapp.cloud.technokratos.com/eco-rus/api/v1/";
-
   const onSignUpClick = (values: FormikValues) => {
     axios.post("account", {
       username: values.username,

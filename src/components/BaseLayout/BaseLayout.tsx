@@ -1,12 +1,14 @@
 import { FC, ReactNode } from "react";
 import { NavLink } from "react-router-dom";
+import { observer } from "mobx-react";
 import { LoginModal } from "../Modals/LoginModal/LoginModal";
 import { Icon } from "../ui/Icon/Icon";
 import { CustomLink } from "../ui/СustomLink/CustomLink";
 import { Button } from "../ui/Button/Button";
-import { observer } from "mobx-react";
 import { useStores } from "../../utils/use-stores-hook";
 import logo from "../../svg-icons/logo.svg";
+import currency from "../../svg-icons/currency.svg";
+import profile from "../../svg-icons/profile.svg";
 import styles from "./BaseLayout.module.scss";
 
 interface Props {
@@ -31,9 +33,7 @@ export const BaseLayout: FC<Props> = observer(({ children }) => {
             </NavLink>
 
             <CustomLink to="/" className={styles.link}>Главная</CustomLink>
-            <CustomLink to="/collpoints" className={styles.link}>Пункты
-              сбора
-            </CustomLink>
+            <CustomLink to="/collpoints" className={styles.link}>Пункты сбора</CustomLink>
             <CustomLink to="/ecomarket" className={styles.link}>ЭкоМаркет</CustomLink>
             <CustomLink to="/aboutservice" className={styles.link}>О сервисе</CustomLink>
           </nav>
@@ -43,26 +43,38 @@ export const BaseLayout: FC<Props> = observer(({ children }) => {
               <Icon name="location" width="24" height="24" />
               <p>Казань</p>
             </div>
-            <div className={styles.actions__link}>
-              <Button
-                type="button"
-                onClick={openModal}
-                disabled={false}
-                theme=""
-                color={"rgba(0, 11, 38, 0.64)"}
-              >
-                <Icon name="goIn" width="24" height="24" />
-                Войти
-              </Button>
-            </div>
+
+            {localStorage.getItem("user") ?
+              <>
+                <div className={styles.actions__link}>
+                  <img src={currency} alt="currency" />
+                  <p>1000</p>
+                </div>
+                <NavLink to={"/profile"} className={styles.actions__link}>
+                  <img src={profile} alt="profile" />
+                  <p>Алексей</p>
+                </NavLink>
+              </>
+              :
+              <div className={styles.actions__link}>
+                <Button
+                  type="button"
+                  onClick={openModal}
+                  disabled={false}
+                  theme=""
+                  color={"rgba(0, 11, 38, 0.64)"}
+                >
+                  <Icon name="goIn" width="24" height="24" />
+                  Войти
+                </Button>
+              </div>
+            }
           </div>
         </section>
       </header>
 
       <main className={styles.main}>
-        {/*<div className={styles.main__container}>*/}
         {children}
-        {/*</div>*/}
       </main>
 
       <footer className={styles.footer}>

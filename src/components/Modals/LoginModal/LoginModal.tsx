@@ -13,15 +13,14 @@ import axios from "axios";
 export const LoginModal = observer(() => {
   const { modalStore: { clearCurrentModal, setCurrentModal } } = useStores();
 
-  axios.defaults.baseURL = "https://ecoapp.cloud.technokratos.com/eco-rus/api/v1/";
-
   const onLoginClick = (values: FormikValues) => {
     axios.post("login", {
-      login: values.email,
+      login: values.login,
       password: values.password
     })
-      .then((res) => {
-        console.log(res.data);
+      .then((res: any) => {
+        localStorage.setItem("token", res.data.token);
+        localStorage.setItem("user", JSON.stringify(res.data))
         clearCurrentModal();
       })
       .catch((err) => {
@@ -43,13 +42,13 @@ export const LoginModal = observer(() => {
 
   const formik = useFormik({
     initialValues: {
-      email: "",
+      login: "",
       password: ""
     },
     validationSchema: Yup.object().shape({
-      email: Yup.string()
-        .required("Введите почту")
-        .email("Введите действительную почту"),
+      login: Yup.string()
+        .required("Введите почту"),
+        // .email("Введите действительную почту"),
       password: Yup.string()
         .required("Введите пароль")
         .matches(/^(?=.*[0-9])(?=.*[a-z]).{3,10}$/g,
@@ -65,15 +64,15 @@ export const LoginModal = observer(() => {
     <Modal title="Вход" onClose={clearCurrentModal}>
       <form onSubmit={formik.handleSubmit} className={styles.modal_container}>
         <input
-          type="email"
-          name="email"
-          placeholder="email"
-          value={formik.values.email}
+          type="text"
+          name="login"
+          placeholder="login"
+          value={formik.values.login}
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
         />
-        {formik.errors.email && formik.touched.email ? (
-          <div className={styles.modal_container__error}>{formik.errors.email}</div>
+        {formik.errors.login && formik.touched.login ? (
+          <div className={styles.modal_container__error}>{formik.errors.login}</div>
         ) : null}
 
         <input
