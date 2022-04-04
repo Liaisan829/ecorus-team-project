@@ -15,7 +15,7 @@ export const LoginModal = observer(() => {
 
   const onLoginClick = (values: FormikValues) => {
     axios.post("login", {
-      login: values.login,
+      login: values.phone,
       password: values.password
     })
       .then((res: any) => {
@@ -42,13 +42,14 @@ export const LoginModal = observer(() => {
 
   const formik = useFormik({
     initialValues: {
-      login: "",
+      phone: "",
       password: ""
     },
     validationSchema: Yup.object().shape({
-      login: Yup.string()
-        .required("Введите почту"),
-        // .email("Введите действительную почту"),
+      phone: Yup.string()
+        .required("Введите номер телефона")
+        .matches(/^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$/g,
+          "Неверный формат номера"),
       password: Yup.string()
         .required("Введите пароль")
         .matches(/^(?=.*[0-9])(?=.*[a-z]).{3,10}$/g,
@@ -65,14 +66,14 @@ export const LoginModal = observer(() => {
       <form onSubmit={formik.handleSubmit} className={styles.modal_container}>
         <input
           type="text"
-          name="login"
-          placeholder="login"
-          value={formik.values.login}
+          name="phone"
+          placeholder="phone"
+          value={formik.values.phone}
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
         />
-        {formik.errors.login && formik.touched.login ? (
-          <div className={styles.modal_container__error}>{formik.errors.login}</div>
+        {formik.errors.phone && formik.touched.phone ? (
+          <div className={styles.modal_container__error}>{formik.errors.phone}</div>
         ) : null}
 
         <input

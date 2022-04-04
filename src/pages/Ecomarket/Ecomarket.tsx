@@ -123,7 +123,7 @@ export const Ecomarket = () => {
     const type = "Обувь";
 
     filteredData = products.filter(item => {
-       item.brand === brand && item.gender.toLowerCase().includes(type.toLowerCase());
+      item.brand === brand && item.gender.toLowerCase().includes(type.toLowerCase());
     });
     return filteredData;
   };
@@ -159,51 +159,53 @@ export const Ecomarket = () => {
           </div>
 
           <aside className={styles.filter}>
+            <div className={styles.filter__block}>
 
-            <h3>Пол</h3>
+              <h3>Пол</h3>
 
-            {genders.map((gender, index) => (
+              {genders.map((gender, index) => (
+                  <Checkbox
+                    key={gender.name}
+                    isChecked={gender.checked}
+                    checkHandler={() => checkStatusProducts(index, setGenders, genders)}
+                    title={gender.name}
+                    index={index}
+                  />
+                )
+              )}
+
+              <h3>Тип товара</h3>
+
+              <Checkbox
+                isChecked={allProductsTypes}
+                checkHandler={() => checkStatusAllProducts(allProductsTypes, setAllProductsTypes, setTypes, types)}
+                title={"Выбрать все"}
+              />
+              {types.map((type, index) =>
                 <Checkbox
-                  key={gender.name}
-                  isChecked={gender.checked}
-                  checkHandler={() => checkStatusProducts(index, setGenders, genders)}
-                  title={gender.name}
-                  index={index}
-                />
-              )
-            )}
+                  key={type.name}
+                  isChecked={type.checked}
+                  checkHandler={() => checkStatusProducts(index, setTypes, types)}
+                  title={type.name}
+                  index={index} />
+              )}
 
-            <h3>Тип товара</h3>
+              <h3>Брэнд</h3>
 
-            <Checkbox
-              isChecked={allProductsTypes}
-              checkHandler={() => checkStatusAllProducts(allProductsTypes, setAllProductsTypes, setTypes, types)}
-              title={"Выбрать все"}
-            />
-            {types.map((type, index) =>
               <Checkbox
-                key={type.name}
-                isChecked={type.checked}
-                checkHandler={() => checkStatusProducts(index, setTypes, types)}
-                title={type.name}
-                index={index} />
-            )}
-
-            <h3>Брэнд</h3>
-
-            <Checkbox
-              isChecked={allProductsBrand}
-              checkHandler={() => checkStatusAllProducts(allProductsBrand, setAllProductsBrand, setBrands, brands)}
-              title={"Выбрать все"}
-            />
-            {brands.map((brand, index) =>
-              <Checkbox
-                key={brand.name}
-                isChecked={brand.checked}
-                checkHandler={() => checkStatusProducts(index, setBrands, brands)}
-                title={brand.name}
-                index={index} />
-            )}
+                isChecked={allProductsBrand}
+                checkHandler={() => checkStatusAllProducts(allProductsBrand, setAllProductsBrand, setBrands, brands)}
+                title={"Выбрать все"}
+              />
+              {brands.map((brand, index) =>
+                <Checkbox
+                  key={brand.name}
+                  isChecked={brand.checked}
+                  checkHandler={() => checkStatusProducts(index, setBrands, brands)}
+                  title={brand.name}
+                  index={index} />
+              )}
+            </div>
           </aside>
 
           <section className={styles.productCards}>
@@ -234,7 +236,7 @@ export const Ecomarket = () => {
                 img={product.img}
                 gender={product.gender}
                 price={product.price}
-                onClick={product.onClick}
+                onClick={() => product.onClick}
               />
             ))}
 

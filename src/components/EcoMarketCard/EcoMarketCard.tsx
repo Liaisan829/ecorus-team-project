@@ -20,7 +20,7 @@ export const EcoMarketCard: FC<CardProps> = ({ brand, img, name, gender, price, 
         <p>{brand}</p>
       </div>
 
-      <Button type="button" onClick={onClick} theme="">
+      <Button type="button" onClick={() => onClick} theme="">
         <img src={img} alt="item" />
       </Button>
 

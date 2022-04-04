@@ -18,7 +18,8 @@ export const SignUpModal = observer(() => {
       password: values.password
     })
       .then((res)=>{
-        console.log(res.data);
+        localStorage.setItem("token", res.data.token);
+        localStorage.setItem("user", JSON.stringify(res.data))
         clearCurrentModal();
       })
       .catch((err)=>{
