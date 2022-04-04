@@ -3,7 +3,7 @@ import SwiperCore, { Navigation } from "swiper";
 import "swiper/scss";
 import "swiper/scss/navigation";
 import "./Slider.scss";
-import { Card } from "../Card/Card";
+import { Card } from "../Cards/Card/Card";
 import serviceCondition from "../../svg-icons/serviceCondition.svg";
 import plastic from "../../svg-icons/plastic.svg";
 import masks from "../../svg-icons/masks.svg";

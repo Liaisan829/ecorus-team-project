@@ -1,5 +1,5 @@
 import styles from "./Card.module.scss";
-import { Button } from "../ui/Button/Button";
+import { Button } from "../../ui/Button/Button";
 import { FC } from "react";
 
 interface CardProps {

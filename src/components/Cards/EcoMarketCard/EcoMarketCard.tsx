@@ -1,6 +1,6 @@
 import { FC } from "react";
-import { Button } from "../ui/Button/Button";
-import currency from "../../svg-icons/currency.svg";
+import { Button } from "../../ui/Button/Button";
+import currency from "../../../svg-icons/currency.svg";
 import styles from "./EcoMarketCard.module.scss";
 
 interface CardProps {

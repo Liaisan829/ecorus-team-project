@@ -1,0 +1,12 @@
+@import "../../../../styles/mixins";
+
+.fullCard {
+  display: flex;
+  flex-direction: column;
+  border-radius: 16px;
+
+  img {
+    width: 385px;
+    height: 175px;
+  }
+}

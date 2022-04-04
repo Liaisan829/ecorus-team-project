@@ -1,1 +1,68 @@
 @import "../../styles/mixins";
+
+.container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.profile {
+  display: flex;
+  flex-direction: row;
+  margin-top: 40px;
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid $c-light-grey;
+    border-radius: 20px;
+    padding: 40px;
+    margin-right: 48px;
+
+    &__avatar {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-width: 320px;
+
+      img {
+        width: 128px;
+        height: 128px;
+        margin-bottom: 24px;
+        border-radius: 50%;
+      }
+    }
+
+    &__personalData {
+      margin-top: 24px;
+      margin-bottom: 24px;
+    }
+
+    h2 {
+      @include infoBlockText;
+      font-size: 24px;
+    }
+
+    p {
+      @include secondary-text;
+    }
+  }
+
+  &__filling {
+    display: flex;
+    flex-direction: column;
+
+    &__links {
+      border-bottom: 2 px solid $c-grey; // не работает
+      padding-bottom: 10px;
+
+      &__link {
+        @include secondary-text;
+        font-size: 20px;
+        text-decoration: none;
+        margin-right: 24px;
+      }
+    }
+  }
+}

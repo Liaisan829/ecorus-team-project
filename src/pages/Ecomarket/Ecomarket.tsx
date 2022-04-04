@@ -1,6 +1,6 @@
 import { useStores } from "../../utils/use-stores-hook";
 import { BaseLayout } from "../../components/BaseLayout/BaseLayout";
-import { EcoMarketCard } from "../../components/EcoMarketCard/EcoMarketCard";
+import { EcoMarketCard } from "../../components/Cards/EcoMarketCard/EcoMarketCard";
 import { Button } from "../../components/ui/Button/Button";
 import { Checkbox } from "../../components/ui/Checkbox/Checkbox";
 import { QrModal } from "../../components/Modals/QrModal/QrModal";
