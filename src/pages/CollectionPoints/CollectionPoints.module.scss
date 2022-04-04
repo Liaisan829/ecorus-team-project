@@ -1,6 +1,32 @@
 @import '../../styles/mixins';
 
-.container{
+.mapPage {
   margin-top: -40px;
-  width: 100vw;
+  position: relative;
+
+  &__info {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+
+    &__top {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      position: absolute;
+      max-width: 1200px;
+      width: 100%;
+      margin-top: 32px;
+      z-index: 5;
+    }
+
+    &__cards {
+      display: flex;
+      flex-direction: column;
+      float: left;
+      z-index: 5;
+      position: absolute;
+      margin-top: 112px;
+    }
+  }
 }

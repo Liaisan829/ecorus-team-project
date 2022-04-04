@@ -1,0 +1,17 @@
+@import "../../../styles/mixins";
+
+.dropDownList {
+  border: none;
+  border-radius: 8px;
+  width: 260px;
+  background: $c-white;
+  padding: 14px 46px 14px 20px;
+  outline: none;
+
+  option {
+    border-radius: 12px;
+    color: rgba(0, 11, 38, 0.72);
+    padding: 10px 20px;
+    border: none;
+  }
+}
