@@ -1,16 +1,57 @@
-import { BaseLayout } from "../../components/BaseLayout/BaseLayout";
+import {BaseLayout} from "../../components/BaseLayout/BaseLayout";
 import Map from "../../components/Map/Map";
-import styles from "./CollectionPoints.module.scss";
+import CollectionPointCard from "../../components/CollectionPointCard/CollectionPointCard";
+import collection from '../../svg-icons/collectionPointImg.svg';
+import SearchInput from "../../components/ui/SearchInput/SearchInput";
+import DropDownList from "../../components/ui/DropDownList/DropDownList";
+import styles from './CollectionPoints.module.scss';
 
 export const CollectionPoints = () => {
-  return (
-    <>
-      <BaseLayout>
-        <div className={styles.container}>
-          <Map />
-          <button>hello</button>
-        </div>
-      </BaseLayout>
-    </>
-  );
-};
+    return (
+        <>
+            <BaseLayout>
+                <div className={styles.mapPage}>
+                    <section className={styles.mapPage__info}>
+
+                        <div className={styles.mapPage__info__top}>
+                            <SearchInput/>
+                            <DropDownList
+                                title={'Выбрано 3 магазина'}
+                                subtitle={['Nike', 'H&M', 'Adidas']}
+                            />
+                            <DropDownList
+                                title={'Материалы'}
+                                subtitle={['Стекло', 'Пластик', 'Дерево']}
+                            />
+                        </div>
+
+                        <div className={styles.mapPage__info__cards}>
+                            <CollectionPointCard
+                                img={collection}
+                                address={'ул.Кремлёвская, 88'}
+                                description={'Пластик, стекло, бумага, металл, старая одежда, батареи, аккумуляторы...'}
+                            />
+                            <CollectionPointCard
+                                img={collection}
+                                address={'ул.Кремлёвская, 88'}
+                                description={'Стекло, бумага, металл, старая одежда, батареи'}
+                            />
+                            <CollectionPointCard
+                                img={collection}
+                                address={'ул.Кремлёвская, 88'}
+                                description={'Пластик, стекло, бумага, металл'}
+                            />
+                            <CollectionPointCard
+                                img={collection}
+                                address={'ул.Кремлёвская, 88'}
+                                description={'Стекло, бумага, металл, старая одежда, батареи'}
+                            />
+                        </div>
+                    </section>
+
+                    <Map/>
+                </div>
+            </BaseLayout>
+        </>
+    )
+}

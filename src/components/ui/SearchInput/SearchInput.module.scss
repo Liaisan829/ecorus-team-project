@@ -1,0 +1,19 @@
+@import "../../../styles/mixins";
+
+.searchInput {
+  display: flex;
+  align-items: center;
+
+  &__icon {
+    margin-right: -30px;
+    z-index: 6;
+  }
+
+  input {
+    border: none;
+    border-radius: 8px;
+    width: 500px;
+    background: $c-white;
+    padding: 14px 20px 14px 38px;
+  }
+}
