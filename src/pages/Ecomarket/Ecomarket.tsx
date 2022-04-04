@@ -34,8 +34,7 @@ export const Ecomarket = () => {
     img: any,
     name: string,
     gender: string,
-    price: string,
-    onClick: any
+    price: string
   }
 
   const onGetPromocodeClick = () => {
@@ -44,11 +43,6 @@ export const Ecomarket = () => {
 
   const onButtonClick = () => {
     console.log("click");
-  };
-
-  const onGetQRGet = () => {
-    console.log("click");
-    setCurrentModal(QrModal);
   };
 
   const checkStatusProducts = (index: number, setProducts: any, products: Product[]) => {
@@ -60,7 +54,6 @@ export const Ecomarket = () => {
     );
     filterData();
   };
-
 
   const checkStatusAllProducts = (isAllProducts: boolean, setAllProducts: any, setProducts: any, products: Product[]) => {
     setClicked(!clicked);
@@ -79,40 +72,35 @@ export const Ecomarket = () => {
       img: sneak1,
       name: "Nike Air Max 2022",
       gender: "Мужская обувь",
-      price: "1000",
-      onClick: { onGetQRGet }
+      price: "1000"
     },
     {
       brand: "NIKE",
       img: sneak2,
       name: "Nike Air Max 90 Premium",
       gender: "Мужская обувь",
-      price: "750",
-      onClick: { onGetQRGet }
+      price: "750"
     },
     {
       brand: "Adidas",
       img: sneak3,
       name: "Adidas Alphabounce RC",
       gender: "Мужская обувь",
-      price: "1200",
-      onClick: { onGetQRGet }
+      price: "1200"
     },
     {
       brand: "H&M",
       img: hoodie,
       name: "Nike Air Max 2021",
       gender: "Мужское худи",
-      price: "1000",
-      onClick: { onGetQRGet }
+      price: "1000"
     },
     {
       brand: "NIKE",
       img: sneak4,
       name: "Nike Air Force 1 Low",
       gender: "Мужская обувь",
-      price: "2100",
-      onClick: { onGetQRGet }
+      price: "2100"
     }
   ];
 
@@ -206,6 +194,12 @@ export const Ecomarket = () => {
                   index={index} />
               )}
             </div>
+            <div className={styles.filter__btn}>
+              <Button
+                  type="submit"
+                  theme="grey"
+              >Сбросить фильтры</Button>
+            </div>
           </aside>
 
           <section className={styles.productCards}>
@@ -236,7 +230,6 @@ export const Ecomarket = () => {
                 img={product.img}
                 gender={product.gender}
                 price={product.price}
-                onClick={() => product.onClick}
               />
             ))}
 

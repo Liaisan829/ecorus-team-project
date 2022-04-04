@@ -29,6 +29,13 @@
   position: sticky;
   top: 5px;
 
+  &__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+
   &__block {
     padding: 24px 0 24px 24px;
 

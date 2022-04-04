@@ -50,7 +50,8 @@ export const Checkbox:FC<Props> = ({title, isChecked, checkHandler, index}) => {
           className={styles.checkbox__input}
         />
         <span className={isChecked ? styles.checkbox__activeSpan : styles.checkbox__span}/>
-        <p className={isChecked ? styles.checkbox__activeText : styles.checkbox__text}>{title}</p>      </label>
+        <p className={isChecked ? styles.checkbox__activeText : styles.checkbox__text}>{title}</p>
+      </label>
     </>
   )
 }
