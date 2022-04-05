@@ -13,6 +13,13 @@
   justify-content: space-between;
   margin-bottom: 40px;
 
+  &__content{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
   &__filterButtons {
     display: flex;
     flex-direction: row;
@@ -24,8 +31,6 @@
   width: 282px;
   border: 1px solid $c-light-grey;
   border-radius: 16px;
-  float: left;
-  margin-right: 45px;
   position: sticky;
   top: 5px;
 

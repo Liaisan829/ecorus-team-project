@@ -10,7 +10,6 @@ export interface ProductModel {
   name: string,
   gender: string,
   price: string,
-  onClick: Function
 }
 
 export const Products: Array<ProductModel> = [
@@ -19,39 +18,34 @@ export const Products: Array<ProductModel> = [
     img: sneak1,
     name: "Nike Air Max 2022",
     gender: "Мужская обувь",
-    price: "1000",
-    onClick: () => {}
+    price: "1000"
   },
   {
     brand: "NIKE",
     img: sneak2,
     name: "Nike Air Max 90 Premium",
     gender: "Мужская обувь",
-    price: "750",
-    onClick: () => {}
+    price: "750"
   },
   {
     brand: "Adidas",
     img: sneak3,
     name: "Adidas Alphabounce RC",
     gender: "Мужская обувь",
-    price: "1200",
-    onClick: () => {}
+    price: "1200"
   },
   {
     brand: "H&M",
     img: hoodie,
     name: "Nike Air Max 2021",
     gender: "Мужское худи",
-    price: "1000",
-    onClick: () => {}
+    price: "1000"
   },
   {
     brand: "NIKE",
     img: sneak4,
     name: "Nike Air Force 1 Low",
     gender: "Мужская обувь",
-    price: "2100",
-    onClick: () => {}
+    price: "2100"
   }
 ];
