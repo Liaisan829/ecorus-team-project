@@ -8,7 +8,6 @@ import styles from './CollectionPoints.module.scss';
 
 export const CollectionPoints = () => {
     return (
-        <>
             <BaseLayout>
                     <div className={styles.mapPage}>
                         <section className={styles.mapPage__info}>
@@ -50,10 +49,8 @@ export const CollectionPoints = () => {
                                 />
                             </div>
                         </section>
-
                         <Map/>
                     </div>
             </BaseLayout>
-        </>
     )
 }

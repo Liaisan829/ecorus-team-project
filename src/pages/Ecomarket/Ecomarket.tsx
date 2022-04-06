@@ -1,16 +1,26 @@
-import { BaseLayout } from "../../components/BaseLayout/BaseLayout";
-import { EcoMarketCard } from "../../components/Cards/EcoMarketCard/EcoMarketCard";
-import { Button } from "../../components/ui/Button/Button";
+import {BaseLayout} from "../../components/BaseLayout/BaseLayout";
+import {EcoMarketCard} from "../../components/Cards/EcoMarketCard/EcoMarketCard";
+import {Button} from "../../components/ui/Button/Button";
 import currency from "../../svg-icons/currency.svg";
 import styles from "./Ecomarket.module.scss";
-import { FilterCheckboxes } from "../../containers/FilterCheckboxes/FilterCheckboxes";
-import { ProductModel, Products } from "../../stores/ProductStore";
-import { useEffect, useState } from "react";
+import {FilterCheckboxes} from "../../containers/FilterCheckboxes/FilterCheckboxes";
+import {ProductModel, Products} from "../../stores/ProductStore";
+import {useEffect, useState} from "react";
+import EcoMarketCardSkeleton from "../../components/Skeletons/EcoMarketCardSkeleton";
 
 export const Ecomarket = () => {
   const [products, setProducts] = useState<Array<ProductModel>>([]);
+  const [loading, setLoading] = useState(false);
 
-  useEffect(()=>{
+  useEffect(() => {
+    setLoading(true);
+    const timing = setTimeout(() => {
+      setLoading(false);
+    }, 1500);
+    return () => clearTimeout(timing);
+  }, []);
+
+  useEffect(() => {
     setProducts(Products);
   }, [])
 
@@ -35,87 +45,92 @@ export const Ecomarket = () => {
   };
 
   return (
-    <>
-      <BaseLayout>
-        <div className={styles.container}>
-          <div className={styles.ecomarket}>
-            <h1>ЭкоМаркет</h1>
-            <div className={styles.ecomarket__filterButtons}>
-              <Button
-                type={"button"}
-                theme={"eco"}
-                onClick={onButtonClick}
-                children={"По популярности"}
-              />
+      <>
+        <BaseLayout>
+          <div className={styles.container}>
+            <div className={styles.ecomarket}>
+              <h1>ЭкоМаркет</h1>
+              <div className={styles.ecomarket__filterButtons}>
+                <Button
+                    type={"button"}
+                    theme={"eco"}
+                    onClick={onButtonClick}
+                    children={"По популярности"}
+                />
 
-              <Button
-                type={"button"}
-                theme={"eco"}
-                onClick={onButtonClick}
-                children={"По цене"}
-              />
+                <Button
+                    type={"button"}
+                    theme={"eco"}
+                    onClick={onButtonClick}
+                    children={"По цене"}
+                />
 
-              <Button
-                type={"button"}
-                theme={"eco"}
-                onClick={onButtonClick}
-                children={"По новизне"}
-              />
-            </div>
-          </div>
-
-          <div className={styles.ecomarket__content}>
-            <div className={styles.filter}>
-              <FilterCheckboxes />
+                <Button
+                    type={"button"}
+                    theme={"eco"}
+                    onClick={onButtonClick}
+                    children={"По новизне"}
+                />
+              </div>
             </div>
 
-            <section className={styles.productCards}>
-              <div className={styles.promocodeCard}>
-                <div className={styles.promocodeCard__info}>
-                  <div className={styles.promocodeCard__info__text}>
-                    <div className={styles.promocodeCard__info__balance}>
-                      <p>На вашем балансе</p>
-                      <img src={currency} alt="currency" />
-                      <h6>200</h6>
-                    </div>
-                    <p>Вы можете обменять их на скидку 200 руб.</p>
-                  </div>
-                  <Button
-                    type="submit"
-                    onClick={onGetPromocodeClick}
-                    theme={"green"}
-                    children={"Получить промокод"}
-                  />
-                </div>
+            <div className={styles.ecomarket__content}>
+              <div className={styles.filter}>
+                <FilterCheckboxes/>
               </div>
 
-              {products.map(product => (
-                <EcoMarketCard
-                  key={product.name}
-                  brand={product.brand}
-                  name={product.name}
-                  img={product.img}
-                  gender={product.gender}
-                  price={product.price}
-                />
-              ))}
+              <section className={styles.productCards}>
+                {loading ? <EcoMarketCardSkeleton/> :
+                    <>
+                      <div className={styles.promocodeCard}>
+                        <div className={styles.promocodeCard__info}>
+                          <div className={styles.promocodeCard__info__text}>
+                            <div className={styles.promocodeCard__info__balance}>
+                              <p>На вашем балансе</p>
+                              <img src={currency} alt="currency"/>
+                              <h6>200</h6>
+                            </div>
+                            <p>Вы можете обменять их на скидку 200 руб.</p>
+                          </div>
+                          <Button
+                              type="submit"
+                              onClick={onGetPromocodeClick}
+                              theme={"green"}
+                              children={"Получить промокод"}
+                          />
+                        </div>
+                      </div>
 
-              {/*<h1>Filtered data</h1>*/}
-              {/*{filteredData.map(data => (*/}
-              {/*  <EcoMarketCard*/}
-              {/*    key={data.name}*/}
-              {/*    brand={data.brand}*/}
-              {/*    name={data.name}*/}
-              {/*    img={data.img}*/}
-              {/*    gender={data.gender}*/}
-              {/*    price={data.price}*/}
-              {/*    onClick={data.onClick}*/}
-              {/*  />*/}
-              {/*))}*/}
-            </section>
+                      {products.map(product => (
+                          <EcoMarketCard
+                              key={product.name}
+                              brand={product.brand}
+                              name={product.name}
+                              img={product.img}
+                              gender={product.gender}
+                              price={product.price}
+                          />
+                      ))}
+
+
+                      {/*<h1>Filtered data</h1>*/}
+                      {/*{filteredData.map(data => (*/}
+                      {/*  <EcoMarketCard*/}
+                      {/*    key={data.name}*/}
+                      {/*    brand={data.brand}*/}
+                      {/*    name={data.name}*/}
+                      {/*    img={data.img}*/}
+                      {/*    gender={data.gender}*/}
+                      {/*    price={data.price}*/}
+                      {/*    onClick={data.onClick}*/}
+                      {/*  />*/}
+                      {/*))}*/}
+                    </>
+                }
+              </section>
+            </div>
           </div>
-        </div>
-      </BaseLayout>
-    </>
+        </BaseLayout>
+      </>
   );
 };

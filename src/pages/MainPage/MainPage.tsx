@@ -1,6 +1,6 @@
 import { BaseLayout } from "../../components/BaseLayout/BaseLayout";
 import { Slider } from "../../components/Swiper/Slider";
-import { BottomCard } from "../../components/BottomCard/BottomCard";
+import { BottomCard } from "../../components/Cards/BottomCard/BottomCard";
 import ecomarket from "../../svg-icons/ecomarket.svg";
 import collpoints from "../../svg-icons/collpoints.svg";
 import styles from "./MainPage.module.scss";

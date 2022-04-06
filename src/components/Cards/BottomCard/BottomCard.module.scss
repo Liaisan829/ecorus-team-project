@@ -1,4 +1,4 @@
-@import "../../styles/mixins.scss";
+@import "../../../styles/mixins";
 
 .informBlock {
   border: 2px solid $c-light-grey;
@@ -37,4 +37,13 @@
 
     }
   }
+}
+
+.skeletonImg {
+  margin-left: 50px;
+  border-radius: 10px;
+}
+
+.skeletonItem {
+  margin-top: 15px;
 }
