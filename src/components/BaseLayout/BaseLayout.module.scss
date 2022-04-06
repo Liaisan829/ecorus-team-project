@@ -96,4 +96,19 @@ nav {
   }
 }
 
+@media screen and (max-width: 1250px) {
+  .header {
 
+    &__container {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+  }
+
+  .footer{
+    &__container{
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+  }
+}

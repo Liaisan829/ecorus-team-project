@@ -113,6 +113,24 @@
   }
 }
 
+@media screen and (max-width: 1250px) {
+  .container {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .ecomarket{
+    &__content{
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+  }
+
+  .promocodeCard{
+    width: 200px;
+  }
+}
+
 .productCardsItem {
   margin-right: 8px;
   margin-bottom: 20px;

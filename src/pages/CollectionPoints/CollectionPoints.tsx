@@ -1,9 +1,9 @@
 import {BaseLayout} from "../../components/BaseLayout/BaseLayout";
 import Map from "../../components/Map/Map";
 import CollectionPointCard from "../../components/Cards/CollectionPointCards/CommonCard/CollectionPointCard";
-import collection from '../../svg-icons/collectionPointImg.svg';
 import SearchInput from "../../components/ui/SearchInput/SearchInput";
 import DropDownList from "../../components/ui/DropDownList/DropDownList";
+import collection from '../../svg-icons/collectionPointImg.svg';
 import styles from './CollectionPoints.module.scss';
 
 export const CollectionPoints = () => {

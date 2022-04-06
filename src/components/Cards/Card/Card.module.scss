@@ -1,6 +1,6 @@
 @import "../../../styles/mixins";
 
-.section{
+.section {
   display: flex;
   align-content: center;
   flex-direction: row;
@@ -8,7 +8,7 @@
   padding-left: 64px;
   border-radius: 20px;
 
-  h1{
+  h1 {
     font-family: Inter, sans-serif;
     font-style: normal;
     font-weight: bold;
@@ -18,17 +18,37 @@
     margin-bottom: 16px;
   }
 
-  p{
+  p {
     @include secondary-text;
     margin-bottom: 40px;
   }
 
-  img{
+  img {
     width: 560px;
     padding-left: 90px;
     border-radius: 20px;
   }
-  &__info{
+
+  &__info {
     margin-top: 56px;
+  }
+}
+
+@media screen and (max-width: 1250px) {
+  .section {
+    max-width: 1000px;
+    height: 300px;
+
+    &__info {
+      margin-top: 30px;
+    }
+
+    h1 {
+      font-size: 40px;
+    }
+
+    img{
+      width: 450px;
+    }
   }
 }

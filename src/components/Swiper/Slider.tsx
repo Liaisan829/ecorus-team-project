@@ -1,13 +1,13 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Navigation } from "swiper";
-import "swiper/scss";
 import "swiper/scss/navigation";
-import "./Slider.scss";
 import { Card } from "../Cards/Card/Card";
+import { Icon } from "../ui/Icon/Icon";
 import serviceCondition from "../../svg-icons/serviceCondition.svg";
 import plastic from "../../svg-icons/plastic.svg";
 import masks from "../../svg-icons/masks.svg";
-import { Icon } from "../ui/Icon/Icon";
+import "swiper/scss";
+import "./Slider.scss";
 
 export const Slider = () => {
 
