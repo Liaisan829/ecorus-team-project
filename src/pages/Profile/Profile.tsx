@@ -1,4 +1,4 @@
-import {BaseLayout} from "../../components/BaseLayout/BaseLayout";
+import Footer from "../../components/Footer/Footer";
 import {Button} from "../../components/ui/Button/Button";
 import profile from '../../svg-icons/profile.svg';
 import styles from "./Profile.module.scss";
@@ -6,7 +6,7 @@ import {NavLink} from "react-router-dom";
 
 export const Profile = () => {
     return (
-        <BaseLayout>
+        <>
             <div className={styles.container}>
                 <h1>Личный кабинет</h1>
 
@@ -35,6 +35,7 @@ export const Profile = () => {
                     </div>
                 </div>
             </div>
-        </BaseLayout>
+            <Footer/>
+        </>
     );
 };

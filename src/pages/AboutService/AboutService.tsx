@@ -1,10 +1,10 @@
-import {BaseLayout} from "../../components/BaseLayout/BaseLayout";
-import styles from "./AboutService.module.scss";
+import Footer from "../../components/Footer/Footer";
 
 export const AboutService = () => {
   return(
-      <BaseLayout>
+      <>
           hello from about service
-      </BaseLayout>
+          <Footer/>
+      </>
   )
 }

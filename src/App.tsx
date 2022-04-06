@@ -6,10 +6,12 @@ import {Ecomarket} from "./pages/Ecomarket/Ecomarket";
 import {CollectionPoints} from "./pages/CollectionPoints/CollectionPoints";
 import {AboutService} from "./pages/AboutService/AboutService";
 import { Profile } from "./pages/Profile/Profile";
+import Header from "./components/Header/Header";
 
 const App = () => {
     return (
         <BrowserRouter>
+            <Header/>
             <Routes>
                 <Route path="/" element={<MainPage/>}/>
                 <Route path="/collpoints" element={<CollectionPoints/>}/>

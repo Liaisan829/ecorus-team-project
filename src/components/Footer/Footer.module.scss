@@ -1,0 +1,39 @@
+@import "../../styles/mixins";
+
+.footer {
+  border-top: 1px solid $c-light-grey;
+  padding: 30px;
+
+  &__container {
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0 auto;
+  }
+
+  &__contact {
+    display: flex;
+    align-items: center;
+
+    a {
+      text-decoration: none;
+      @include secondary-text
+    }
+  }
+
+  &__contact:last-child {
+    margin-left: 31px;
+  }
+}
+
+@media screen and (max-width: 1250px) {
+  .footer{
+
+    &__container{
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+  }
+}
