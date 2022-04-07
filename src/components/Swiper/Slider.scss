@@ -51,8 +51,20 @@
   .slider {
     max-width: 1000px;
     margin: 0 auto;
+
     .navigation {
       max-width: 1060px;
+    }
+  }
+}
+
+@media screen and (max-width: 1050px) {
+  .slider {
+    max-width: 800px;
+    margin: 0 auto;
+
+    .navigation {
+      max-width: 860px;
     }
   }
 }

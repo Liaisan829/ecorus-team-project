@@ -33,7 +33,7 @@ export const BottomCard: FC<BottomCardProps> = ({cardHeadline, cardText, img}) =
                     <div className={styles.informBlock__info}>
                         <h1>{cardHeadline}</h1>
                         <p>{cardText}</p>
-                        <div className={styles.cardButton}>
+                        <div className={styles.informBlock__info__cardButton}>
                             <Button
                                 type="button"
                                 onClick={onBottomButtonClick}

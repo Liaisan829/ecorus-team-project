@@ -52,3 +52,28 @@
     }
   }
 }
+
+@media screen and (max-width: 1050px) {
+  .section {
+    max-width: 800px;
+    height: 280px;
+
+    &__info {
+      margin-top: 25px;
+    }
+
+    h1 {
+      font-size: 33px;
+      line-height: 40px;
+    }
+
+    img{
+      width: 350px;
+    }
+
+    p{
+      margin-bottom: 20px;
+      font-size: 14px;
+    }
+  }
+}

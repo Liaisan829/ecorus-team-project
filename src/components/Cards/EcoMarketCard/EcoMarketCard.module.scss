@@ -58,12 +58,22 @@
   }
 }
 
-@media screen and (max-width: 1250px) {
-  .section {
-    width: 200px;
+@media screen and (max-width: 1250px){
+  .section{
+    max-width: 240px;
 
-    &__img {
-      width: 200px;
+    &__img{
+      max-width: 240px;
+    }
+  }
+}
+
+@media screen and (max-width: 1050px) {
+  .section{
+    max-width: 220px;
+
+    &__img{
+      max-width: 220px;
     }
   }
 }

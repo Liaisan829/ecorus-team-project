@@ -26,24 +26,80 @@
 
   &__info {
 
-    .cardButton {
+    &__cardButton {
       width: 48px;
       height: 48px;
       border: none;
       display: flex;
       justify-content: center;
       align-items: center;
-      margin-top: 46px;
-
+      margin-top: 40px;
     }
   }
 }
 
 .skeletonImg {
-  margin-left: 50px;
+  margin-left: 55px;
   border-radius: 10px;
 }
 
 .skeletonItem {
   margin-top: 15px;
+}
+
+@media screen and (max-width: 1250px) {
+  .informBlock {
+    width: 450px;
+
+    img {
+      width: 240px;
+      height: 240px;
+    }
+
+    h1 {
+      font-size: 28px;
+    }
+
+    p {
+      font-size: 14px;
+    }
+  }
+  //не применяются стили к скелетону
+  .skeletonImg {
+    margin-left: 5px;
+    width: 150px;
+  }
+
+  .skeletonItem {
+    margin-top: 5px;
+    width: 150px;
+  }
+}
+
+@media screen and (max-width: 1050px) {
+  .informBlock {
+    width: 350px;
+    padding-left: 25px;
+    padding-top: 25px;
+
+    img {
+      width: 150px;
+      height: 150px;
+    }
+
+    h1 {
+      font-size: 20px;
+    }
+
+    p {
+      font-size: 13px;
+    }
+
+    &__info {
+      &__cardButton {
+        margin-top: 15px;
+        padding: 5px 10px;
+      }
+    }
+  }
 }

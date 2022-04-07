@@ -27,11 +27,11 @@ nav {
     margin-left: 26px;
   }
 
-  .logo {
-    width: 94px;
-    height: 18px;
-    padding-right: 50px;
-  }
+  //.logo {
+  //  width: 94px;
+  //  height: 18px;
+  //  padding-right: 50px;
+  //}
 }
 
 .actions {
@@ -65,6 +65,22 @@ nav {
     &__container {
       max-width: 1000px;
       margin: 0 auto;
+    }
+  }
+}
+
+@media screen and (max-width: 1050px) {
+  .header {
+
+    &__container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+  }
+
+  nav {
+    .link {
+      margin-left: 20px;
     }
   }
 }

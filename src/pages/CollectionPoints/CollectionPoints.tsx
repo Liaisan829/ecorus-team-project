@@ -1,4 +1,3 @@
-import Footer from "../../components/Footer/Footer";
 import Map from "../../components/Map/Map";
 import CollectionPointCard from "../../components/Cards/CollectionPointCards/CommonCard/CollectionPointCard";
 import SearchInput from "../../components/ui/SearchInput/SearchInput";

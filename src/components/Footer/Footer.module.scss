@@ -37,3 +37,13 @@
     }
   }
 }
+
+@media screen and (max-width: 1050px) {
+  .footer{
+
+    &__container{
+      max-width: 800px;
+      margin: 0 auto;
+    }
+  }
+}
