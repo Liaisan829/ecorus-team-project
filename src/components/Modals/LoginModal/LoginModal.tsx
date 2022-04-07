@@ -13,6 +13,16 @@ import axios from "axios";
 export const LoginModal = observer(() => {
   const { modalStore: { clearCurrentModal, setCurrentModal } } = useStores();
 
+  const profileRedirect = () => {
+    axios.get("profile")
+      .then((res) => {
+        console.log(res);
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  };
+
   const onLoginClick = (values: FormikValues) => {
     axios.post("login", {
       login: values.phone,
@@ -22,6 +32,7 @@ export const LoginModal = observer(() => {
         localStorage.setItem("token", res.data.token);
         localStorage.setItem("user", JSON.stringify(res.data))
         clearCurrentModal();
+        profileRedirect();
       })
       .catch((err) => {
         console.log(err);

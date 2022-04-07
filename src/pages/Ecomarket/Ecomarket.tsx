@@ -1,37 +1,47 @@
 import Footer from "../../components/Footer/Footer";
-import {EcoMarketCard} from "../../components/Cards/EcoMarketCard/EcoMarketCard";
-import {Button} from "../../components/ui/Button/Button";
-import {FilterCheckboxes} from "../../containers/FilterCheckboxes/FilterCheckboxes";
-import {ProductModel, Products} from "../../stores/ProductStore";
-import {useEffect, useState} from "react";
+import { EcoMarketCard } from "../../components/Cards/EcoMarketCard/EcoMarketCard";
+import { Button } from "../../components/ui/Button/Button";
+import { FilterCheckboxes } from "../../containers/FilterCheckboxes/FilterCheckboxes";
+import { ProductModel, Products } from "../../stores/ProductStore";
+import { useEffect, useState } from "react";
 import EcoMarketCardSkeleton from "../../components/Skeletons/EcoMarketCardSkeleton";
 import PromocodeCard from "../../components/Cards/PromocodeCard/PromocodeCard";
 import styles from "./Ecomarket.module.scss";
-
+import axios from "axios";
 
 export const Ecomarket = () => {
   const [products, setProducts] = useState<Array<ProductModel>>([]);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
+    setProducts(Products);
+
     setLoading(true);
     const timing = setTimeout(() => {
       setLoading(false);
     }, 1500);
     return () => clearTimeout(timing);
+
   }, []);
 
-  useEffect(() => {
-    setProducts(Products);
-  }, []);
 
-  useEffect(() => {
-    setProducts(Products);
-  }, []);
-
+  // 400 error, no error_message, shop_ids?????
+  const getItems = () => {
+    axios.get("market", {
+      params: {
+        page_number: 1,
+        page_size: 10,
+        sexes: "MAN",
+        item_categories: "CLOTHES",
+        shop_ids: "NIKE"
+      }
+    })
+      .then(res => console.log(res))
+      .catch(err => console.log(err));
+  };
 
   const onButtonClick = () => {
-    console.log("click");
+    getItems();
   };
 
   return (
@@ -65,27 +75,29 @@ export const Ecomarket = () => {
 
         <div className={styles.ecomarket__content}>
           <div className={styles.filter}>
-            <FilterCheckboxes/>
+            <FilterCheckboxes />
           </div>
 
           <section className={styles.productCards}>
-            {loading ? <EcoMarketCardSkeleton/> : <>
-              <PromocodeCard/>
-              {products.map(product => (
-                <EcoMarketCard
-                  key={product.name}
-                  brand={product.brand}
-                  name={product.name}
-                  img={product.img}
-                  gender={product.gender}
-                  price={product.price}
-                />
-              ))}
-            </>}
+            {loading ? <EcoMarketCardSkeleton /> :
+              <>
+                <PromocodeCard />
+                {products.map(product => (
+                  <EcoMarketCard
+                    key={product.name}
+                    brand={product.brand}
+                    name={product.name}
+                    img={product.img}
+                    gender={product.gender}
+                    price={product.price}
+                  />
+                ))}
+              </>
+            }
           </section>
         </div>
       </div>
-      <Footer/>
+      <Footer />
     </>
   );
 };

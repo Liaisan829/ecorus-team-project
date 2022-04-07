@@ -10,6 +10,18 @@ import * as Yup from "yup";
 export const SignUpModal = observer(() => {
   const { modalStore: { clearCurrentModal } } = useStores();
 
+
+  //запрос успешный но профиль не открывает
+  const profileRedirect = () => {
+    axios.get("profile")
+      .then((res) => {
+        console.log(res);
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  };
+
   const onSignUpClick = (values: FormikValues) => {
     axios.post("account", {
       username: values.username,
@@ -17,14 +29,15 @@ export const SignUpModal = observer(() => {
       phone_number: values.phone,
       password: values.password
     })
-      .then((res)=>{
+      .then((res) => {
         localStorage.setItem("token", res.data.token);
-        localStorage.setItem("user", JSON.stringify(res.data))
+        localStorage.setItem("user", JSON.stringify(res.data));
         clearCurrentModal();
+        profileRedirect();
       })
-      .catch((err)=>{
+      .catch((err) => {
         console.log(err);
-      })
+      });
   };
 
   const formik = useFormik({
