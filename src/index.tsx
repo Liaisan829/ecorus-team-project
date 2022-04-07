@@ -19,11 +19,12 @@ axios.interceptors.request.use(({ ...config }) => {
       ...config,
       headers: {
         ...(config.headers || {}),
+        "Access-Control-Allow-Origin": "*",
         Authorization: token,
         "Content-type": "application/json"
       }
     };
-  } else{
+  } else {
     return config;
   }
 });
@@ -33,7 +34,7 @@ ReactDOM.render(
     <Provider {...mainStore}>
       <App />
 
-      <ModalConstructor/>
+      <ModalConstructor />
     </Provider>
   </React.StrictMode>,
   document.getElementById("root")

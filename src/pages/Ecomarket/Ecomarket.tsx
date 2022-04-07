@@ -24,16 +24,14 @@ export const Ecomarket = () => {
 
   }, []);
 
-
-  // 400 error, no error_message, shop_ids?????
   const getItems = () => {
     axios.get("market", {
       params: {
-        page_number: 1,
+        page_number: 2,
         page_size: 10,
-        sexes: "MAN",
-        item_categories: "CLOTHES",
-        shop_ids: "NIKE"
+        sexes: `["WOMAN"]`,
+        item_categories: `["SHOES"]`,
+        shop_ids: `["ec4e2c1d-a495-4010-bbf9-67fc99c8be28"]`
       }
     })
       .then(res => console.log(res))

@@ -1,3 +1,5 @@
+import * as Yup from "yup";
+import axios from "axios";
 import { observer } from "mobx-react";
 import { FormikValues, useFormik } from "formik";
 import { Modal } from "../Modal/Modal";
@@ -5,10 +7,8 @@ import { useStores } from "../../../utils/use-stores-hook";
 import { Button } from "../../ui/Button/Button";
 import { LoginWithCodeModal } from "../LoginReceiveCodeModal/LoginWithCodeModal";
 import { LoginForPartnersModal } from "../ForPartnersModal/LoginForPartnersModal";
-import styles from "../Modal/Modal.module.scss";
 import { SignUpModal } from "../SignUpModal/SignUpModal";
-import * as Yup from "yup";
-import axios from "axios";
+import styles from "../Modal/Modal.module.scss";
 
 export const LoginModal = observer(() => {
   const { modalStore: { clearCurrentModal, setCurrentModal } } = useStores();

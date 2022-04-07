@@ -11,6 +11,10 @@
     flex-direction: column;
     padding: 140px 24px 24px;
 
+    &__button{
+      margin: 0 auto;
+    }
+
     &__text {
       margin-bottom: 60px;
     }
