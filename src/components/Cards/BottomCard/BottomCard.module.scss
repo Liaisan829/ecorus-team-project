@@ -43,8 +43,13 @@
   border-radius: 10px;
 }
 
+.skeletonBtn {
+  margin-top: 60px;
+}
+
 .skeletonItem {
   margin-top: 15px;
+  margin-bottom: 10px;
 }
 
 @media screen and (max-width: 1250px) {

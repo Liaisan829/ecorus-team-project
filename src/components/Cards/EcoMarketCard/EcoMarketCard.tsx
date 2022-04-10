@@ -1,6 +1,9 @@
-import {FC} from "react";
+import { FC } from "react";
+import { Button } from "../../ui/Button/Button";
 import currency from "../../../svg-icons/currency.svg";
 import styles from "./EcoMarketCard.module.scss";
+import {useStores} from "../../../utils/use-stores-hook";
+import {QrModal} from "../../Modals/QrModal/QrModal";
 
 interface CardProps {
     brand: string
@@ -10,7 +13,13 @@ interface CardProps {
     price: string,
 }
 
-export const EcoMarketCard: FC<CardProps> = ({brand, img, name, gender, price}) => {
+
+export const EcoMarketCard: FC<CardProps> = ({ brand, img, name, gender, price}) => {
+    const { modalStore: { setCurrentModal } } = useStores();
+
+    const onOpenQrCodeModal = () => {
+        setCurrentModal(QrModal)
+    }
 
     return (
         <div className={styles.section}>
@@ -18,7 +27,9 @@ export const EcoMarketCard: FC<CardProps> = ({brand, img, name, gender, price}) 
                 <p>{brand}</p>
             </div>
 
-            <img className={styles.section__img} src={img} alt="item"/>
+            <Button type="button" onClick={onOpenQrCodeModal} theme="">
+                <img src={img} alt="item" />
+            </Button>
 
             <div className={styles.section__text}>
                 <h6>{name}</h6>
@@ -26,7 +37,7 @@ export const EcoMarketCard: FC<CardProps> = ({brand, img, name, gender, price}) 
             </div>
 
             <div className={styles.section__price}>
-                <img src={currency} alt="currency"/>
+                <img src={currency} alt="currency" />
                 <p>{price}</p>
             </div>
         </div>
