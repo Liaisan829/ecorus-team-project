@@ -26,12 +26,6 @@ nav {
     text-decoration: none;
     margin-left: 26px;
   }
-
-  //.logo {
-  //  width: 94px;
-  //  height: 18px;
-  //  padding-right: 50px;
-  //}
 }
 
 .actions {
@@ -50,7 +44,7 @@ nav {
     }
   }
 
-  &__link:not(last-child) {
+  &__link:not(:last-child) {
     padding-right: 40px;
   }
 
@@ -79,8 +73,28 @@ nav {
   }
 
   nav {
-    .link {
-      margin-left: 20px;
+
+    img {
+      width: 75px;
     }
+
+    .link {
+      font-size: 14px;
+      margin-left: 15px;
+    }
+  }
+
+  .actions {
+    &__link {
+      p {
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .header{
+    display: none;
   }
 }

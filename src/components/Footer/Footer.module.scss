@@ -29,9 +29,9 @@
 }
 
 @media screen and (max-width: 1250px) {
-  .footer{
+  .footer {
 
-    &__container{
+    &__container {
       max-width: 1000px;
       margin: 0 auto;
     }
@@ -39,11 +39,27 @@
 }
 
 @media screen and (max-width: 1050px) {
-  .footer{
+  .footer {
 
-    &__container{
+    &__container {
       max-width: 800px;
       margin: 0 auto;
+    }
+
+    &__contact {
+      a {
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .footer {
+    &__container {
+      max-width: 375px;
+      margin: 0 auto;
+      flex-direction: column;
     }
   }
 }
