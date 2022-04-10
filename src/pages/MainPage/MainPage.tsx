@@ -10,7 +10,7 @@ export const MainPage = () => {
   return (
       <>
           <div className = {styles.container}>
-              {/*<Slider />*/}
+              <Slider />
               <div className={styles.cardsFlex}>
                   <BottomCard
                       cardHeadline="Пункты сбора"
@@ -22,7 +22,7 @@ export const MainPage = () => {
                       img={ecomarket} />
               </div>
           </div>
-          <Footer/>
+          {/*<Footer/>*/}
       </>
   );
 };

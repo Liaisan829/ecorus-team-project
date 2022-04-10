@@ -93,8 +93,14 @@ nav {
   }
 }
 
+
 @media screen and (max-width: 375px) {
-  .header{
+  .header {
     display: none;
+
+    &__container {
+      justify-content: space-between;
+      padding: 0 10px;
+    }
   }
 }

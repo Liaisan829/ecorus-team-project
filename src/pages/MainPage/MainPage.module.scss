@@ -9,7 +9,6 @@
 
 .container{
   max-width: 1200px;
-  width: 100%;
   margin: 0 auto;
 }
 
@@ -27,6 +26,13 @@
   }
 }
 
+//@media screen and (max-width: 400px){
+//  .cardsFlex{
+//    max-width: 800px;
+//    margin: 0 auto 70px auto;
+//  }
+//}
+
 @media screen and (max-width: 375px){
   .container{
     max-width: 375px;
@@ -35,9 +41,12 @@
   }
 
   .cardsFlex{
+    display: flex;
     flex-direction: column;
     max-width: 340px;
-    margin: 0 auto;
-    justify-content: center;
+    margin-top: -160px;
+    padding: 0 16px;
+    z-index: 5;
+    position: absolute;
   }
 }
