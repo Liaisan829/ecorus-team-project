@@ -78,14 +78,14 @@
 @media screen and (max-width: 1050px) {
   .promocodeCard {
     width: 220px;
-    //&__info {
-    //  &__button {
-    //    width:200px;
-    //  }
-    //
-    //  &__button::content{
-    //    font-size: 10px;
-    //  }
-    //}
+    &__info {
+      &__button {
+        width:200px;
+      }
+
+      &__button::content{
+        font-size: 10px;
+      }
+    }
   }
 }

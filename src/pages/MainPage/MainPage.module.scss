@@ -13,6 +13,11 @@
 }
 
 @media screen and (max-width: 1250px) {
+  .container{
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
   .cardsFlex{
     max-width: 1000px;
     margin: 0 auto 70px auto;
@@ -20,6 +25,11 @@
 }
 
 @media screen and (max-width: 1050px){
+  .container{
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
   .cardsFlex{
     max-width: 800px;
     margin: 0 auto 70px auto;

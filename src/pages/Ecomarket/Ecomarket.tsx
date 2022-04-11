@@ -27,9 +27,9 @@ export const Ecomarket = () => {
     const getItems = () => {
         axios.get("market", {
             params: {
-                page_number: 2,
+                page_number: 1,
                 page_size: 10,
-                sexes: `["WOMAN"]`,
+                sexes: `["MAN"]`,
                 item_categories: `["SHOES"]`,
                 shop_ids: `["ec4e2c1d-a495-4010-bbf9-67fc99c8be28"]`
             }
