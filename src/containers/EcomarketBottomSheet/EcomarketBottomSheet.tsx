@@ -4,10 +4,11 @@ import { SortingButtons } from "../SortingButtons/SortingButtons";
 import { Button } from "../../components/ui/Button/Button";
 import { FilterCheckboxes } from "../FilterCheckboxes/FilterCheckboxes";
 import useDebounce from "../../utils/useDebounce";
+import styles from "./EcomarketBottomSheet.module.scss";
+import "../../containers/FilterCheckboxes/FilterCheckboxes.module.scss";
 
 export const EcomarketBottomSheet = () => {
 
-  // const sheetRef = useRef();
   const [loadingOpen, setLoadingOpen] = useState<boolean>(false);
   const open = useDebounce(loadingOpen, 1000);
 
@@ -16,7 +17,6 @@ export const EcomarketBottomSheet = () => {
       <BottomSheet
         open
         blocking={false}
-        // ref={sheetRef}
         scrollLocking={false}
         snapPoints={({ headerHeight, maxHeight }) => [
           headerHeight,
@@ -25,7 +25,9 @@ export const EcomarketBottomSheet = () => {
         ]}
         onSpringStart={(event) => event.type === "SNAP" && setLoadingOpen(true)}
         header={
-          <SortingButtons/>
+          <div className={styles.sortingButtons}>
+            <SortingButtons />
+          </div>
         }
         footer={
           <>
@@ -43,8 +45,8 @@ export const EcomarketBottomSheet = () => {
           </>
         }
       >
-        <FilterCheckboxes/>
+        <FilterCheckboxes />
       </BottomSheet>
     </>
   );
-}
+};

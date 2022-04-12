@@ -44,7 +44,9 @@ export const Ecomarket = () => {
             />
           </div>
 
-          <SortingButtons />
+          <div className={styles.sortingButtons}>
+            <SortingButtons />
+          </div>
         </div>
 
         <div className={styles.ecomarket__content}>
@@ -76,7 +78,7 @@ export const Ecomarket = () => {
           </section>
         </div>
       </div>
-      <EcomarketBottomSheet/>
+      <EcomarketBottomSheet />
       <Footer />
     </>
   );

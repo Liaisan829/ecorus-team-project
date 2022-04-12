@@ -1,0 +1,13 @@
+@import "../../styles/mixins";
+
+.sortingButtons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  overflow-y: scroll;
+  margin-left: 24px;
+}
+//
+//@media screen and (max-width: 420px){
+//  //выключить сам bottom sheet
+//}

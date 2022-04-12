@@ -25,6 +25,12 @@
   }
 }
 
+.sortingButtons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
 .productCards {
   display: flex;
   flex-direction: row;
@@ -71,6 +77,10 @@
     }
   }
 
+  .filter {
+    max-width: 250px;
+  }
+
   .productCards {
     max-width: 500px;
   }
@@ -89,12 +99,16 @@
       max-width: 350px;
     }
 
-    &__mobileFilter{
+    &__mobileFilter {
       display: block;
     }
   }
 
-  .productCards{
+  .sortingButtons {
+    display: none;
+  }
+
+  .productCards {
     max-width: 350px;
     margin-left: 0;
   }

@@ -1,6 +1,5 @@
 import axios from "axios";
 import { Button } from "../../components/ui/Button/Button";
-import styles from "./SortingButtons.module.scss";
 
 export const SortingButtons = () => {
 
@@ -22,7 +21,7 @@ export const SortingButtons = () => {
     getItems();
   };
   return (
-    <div className={styles.sortingButtons}>
+    <>
       <Button
         type={"button"}
         theme={"eco"}
@@ -43,6 +42,6 @@ export const SortingButtons = () => {
         onClick={onButtonClick}
         children={"По новизне"}
       />
-    </div>
+    </>
   );
 };
