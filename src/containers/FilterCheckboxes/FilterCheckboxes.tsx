@@ -42,8 +42,7 @@ export const FilterCheckboxes = () => {
   };
 
   return (
-    <>
-      <div className={styles.filter}>
+    <div className={styles.filter}>
         <div className={styles.filter__block}>
 
           <h3>Пол</h3>
@@ -98,7 +97,6 @@ export const FilterCheckboxes = () => {
             onClick={() => resetFilters()}
           >Сбросить фильтры</Button>
         </div>
-      </div>
-    </>
+    </div>
   );
 };

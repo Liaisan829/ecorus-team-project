@@ -13,7 +13,7 @@ export const EcomarketBottomSheet = () => {
   const open = useDebounce(loadingOpen, 1000);
 
   return (
-    <>
+    <div className={styles.bottomSheet}>
       <BottomSheet
         open
         blocking={false}
@@ -45,8 +45,10 @@ export const EcomarketBottomSheet = () => {
           </>
         }
       >
-        <FilterCheckboxes />
+          <div className={styles.filter}>
+              <FilterCheckboxes />
+          </div>
       </BottomSheet>
-    </>
+    </div>
   );
 };

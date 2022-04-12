@@ -7,7 +7,9 @@
   overflow-y: scroll;
   margin-left: 24px;
 }
-//
-//@media screen and (max-width: 420px){
-//  //выключить сам bottom sheet
-//}
+
+@media screen and (max-width: 420px){
+  .filter {
+    display: initial;
+  }
+}

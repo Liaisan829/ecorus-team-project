@@ -97,6 +97,10 @@
   .ecomarket {
     &__content {
       max-width: 350px;
+
+      &__filter {
+        display: none;
+      }
     }
 
     &__mobileFilter {
@@ -113,3 +117,4 @@
     margin-left: 0;
   }
 }
+
