@@ -21,7 +21,7 @@ export const EcoMarketCard: FC<CardProps> = ({ brand, img, name, gender, price})
             </div>
 
             <Button type="button" theme="">
-                <img src={img} alt="item" />
+                <img className={styles.section__img} src={img} alt="item" />
             </Button>
 
             <div className={styles.section__text}>

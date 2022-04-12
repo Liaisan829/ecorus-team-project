@@ -13,52 +13,15 @@
   justify-content: space-between;
   margin-bottom: 40px;
 
+  &__mobileFilter {
+    display: none;
+  }
+
   &__content {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
-  }
-
-  &__filterButtons {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-  }
-}
-
-
-.filter {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 290px;
-  border: 1px solid $c-light-grey;
-  border-radius: 17px;
-  position: sticky;
-  top: 5px;
-
-  &__btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 20px;
-  }
-
-  &__block {
-    padding: 24px 0 24px 24px;
-    margin-bottom: 10px;
-
-    h3 {
-      margin-bottom: 13px;
-      @include secondary-text;
-      color: $c-dark-grey;
-      margin-top: 24px;
-
-      &:first-child {
-        margin-top: 0;
-      }
-    }
   }
 }
 
@@ -67,7 +30,7 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
-  margin-left: 50px;
+  margin-left: 70px;
   max-width: 870px;
 
   &__productCardsItem {
@@ -77,12 +40,6 @@
 
 .skeletonItem {
   margin-bottom: 8px;
-}
-
-@media screen and (max-width: 1600px) {
-  .filterBtn {
-    display: none;
-  }
 }
 
 @media screen and (max-width: 1250px) {
@@ -97,16 +54,8 @@
     }
   }
 
-  .filter {
-    max-width: 280px;
-  }
-
   .productCards {
-    max-width: 650px;
-  }
-
-  .filterBtn {
-    display: none;
+    max-width: 570px;
   }
 }
 
@@ -122,12 +71,7 @@
     }
   }
 
-  .filter {
-    max-width: 250px;
-  }
-
   .productCards {
-    margin-left: 70px;
     max-width: 500px;
   }
 
@@ -136,34 +80,22 @@
   }
 }
 
-@media screen and (max-width: 375px) {
-
+@media screen and (max-width: 420px) {
   .container {
-    width: 375px;
+    max-width: 350px;
   }
-
   .ecomarket {
-    display: block;
-    margin-top: 20px;
+    &__content {
+      max-width: 350px;
+    }
 
-    h1 {
-      margin-bottom: 24px;
+    &__mobileFilter{
+      display: block;
     }
   }
 
-  .filter {
-    display: none;
+  .productCards{
+    max-width: 350px;
+    margin-left: 0;
   }
-
-  .ecomarket {
-    &__filterButtons {
-      display: none;
-    }
-  }
-  .filterBtn {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-  }
-
 }
