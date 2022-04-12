@@ -122,6 +122,22 @@
   }
 }
 
+@media screen and (max-width: 850px) {
+  .informBlock {
+    width: 290px;
+
+    &__info {
+      min-width: 170px;
+    }
+
+    img {
+      width: 100px;
+      height: 100px;
+      margin-top: 90px;
+    }
+  }
+}
+
 @media screen and (max-width: 375px) {
   .informBlock {
     width: 320px;
