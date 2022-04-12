@@ -52,7 +52,16 @@
   margin-bottom: 10px;
 }
 
+.skeletonBlock {
+  display: flex;
+  flex-direction: row;
+}
+
 @media screen and (max-width: 1250px) {
+  .skeletonBlock {
+    margin-left: -40px;
+  }
+
   .informBlock {
     width: 450px;
 
@@ -68,17 +77,21 @@
     p {
       font-size: 14px;
     }
+
+    .skeletonImg {
+      margin-right: 20px;
+      width: 150px;
+    }
   }
   //не применяются стили к скелетону
   .skeletonImg {
     margin-left: 5px;
-    width: 150px;
+  }
+  .skeletonItem {
+    margin-left: 10px;
+    width: 50px;
   }
 
-  .skeletonItem {
-    margin-top: 5px;
-    width: 150px;
-  }
 }
 
 @media screen and (max-width: 1050px) {

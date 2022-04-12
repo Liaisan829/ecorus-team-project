@@ -2,8 +2,6 @@ import { FC } from "react";
 import { Button } from "../../ui/Button/Button";
 import currency from "../../../svg-icons/currency.svg";
 import styles from "./EcoMarketCard.module.scss";
-import {useStores} from "../../../utils/use-stores-hook";
-import {QrModal} from "../../Modals/QrModal/QrModal";
 
 interface CardProps {
     brand: string
@@ -15,11 +13,6 @@ interface CardProps {
 
 
 export const EcoMarketCard: FC<CardProps> = ({ brand, img, name, gender, price}) => {
-    const { modalStore: { setCurrentModal } } = useStores();
-
-    const onOpenQrCodeModal = () => {
-        setCurrentModal(QrModal)
-    }
 
     return (
         <div className={styles.section}>
@@ -27,7 +20,7 @@ export const EcoMarketCard: FC<CardProps> = ({ brand, img, name, gender, price})
                 <p>{brand}</p>
             </div>
 
-            <Button type="button" onClick={onOpenQrCodeModal} theme="">
+            <Button type="button" theme="">
                 <img src={img} alt="item" />
             </Button>
 

@@ -4,6 +4,43 @@
   display: none;
 }
 
+@media screen and (max-width: 850px) {
+  .header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__container {
+      max-width: 850px;
+      width: 100%;
+      padding: 16px 28px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+
+  .actions {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    &__link {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin-right: 20px;
+
+      p {
+        margin-left: 8px;
+        @include secondary-text;
+        font-weight: 600;
+      }
+    }
+  }
+}
+
 @media screen and (max-width: 375px) {
   .header {
     display: flex;

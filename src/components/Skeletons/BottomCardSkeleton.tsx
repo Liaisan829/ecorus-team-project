@@ -17,7 +17,7 @@ const BottomCardSkeleton = () => {
         loop: {reverse: true},
     })
     return (
-        <>
+        <div className={styles.skeletonBlock}>
             <div className={styles.informBlock__info}>
                 <animated.div className={styles.skeletonItem} style={{background, width: 220, height: 30}}/>
                 <animated.div className={styles.skeletonItem} style={{background, width: 235, height: 40}}/>
@@ -28,7 +28,7 @@ const BottomCardSkeleton = () => {
             <div className={styles.skeletonImg}>
                 <animated.div style={{background, width: 250, height: 250}}/>
             </div>
-        </>
+        </div>
     )
 };
 
