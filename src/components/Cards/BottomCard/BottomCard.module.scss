@@ -127,7 +127,7 @@
     width: 290px;
 
     &__info {
-      min-width: 170px;
+      margin-top: -10px;
     }
 
     img {
@@ -138,9 +138,9 @@
   }
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 420px) {
   .informBlock {
-    width: 320px;
+    width: 370px;
     padding-left: 20px;
     padding-top: 20px;
     background: $c-white;

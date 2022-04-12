@@ -41,39 +41,21 @@
   }
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 420px) {
   .header {
     display: flex;
     justify-content: center;
     align-items: center;
 
     &__container {
-      max-width: 375px;
+      max-width: 420px;
       width: 100%;
-      padding: 16px 24px;
       display: flex;
       flex-direction: row;
       align-items: center;
       justify-content: space-between;
     }
   }
-
-  .actions {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-
-    &__link {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      margin-right: 20px;
-
-      p {
-        margin-left: 8px;
-        @include secondary-text;
-        font-weight: 600;
-      }
-    }
-  }
 }
+
+

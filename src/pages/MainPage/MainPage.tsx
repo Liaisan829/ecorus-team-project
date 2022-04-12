@@ -22,7 +22,7 @@ export const MainPage = () => {
                       img={ecomarket} />
               </div>
           </div>
-          {/*<Footer/>*/}
+          <Footer/>
       </>
   );
 };
