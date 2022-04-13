@@ -1,54 +1,67 @@
 import { BottomSheet } from "react-spring-bottom-sheet";
-import { useState } from "react";
+import { FC, useEffect, useState } from "react";
 import { SortingButtons } from "../SortingButtons/SortingButtons";
 import { Button } from "../../components/ui/Button/Button";
 import { FilterCheckboxes } from "../FilterCheckboxes/FilterCheckboxes";
-import useDebounce from "../../utils/useDebounce";
 import styles from "./EcomarketBottomSheet.module.scss";
 import "../../containers/FilterCheckboxes/FilterCheckboxes.module.scss";
 
-export const EcomarketBottomSheet = () => {
+interface Props {
+  isOpen: boolean;
 
-  const [loadingOpen, setLoadingOpen] = useState<boolean>(false);
-  const open = useDebounce(loadingOpen, 1000);
+}
+
+export const EcomarketBottomSheet: FC<Props> = ({ isOpen }) => {
+  const [open, setOpen] = useState<boolean>(isOpen);
+
+  useEffect(()=>{
+    setOpen(isOpen)
+  }, [isOpen]);
 
   return (
-    <div className={styles.bottomSheet}>
-      <BottomSheet
-        open
-        blocking={false}
-        scrollLocking={false}
-        snapPoints={({ headerHeight, maxHeight }) => [
-          headerHeight,
-          (maxHeight - 56) * 0.65,
-          maxHeight - 56
-        ]}
-        onSpringStart={(event) => event.type === "SNAP" && setLoadingOpen(true)}
-        header={
-          <div className={styles.sortingButtons}>
-            <SortingButtons />
-          </div>
-        }
-        footer={
-          <>
-            <Button
-              type={"button"}
-              theme={"green"}
-              children={"Применить"}
-            />
 
-            <Button
-              type={"button"}
-              theme={"grey"}
-              children={"Сбросить фильтры"}
-            />
-          </>
-        }
-      >
-          <div className={styles.filter}>
-              <FilterCheckboxes />
-          </div>
-      </BottomSheet>
-    </div>
+    <BottomSheet
+      className={styles.bottomSheet}
+      open={open}
+      blocking={false}
+      scrollLocking={false}
+      snapPoints={({ headerHeight, maxHeight }) => [
+        headerHeight,
+        (maxHeight - 56) * 0.65,
+        maxHeight - 56
+      ]}
+      onDismiss={()=> {
+        setOpen(false)
+
+        // идеале менять на фалсе но пока не работает
+        isOpen=false
+      }}
+      header={
+        <div className={styles.sortingButtons}>
+          <SortingButtons />
+        </div>
+      }
+      footer={
+        <>
+          <Button
+            type={"button"}
+            theme={"green"}
+            onClick={()=>setOpen(false)}
+            children={"Применить"}
+          />
+
+          <Button
+            type={"button"}
+            theme={"grey"}
+            children={"Сбросить фильтры"}
+          />
+        </>
+      }
+    >
+      <div className={styles.filter}>
+        <FilterCheckboxes />
+      </div>
+    </BottomSheet>
+
   );
 };

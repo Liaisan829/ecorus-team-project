@@ -23,7 +23,6 @@
     max-width: 400px;
     padding: 48px;
 
-
     &__qrcode {
       display: flex;
       flex-direction: column;
@@ -45,5 +44,34 @@
     color: $c-grey;
     margin-top: 24px;
     margin-bottom: 24px;
+  }
+}
+
+
+@media screen and (max-width: 1250px){
+  .overlay{
+    &__popup{
+      max-width: 350px;
+      padding: 40px;
+    }
+  }
+}
+
+@media screen and (max-width: 1050px){
+  .overlay{
+    &__popup{
+      max-width: 300px;
+      padding: 35px;
+    }
+  }
+}
+
+@media screen and (max-width: 420px){
+  .overlay{
+    background: white;
+    &__popup{
+      max-width: 340px;
+      padding: 30px;
+    }
   }
 }

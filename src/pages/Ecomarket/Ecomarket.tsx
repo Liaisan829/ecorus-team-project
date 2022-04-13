@@ -13,6 +13,7 @@ import "react-spring-bottom-sheet/dist/style.css";
 
 export const Ecomarket = () => {
     const [products, setProducts] = useState<Array<ProductModel>>([]);
+    const [isOpen, setIsOpen] = useState<boolean>(false);
     const [loading, setLoading] = useState(false);
 
     useEffect(() => {
@@ -27,7 +28,7 @@ export const Ecomarket = () => {
     }, []);
 
     const onFilterClick = () => {
-        console.log("filter clicked");
+        setIsOpen(!isOpen);
     };
 
     return (
@@ -80,7 +81,7 @@ export const Ecomarket = () => {
                     </section>
                 </div>
             </div>
-            <EcomarketBottomSheet/>
+            <EcomarketBottomSheet isOpen={isOpen}/>
             <Footer/>
         </>
     );

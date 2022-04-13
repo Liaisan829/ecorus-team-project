@@ -8,8 +8,16 @@
   margin-left: 24px;
 }
 
-@media screen and (max-width: 420px){
+.bottomSheet {
+  display: none;
+}
+
+@media screen and (max-width: 420px) {
   .filter {
     display: initial;
+  }
+
+  .bottomSheet {
+    display: initial;;
   }
 }

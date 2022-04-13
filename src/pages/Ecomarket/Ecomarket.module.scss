@@ -74,19 +74,28 @@
     &__content {
       max-width: 800px;
       margin: 0 auto;
-    }
-  }
 
-  .filter {
-    max-width: 250px;
+      &__filter {
+        width: 250px;
+      }
+    }
   }
 
   .productCards {
     max-width: 500px;
   }
+}
 
-  .filterBtn {
-    display: none;
+@media screen and (max-width: 850px) {
+  .container {
+    max-width: 650px;
+  }
+
+  .ecomarket {
+    &__content {
+      max-width: 650px;
+      margin: 0 auto;
+    }
   }
 }
 

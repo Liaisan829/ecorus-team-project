@@ -81,37 +81,49 @@
 
     &__info {
       &__button {
-        width: 200px;
-      }
-
-      &__button::content {
-        font-size: 10px;
+        width: 172px;
       }
     }
   }
 }
 
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 850px) {
   .promocodeCard {
-    width: 350px;
+    width: 300px;
 
     &__info {
-      width: 230px;
-      margin: 0 auto;
-
-      &__balance {
-        flex-direction: row;
-
-        p {
-          @include primary-text;
-          color: $c-dark;
-          font-weight: 400;
-        }
+      &__button {
+        width: 200px;
       }
+    }
+  }
 
-      &__text {
-        p {
-          @include primary-text;
+  @media screen and (max-width: 420px) {
+    .promocodeCard {
+      width: 350px;
+
+      &__info {
+        width: 230px;
+        margin: 0 auto;
+
+        &__button {
+          width: 200px;
+        }
+
+        &__balance {
+          flex-direction: row;
+
+          p {
+            @include primary-text;
+            color: $c-dark;
+            font-weight: 400;
+          }
+        }
+
+        &__text {
+          p {
+            @include primary-text;
+          }
         }
       }
     }
