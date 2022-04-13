@@ -1,5 +1,5 @@
-import styles from './DropDownList.module.scss';
 import {FC} from "react";
+import styles from './DropDownList.module.scss';
 
 interface Props {
     title: string,

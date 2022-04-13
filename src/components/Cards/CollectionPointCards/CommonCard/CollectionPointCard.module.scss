@@ -24,3 +24,13 @@
     }
   }
 }
+
+@media screen and (max-width: 1120px){
+  .collectionCard{
+    width: 300px;
+
+    img{
+      width: 90px;
+    }
+  }
+}

@@ -1,5 +1,5 @@
-import styles from './CollectionPointCard.module.scss';
 import {FC} from "react";
+import styles from './CollectionPointCard.module.scss';
 
 interface Props {
     img: any,

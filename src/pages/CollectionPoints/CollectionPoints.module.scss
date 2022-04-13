@@ -29,3 +29,34 @@
     }
   }
 }
+
+@media screen and (max-width: 1320px) {
+  .mapPage {
+    &__info {
+      max-width: 1000px;
+      width: 100%;
+      margin: 0 auto;
+
+      &__top{
+        max-width: 1000px;
+        width: 100%;
+      }
+    }
+  }
+}
+
+
+@media screen and (max-width: 1120px) {
+  .mapPage {
+    &__info {
+      max-width: 800px;
+      width: 100%;
+      margin: 0 auto;
+
+      &__top{
+        max-width: 800px;
+        width: 100%;
+      }
+    }
+  }
+}

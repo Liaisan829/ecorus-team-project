@@ -1,5 +1,5 @@
-import styles from './SearchInput.module.scss';
 import {Icon} from "../Icon/Icon";
+import styles from './SearchInput.module.scss';
 
 const SearchInput = () => {
     return (

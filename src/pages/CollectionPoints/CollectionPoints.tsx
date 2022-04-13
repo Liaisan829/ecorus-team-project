@@ -16,7 +16,7 @@ export const CollectionPoints = () => {
                         <DropDownList
                             title={'Выбрано 3 магазина'}
                             subtitle={
-                                ['Nike', 'H&M', 'Adidas']
+                                ['Выбрать все', 'Nike', 'H&M', 'Adidas']
                             }
                         />
                         <DropDownList
