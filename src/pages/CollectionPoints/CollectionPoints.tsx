@@ -4,6 +4,8 @@ import SearchInput from "../../components/ui/SearchInput/SearchInput";
 import DropDownList from "../../components/ui/DropDownList/DropDownList";
 import collection from '../../svg-icons/collectionPointImg.svg';
 import styles from './CollectionPoints.module.scss';
+import {Button} from "../../components/ui/Button/Button";
+import {Icon} from "../../components/ui/Icon/Icon";
 
 export const CollectionPoints = () => {
     return (
@@ -13,6 +15,14 @@ export const CollectionPoints = () => {
 
                     <div className={styles.mapPage__info__top}>
                         <SearchInput/>
+                        <div className={styles.mapPage__info__filterBtn}>
+                            <Button
+                                type={"button"}
+                                theme={"filter"}
+                            >
+                                <Icon name={"filter"} width={20} height={20}/>
+                            </Button>
+                        </div>
                         <DropDownList
                             title={'Выбрано 3 магазина'}
                             subtitle={
@@ -40,11 +50,6 @@ export const CollectionPoints = () => {
                             img={collection}
                             address={'ул.Кремлёвская, 88'}
                             description={'Пластик, стекло, бумага, металл'}
-                        />
-                        <CollectionPointCard
-                            img={collection}
-                            address={'ул.Кремлёвская, 88'}
-                            description={'Стекло, бумага, металл, старая одежда, батареи'}
                         />
                     </div>
                 </section>

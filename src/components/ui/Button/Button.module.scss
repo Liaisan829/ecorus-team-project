@@ -45,4 +45,12 @@
       margin-left: 0;
     }
   }
+
+  &Filter {
+    @extend .button;
+    background: $c-white;
+    border-radius: 8px;
+    padding: 12px;
+  }
+
 }

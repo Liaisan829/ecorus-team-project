@@ -140,26 +140,24 @@
 
 @media screen and (max-width: 420px) {
   .informBlock {
-    width: 370px;
-    padding-left: 20px;
-    padding-top: 20px;
+    max-width: 410px;
     background: $c-white;
+    align-items: flex-end;
 
     &__info {
-      min-width: 170px;
-
-      h1 {
-        @include adaptiveText;
-      }
-
-      p {
-        font-size: 16px;
+      //min-width: 220px;
+      //max-width: 300px;
+      &__text {
+        margin-bottom: 50px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
       }
     }
 
     img {
-      width: 160px;
-      margin-top: 100px;
+      width: 250px;
+      height: 150px;
     }
   }
 }

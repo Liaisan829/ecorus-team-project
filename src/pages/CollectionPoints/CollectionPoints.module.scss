@@ -17,6 +17,11 @@
       width: 100%;
       margin-top: 32px;
       z-index: 5;
+
+    }
+
+    &__filterBtn {
+      display: none;
     }
 
     &__cards {
@@ -56,6 +61,60 @@
       &__top{
         max-width: 800px;
         width: 100%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 920px) {
+  .mapPage {
+    &__info {
+      max-width: 650px;
+      width: 100%;
+      margin: 0 auto;
+
+      &__top{
+        max-width: 650px;
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 770px) {
+  .mapPage {
+    &__info {
+      max-width: 500px;
+      width: 100%;
+      margin: 0 auto;
+
+      &__top{
+        max-width: 500px;
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .mapPage {
+    &__info {
+      max-width: 300px;
+      width: 100%;
+      margin: 0 auto;
+
+      &__top{
+        max-width: 330px;
+        width: 100%;
+        margin-top: 30px;
+      }
+
+      &__filterBtn {
+        display: initial;
+      }
+
+      &__cards {
+        display: none;
       }
     }
   }

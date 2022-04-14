@@ -82,7 +82,7 @@
 
 @media screen and (max-width: 420px) {
   .slider {
-    min-width: 420px;
+    max-width: 420px;
     margin: 0 auto;
 
     .navigation {

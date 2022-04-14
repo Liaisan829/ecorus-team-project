@@ -33,3 +33,27 @@
     }
   }
 }
+
+@media screen and (max-width: 920px) {
+  .searchInput {
+    input {
+      width: 215px;
+    }
+  }
+}
+
+@media screen and (max-width: 770px) {
+  .searchInput {
+    input {
+      width: 150px;
+    }
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .searchInput {
+    input {
+      width: 230px;
+    }
+  }
+}

@@ -19,3 +19,13 @@
     left: 0;
     z-index: 2;
 }
+
+
+@media screen and (max-width: 720px) {
+
+    .mapContainer {
+        &__zoomControl {
+            display: none;
+        }
+    }
+}

@@ -21,7 +21,9 @@ const Map = () => {
                         </Popup>
                     </Marker>
                 </div>
-                <ZoomControl/>
+                <div className={styles.mapContainer__zoomControl}>
+                    <ZoomControl/>
+                </div>
             </MapContainer>
         </>
     );

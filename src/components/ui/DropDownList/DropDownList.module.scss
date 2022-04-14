@@ -22,3 +22,23 @@
     padding: 14px 30px 14px 20px;
   }
 }
+
+@media screen and (max-width: 920px) {
+  .dropDownList {
+    width: 160px;
+    padding: 14px 30px 14px 20px;
+  }
+}
+
+@media screen and (max-width: 770px) {
+  .dropDownList {
+    width: 120px;
+    padding: 14px 20px 14px 20px;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .dropDownList {
+    display: none;
+  }
+}
