@@ -6,8 +6,16 @@ import collection from '../../svg-icons/collectionPointImg.svg';
 import styles from './CollectionPoints.module.scss';
 import {Button} from "../../components/ui/Button/Button";
 import {Icon} from "../../components/ui/Icon/Icon";
+import {useState} from "react";
+import {CollectionPointsBottomSheet} from "../../containers/CollectionPointsBottomSheet/CollectionPointsBottomSheet";
 
 export const CollectionPoints = () => {
+    const [isOpen, setIsOpen] = useState<boolean>(false);
+
+    const onFilterClick = () => {
+        setIsOpen(!isOpen);
+    };
+
     return (
         <>
             <div className={styles.mapPage}>
@@ -19,6 +27,7 @@ export const CollectionPoints = () => {
                             <Button
                                 type={"button"}
                                 theme={"filter"}
+                                onClick={onFilterClick}
                             >
                                 <Icon name={"filter"} width={20} height={20}/>
                             </Button>
@@ -55,6 +64,7 @@ export const CollectionPoints = () => {
                 </section>
                 <Map/>
             </div>
+            <CollectionPointsBottomSheet isOpen={isOpen}/>
         </>
     )
 }

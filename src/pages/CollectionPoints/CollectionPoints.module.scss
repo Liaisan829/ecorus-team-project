@@ -99,14 +99,38 @@
 @media screen and (max-width: 420px) {
   .mapPage {
     &__info {
-      max-width: 300px;
+      max-width: 250px;
       width: 100%;
       margin: 0 auto;
 
       &__top{
-        max-width: 330px;
+        max-width: 250px;
         width: 100%;
-        margin-top: 30px;
+        margin: 30px auto 0 auto;
+      }
+
+      &__filterBtn {
+        display: initial;
+      }
+
+      &__cards {
+        display: none;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 355px) {
+  .mapPage {
+    &__info {
+      max-width: 200px;
+      width: 100%;
+      margin: 0 auto;
+
+      &__top{
+        max-width: 200px;
+        width: 100%;
+        margin: 30px auto 0 auto;
       }
 
       &__filterBtn {

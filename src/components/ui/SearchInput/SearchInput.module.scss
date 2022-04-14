@@ -53,7 +53,15 @@
 @media screen and (max-width: 420px) {
   .searchInput {
     input {
-      width: 230px;
+      max-width: 230px;
+    }
+  }
+}
+
+@media screen and (max-width: 355px) {
+  .searchInput {
+    input {
+      max-width: 100px;
     }
   }
 }

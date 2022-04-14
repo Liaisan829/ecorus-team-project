@@ -140,13 +140,11 @@
 
 @media screen and (max-width: 420px) {
   .informBlock {
-    max-width: 410px;
+    max-width: 420px;
     background: $c-white;
     align-items: flex-end;
 
     &__info {
-      //min-width: 220px;
-      //max-width: 300px;
       &__text {
         margin-bottom: 50px;
         display: flex;
@@ -154,7 +152,6 @@
         justify-content: space-between;
       }
     }
-
     img {
       width: 250px;
       height: 150px;

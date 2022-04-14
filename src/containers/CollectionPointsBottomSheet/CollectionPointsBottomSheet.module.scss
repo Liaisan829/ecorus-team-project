@@ -1,0 +1,16 @@
+@import "../../styles/mixins";
+
+.bottomSheet {
+  display: none;
+}
+
+@media screen and (max-width: 420px) {
+  .cards {
+    display: initial;
+  }
+
+  .bottomSheet {
+    display: initial;
+    z-index: 9;
+  }
+}
