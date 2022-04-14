@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import { MainPage } from "./pages/MainPage/MainPage";
 import { Ecomarket } from "./pages/Ecomarket/Ecomarket";
 import { CollectionPoints } from "./pages/CollectionPoints/CollectionPoints";
@@ -11,7 +11,7 @@ import "./App.scss";
 
 const App = () => {
   return (
-    <BrowserRouter>
+    <>
       <Header />
       <MobileHeader />
       <Routes>
@@ -21,7 +21,7 @@ const App = () => {
         <Route path="/aboutservice" element={<AboutService />} />
         <Route path="/profile" element={<Profile />} />
       </Routes>
-    </BrowserRouter>
+    </>
   );
 };
 

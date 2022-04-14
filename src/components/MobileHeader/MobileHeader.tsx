@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { Button } from "../ui/Button/Button";
 import { Icon } from "../ui/Icon/Icon";
@@ -7,18 +6,19 @@ import currency from "../../svg-icons/currency.svg";
 import profile from "../../svg-icons/profile.svg";
 import burger_menu from "../../svg-icons/burger-menu.svg";
 import styles from "./MobileHeader.module.scss";
-import { SideBar } from "../SideBar/SideBar";
+import { useStores } from "../../utils/use-stores-hook";
+import { LoginModal } from "../Modals/LoginModal/LoginModal";
+import { SideBarModal } from "../Modals/SideBarModal/SideBarModal";
 
 export const MobileHeader = () => {
-  const [open, setOpen] = useState<boolean>(false);
+  const { modalStore: { setCurrentModal } } = useStores();
 
-  const openModal = () => {
-    console.log("sign in");
+  const openSignModal = () => {
+    setCurrentModal(LoginModal);
   };
 
   const onMenuClick = () => {
-    console.log("menu click");
-    setOpen(true);
+    setCurrentModal(SideBarModal);
   };
 
   return (
@@ -47,7 +47,7 @@ export const MobileHeader = () => {
               <div className={styles.actions__link}>
                 <Button
                   type="button"
-                  onClick={openModal}
+                  onClick={openSignModal}
                   disabled={false}
                   theme=""
                   color={"rgba(0, 11, 38, 0.64)"}
@@ -61,10 +61,8 @@ export const MobileHeader = () => {
               <img src={burger_menu} alt="" />
             </Button>
           </div>
-
         </section>
       </header>
-      {open && <SideBar onCloseClick={() => setOpen} />}
     </>
   );
 };

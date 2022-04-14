@@ -19,7 +19,6 @@
     width: 380px;
     border-radius: 8px;
     border: 1px solid $c-light-grey;
-    //margin-top: 24px;
     margin-bottom: 24px;
     padding-left: 16px;
   }
@@ -80,4 +79,28 @@ button {
   border: none;
   background: none;
   cursor: pointer;
+}
+
+@media screen and (max-width: 420px) {
+  .overlay {
+    background: $c-white;
+  }
+
+  .modal_container {
+    width: 350px;
+
+    input {
+      width: 330px;
+    }
+  }
+}
+
+@media screen and (max-width: 355px){
+  .modal_container {
+    width: 300px;
+
+    input {
+      width: 280px;
+    }
+  }
 }

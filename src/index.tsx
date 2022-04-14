@@ -1,12 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { BrowserRouter } from "react-router-dom";
 import { Provider } from "mobx-react";
 import reportWebVitals from "./reportWebVitals";
 import mainStore from "./stores/MainStore";
 import App from "./App";
 import { ModalConstructor } from "./components/Modals/ModalConstructor/ModalConstructor";
-import "./index.scss";
 import axios from "axios";
+import "./index.scss";
 
 axios.defaults.baseURL = "https://ecoapp.cloud.technokratos.com/eco-rus/api/v1/";
 
@@ -31,11 +32,13 @@ axios.interceptors.request.use(({ ...config }) => {
 
 ReactDOM.render(
   <React.StrictMode>
-    <Provider {...mainStore}>
-      <App />
+    <BrowserRouter>
+      <Provider {...mainStore}>
+        <App />
 
-      <ModalConstructor />
-    </Provider>
+        <ModalConstructor />
+      </Provider>
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById("root")
 );

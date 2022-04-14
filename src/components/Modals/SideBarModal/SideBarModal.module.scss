@@ -1,0 +1,75 @@
+@import "../../../styles/mixins";
+
+.side_bar {
+  display: flex;
+  flex-direction: column;
+  width: 350px;
+
+  &__userInfo {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 48px;
+
+    img {
+      width: 64px;
+      height: 64px;
+    }
+
+    &__userName {
+      display: flex;
+      flex-direction: column;
+      margin-left: 12px;
+
+      h6 {
+        @include secondary-text;
+        color: $c-dark;
+        font-weight: 500;
+      }
+    }
+
+    &__balance {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin-top: 10px;
+
+      p {
+        @include primary-text;
+        color: $c-dark;
+        font-weight: 600;
+      }
+
+      img {
+        width: 24px;
+        height: 24px;
+        margin-right: 10px;
+      }
+    }
+  }
+
+  &__nav {
+    display: flex;
+    flex-direction: column;
+
+    &__link {
+      text-decoration: none;
+      @include secondary-text;
+      font-weight: 500;
+      color: $c-dark;
+      margin-bottom: 32px;
+    }
+  }
+
+  &__address {
+    margin-top: 150px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 355px){
+  .side_bar{
+    width: 300px;
+  }
+}
