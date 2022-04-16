@@ -18,6 +18,12 @@
   }
 
   .bottomSheet {
-    display: initial;;
+    display: initial;
+
+    &__btn {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
   }
 }

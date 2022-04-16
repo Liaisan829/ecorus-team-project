@@ -8,7 +8,6 @@ import "../../containers/FilterCheckboxes/FilterCheckboxes.module.scss";
 
 interface Props {
   isOpen: boolean;
-
 }
 
 export const EcomarketBottomSheet: FC<Props> = ({ isOpen }) => {
@@ -42,7 +41,7 @@ export const EcomarketBottomSheet: FC<Props> = ({ isOpen }) => {
         </div>
       }
       footer={
-        <>
+        <div className={styles.bottomSheet__btn}>
           <Button
             type={"button"}
             theme={"green"}
@@ -55,7 +54,7 @@ export const EcomarketBottomSheet: FC<Props> = ({ isOpen }) => {
             theme={"grey"}
             children={"Сбросить фильтры"}
           />
-        </>
+        </div>
       }
     >
       <div className={styles.filter}>

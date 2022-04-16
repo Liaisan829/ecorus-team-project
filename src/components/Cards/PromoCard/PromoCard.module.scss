@@ -1,0 +1,47 @@
+@import "../../../styles/mixins";
+
+.promoCard {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid $c-light-grey;
+  cursor: pointer;
+
+  &__price {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 180px;
+    height: 110px;
+    border-radius: 12px;
+    background: linear-gradient(#00D4C7 0%, #FFEE57 100%);
+
+    h2 {
+      @include infoBlockText;
+      color: $c-white;
+    }
+  }
+
+  &__info {
+    &__item:not(:last-child) {
+      margin-bottom: 16px;
+    }
+
+    p {
+      @include primary-text;
+    }
+
+    h5 {
+      @include secondary-text;
+      color: $c-dark-grey;
+    }
+
+    .greenLink {
+      color: $c-green;
+    }
+  }
+}
+

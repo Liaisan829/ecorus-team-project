@@ -19,6 +19,7 @@
     border-radius: 20px;
     padding: 40px;
     margin-right: 48px;
+    max-height: 400px;
 
     &__avatar {
       display: flex;
@@ -46,23 +47,6 @@
 
     p {
       @include secondary-text;
-    }
-  }
-
-  &__filling {
-    display: flex;
-    flex-direction: column;
-
-    &__links {
-      border-bottom: 2 px solid $c-grey; // не работает
-      padding-bottom: 10px;
-
-      &__link {
-        @include secondary-text;
-        font-size: 20px;
-        text-decoration: none;
-        margin-right: 24px;
-      }
     }
   }
 }

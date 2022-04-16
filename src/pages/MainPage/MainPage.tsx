@@ -1,4 +1,3 @@
-import Footer from "../../components/Footer/Footer";
 import { Slider } from "../../components/Swiper/Slider";
 import { BottomCard } from "../../components/Cards/BottomCard/BottomCard";
 import ecomarket from "../../svg-icons/ecomarket.svg";
@@ -22,7 +21,6 @@ export const MainPage = () => {
                       img={ecomarket} />
               </div>
           </div>
-          {/*<Footer/>*/}
       </>
   );
 };

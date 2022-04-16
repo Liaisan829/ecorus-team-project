@@ -8,6 +8,7 @@ import {Button} from "../../components/ui/Button/Button";
 import {Icon} from "../../components/ui/Icon/Icon";
 import {useState} from "react";
 import {CollectionPointsBottomSheet} from "../../containers/CollectionPointsBottomSheet/CollectionPointsBottomSheet";
+import CardsBottomSheet from "../../containers/CardsBottomSheet/CardsBottomSheet";
 
 export const CollectionPoints = () => {
     const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -65,6 +66,7 @@ export const CollectionPoints = () => {
                 <Map/>
             </div>
             <CollectionPointsBottomSheet isOpen={isOpen}/>
+            <CardsBottomSheet/>
         </>
     )
 }

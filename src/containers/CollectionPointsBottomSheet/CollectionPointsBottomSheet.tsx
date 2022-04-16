@@ -1,17 +1,17 @@
-import { BottomSheet } from "react-spring-bottom-sheet";
+import {BottomSheet} from "react-spring-bottom-sheet";
 import {FC, useEffect, useState} from "react";
-import CollectionPointCard from "../../components/Cards/CollectionPointCards/CommonCard/CollectionPointCard";
+import {FilterCheckboxes} from "../FilterCheckboxes/FilterCheckboxes";
+import {Button} from "../../components/ui/Button/Button";
 import styles from "./CollectionPointsBottomSheet.module.scss";
-import collection from "../../svg-icons/collectionPointImg.svg";
 
 interface Props {
     isOpen: boolean;
 }
 
-export const CollectionPointsBottomSheet:FC<Props> = ({isOpen}) => {
+export const CollectionPointsBottomSheet: FC<Props> = ({isOpen}) => {
     const [open, setOpen] = useState<boolean>(isOpen);
 
-    useEffect(()=>{
+    useEffect(() => {
         setOpen(isOpen)
     }, [isOpen]);
 
@@ -21,31 +21,31 @@ export const CollectionPointsBottomSheet:FC<Props> = ({isOpen}) => {
             open={open}
             blocking={false}
             scrollLocking={false}
-            snapPoints={({ headerHeight, maxHeight }) => [
-                headerHeight,
-                (maxHeight - 150) * 0.65,
-                maxHeight - 150
+            snapPoints={({maxHeight}) => [
+                 0.7 * maxHeight
             ]}
-            onDismiss={()=> {
+            onDismiss={() => {
                 setOpen(false)
             }}
+            footer={
+                <div className={styles.bottomSheet__btn}>
+                    <Button
+                        type={"button"}
+                        theme={"green"}
+                        onClick={() => setOpen(false)}
+                        children={"Применить"}
+                    />
+
+                    <Button
+                        type={"button"}
+                        theme={"grey"}
+                        children={"Сбросить фильтры"}
+                    />
+                </div>
+            }
         >
-            <div className={styles.cards}>
-                    <CollectionPointCard
-                        img={collection}
-                        address={'ул.Кремлёвская, 88'}
-                        description={'Пластик, стекло, бумага, металл, старая одежда, батареи, аккумуляторы...'}
-                    />
-                    <CollectionPointCard
-                        img={collection}
-                        address={'ул.Кремлёвская, 88'}
-                        description={'Стекло, бумага, металл, старая одежда, батареи'}
-                    />
-                    <CollectionPointCard
-                        img={collection}
-                        address={'ул.Кремлёвская, 88'}
-                        description={'Пластик, стекло, бумага, металл'}
-                    />
+            <div className={styles.filter}>
+                <FilterCheckboxes/>
             </div>
         </BottomSheet>
     );

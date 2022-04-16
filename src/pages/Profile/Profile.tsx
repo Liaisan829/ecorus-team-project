@@ -2,7 +2,7 @@ import Footer from "../../components/Footer/Footer";
 import {Button} from "../../components/ui/Button/Button";
 import profile from '../../svg-icons/profile.svg';
 import styles from "./Profile.module.scss";
-import {NavLink} from "react-router-dom";
+import ProfileSwitcher from "../../components/ProfileSwitcher/ProfileSwitcher";
 
 export const Profile = () => {
     return (
@@ -26,13 +26,7 @@ export const Profile = () => {
                         >Редактировать</Button>
                     </div>
 
-                    <div className={styles.profile__filling}>
-                        <div className={styles.profile__filling__links}>
-                            <NavLink to={''} className={styles.profile__filling__links__link}>Промокоды</NavLink>
-                            <NavLink to={''} className={styles.profile__filling__links__link}>История</NavLink>
-                        </div>
-
-                    </div>
+                    <ProfileSwitcher/>
                 </div>
             </div>
             <Footer/>
