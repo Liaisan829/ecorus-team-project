@@ -3,10 +3,64 @@
 .fullCard {
   display: flex;
   flex-direction: column;
+  background: $c-white;
   border-radius: 16px;
+  padding: 5px;
+
+  &__card {
+    max-width: 400px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-top: 25px;
+
+    &__info {
+      padding: 20px;
+
+      &__time {
+        max-width: 175px;
+        margin-bottom: 30px;
+      }
+
+      &__item {
+        max-width: 295px;
+        border: none;
+        background: $c-light-grey;
+        padding: 0.5px;
+        border-radius: 25px;
+      }
+
+      h3 {
+        @include adaptiveText;
+        font-size: 18px;
+        margin-bottom: 10px;
+      }
+
+      p {
+        @include secondary-text;
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  &__back {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-decoration: none;
+    margin-top: 5px;
+
+    p {
+      @include secondary-text;
+      color: #5780EA;
+      margin-left: 5px;
+    }
+  }
 
   img {
-    width: 385px;
+    width: 400px;
     height: 175px;
   }
 }

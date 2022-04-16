@@ -1,9 +1,16 @@
 import {BottomSheet} from "react-spring-bottom-sheet";
 import CollectionPointCard from '../../components/Cards/CollectionPointCards/CommonCard/CollectionPointCard';
-import collection from "../../svg-icons/collectionPointImg.svg";
 import styles from './CardsBottomSheet.module.scss';
+import {useEffect, useState} from "react";
+import {CollPoints, CollPointsModel} from "../../stores/CollPointsStore";
 
 const CardsBottomSheet = () => {
+    const [collPoints, setCollPoints] = useState<Array<CollPointsModel>>([]);
+
+    useEffect(() => {
+        setCollPoints(CollPoints);
+    }, []);
+
     return (
         <BottomSheet
             className={styles.bottomSheet}
@@ -22,21 +29,14 @@ const CardsBottomSheet = () => {
             open
         >
             <div className={styles.cards}>
-                <CollectionPointCard
-                    img={collection}
-                    address={'ул.Кремлёвская, 88'}
-                    description={'Пластик, стекло, бумага, металл, старая одежда, батареи, аккумуляторы...'}
-                />
-                <CollectionPointCard
-                    img={collection}
-                    address={'ул.Кремлёвская, 88'}
-                    description={'Стекло, бумага, металл, старая одежда, батареи'}
-                />
-                <CollectionPointCard
-                    img={collection}
-                    address={'ул.Кремлёвская, 88'}
-                    description={'Пластик, стекло, бумага, металл'}
-                />
+                {collPoints.map(collPoint => (
+                    <CollectionPointCard
+                        id={collPoint.id}
+                        img={collPoint.img}
+                        address={collPoint.address}
+                        description={collPoint.description}
+                    />
+                ))}
             </div>
         </BottomSheet>
     );

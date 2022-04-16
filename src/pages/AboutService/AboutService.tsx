@@ -1,10 +1,9 @@
-import Footer from "../../components/Footer/Footer";
+import styles from './AboutService.module.scss';
 
 export const AboutService = () => {
   return(
-      <>
-          hello from about service
-          <Footer/>
-      </>
+      <div className={styles.container}>
+          About Service Page
+      </div>
   )
 }

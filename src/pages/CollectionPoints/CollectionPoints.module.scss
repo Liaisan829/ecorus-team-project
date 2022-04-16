@@ -37,6 +37,16 @@
       z-index: 5;
       position: absolute;
       margin-top: 112px;
+
+      a {
+        text-decoration: none;
+      }
+    }
+
+    &__outlet {
+      z-index: 5;
+      position: absolute;
+      margin-top: 100px;
     }
   }
 }

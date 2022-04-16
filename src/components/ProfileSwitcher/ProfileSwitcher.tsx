@@ -1,7 +1,6 @@
 import {NavLink, Outlet} from "react-router-dom";
 import styles from './ProfileSwitcher.module.scss';
 
-
 const ProfileSwitcher = () => {
     return (
         <>

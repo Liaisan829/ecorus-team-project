@@ -1,21 +1,24 @@
 import {FC} from "react";
 import styles from './CollectionPointCard.module.scss';
 
-interface Props {
+export interface Props {
+    id: number,
     img: any,
     address: string,
     description: string
 }
 
-const CollectionPointCard:FC<Props> = ({img, address, description}) => {
+const CollectionPointCard:FC<Props> = ({img, address, description, id}) => {
     return (
-        <div className={styles.collectionCard}>
-            <img src={img} alt="pic"/>
-            <div className={styles.collectionCard__info}>
-                <h3>{address}</h3>
-                <p>{description}</p>
-            </div>
-        </div>
+        <>
+                <div className={styles.collectionCard}>
+                    <img src={img} alt="pic"/>
+                    <div className={styles.collectionCard__info}>
+                        <h3>{address}</h3>
+                        <p>{description}</p>
+                    </div>
+                </div>
+        </>
     );
 };
 

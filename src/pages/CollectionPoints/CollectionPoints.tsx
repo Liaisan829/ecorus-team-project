@@ -2,20 +2,26 @@ import Map from "../../components/Map/Map";
 import CollectionPointCard from "../../components/Cards/CollectionPointCards/CommonCard/CollectionPointCard";
 import SearchInput from "../../components/ui/SearchInput/SearchInput";
 import DropDownList from "../../components/ui/DropDownList/DropDownList";
-import collection from '../../svg-icons/collectionPointImg.svg';
-import styles from './CollectionPoints.module.scss';
 import {Button} from "../../components/ui/Button/Button";
 import {Icon} from "../../components/ui/Icon/Icon";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import {CollectionPointsBottomSheet} from "../../containers/CollectionPointsBottomSheet/CollectionPointsBottomSheet";
 import CardsBottomSheet from "../../containers/CardsBottomSheet/CardsBottomSheet";
+import {CollPointsModel, CollPoints} from "../../stores/CollPointsStore";
+import {NavLink, Outlet } from "react-router-dom";
+import styles from './CollectionPoints.module.scss';
 
 export const CollectionPoints = () => {
     const [isOpen, setIsOpen] = useState<boolean>(false);
+    const [collPoints, setCollPoints] = useState<Array<CollPointsModel>>([]);
 
     const onFilterClick = () => {
         setIsOpen(!isOpen);
     };
+
+    useEffect(() => {
+        setCollPoints(CollPoints);
+    }, []);
 
     return (
         <>
@@ -46,21 +52,20 @@ export const CollectionPoints = () => {
                     </div>
 
                     <div className={styles.mapPage__info__cards}>
-                        <CollectionPointCard
-                            img={collection}
-                            address={'ул.Кремлёвская, 88'}
-                            description={'Пластик, стекло, бумага, металл, старая одежда, батареи, аккумуляторы...'}
-                        />
-                        <CollectionPointCard
-                            img={collection}
-                            address={'ул.Кремлёвская, 88'}
-                            description={'Стекло, бумага, металл, старая одежда, батареи'}
-                        />
-                        <CollectionPointCard
-                            img={collection}
-                            address={'ул.Кремлёвская, 88'}
-                            description={'Пластик, стекло, бумага, металл'}
-                        />
+                        {collPoints.map(collPoint => (
+                                <NavLink to={`/collpoints/card`}>
+                                    <CollectionPointCard
+                                        id={collPoint.id}
+                                        img={collPoint.img}
+                                        address={collPoint.address}
+                                        description={collPoint.description}
+                                    />
+                                </NavLink>
+                            )
+                        )}
+                    </div>
+                    <div className={styles.mapPage__info__outlet}>
+                        <Outlet/>
                     </div>
                 </section>
                 <Map/>

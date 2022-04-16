@@ -9,6 +9,7 @@ import Header from "./components/Header/Header";
 import {MobileHeader} from "./components/MobileHeader/MobileHeader";
 import PromocodeContainer from "./containers/PromocodeContainer/PromocodeContainer";
 import HistoryContainer from "./containers/HistoryContainer/HistoryContainer";
+import CollPointsFullCard from "./containers/CollPointsFullCard/CollPointsFullCard";
 import "./App.scss";
 
 const App = () => {
@@ -22,7 +23,9 @@ const App = () => {
                     <Route path="/profile/promo" element={<PromocodeContainer/>}/>
                     <Route path="/profile/history" element={<HistoryContainer/>}/>
                 </Route>
-                <Route path="/collpoints" element={<CollectionPoints/>}/>
+                <Route path="/collpoints" element={<CollectionPoints/>}>
+                    <Route path="/collpoints/card" element={<CollPointsFullCard/>}/>
+                </Route>
                 <Route path="/ecomarket" element={<Ecomarket/>}/>
                 <Route path="/aboutservice" element={<AboutService/>}/>
             </Routes>
