@@ -29,6 +29,7 @@ const Header = () => {
                     <CustomLink to="/collpoints" className={styles.link}>Пункты сбора</CustomLink>
                     <CustomLink to="/ecomarket" className={styles.link}>ЭкоМаркет</CustomLink>
                     <CustomLink to="/aboutservice" className={styles.link}>О сервисе</CustomLink>
+
                 </nav>
 
                 <div className={styles.actions}>

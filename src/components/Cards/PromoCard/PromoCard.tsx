@@ -1,8 +1,8 @@
-import styles from './PromoCard.module.scss';
 import {FC} from "react";
 import {Button} from "../../ui/Button/Button";
 import {useStores} from "../../../utils/use-stores-hook";
 import {QrModal} from "../../Modals/QrModal/QrModal";
+import styles from './PromoCard.module.scss';
 
 interface Props {
     price: string,
@@ -17,6 +17,7 @@ const PromoCard: FC<Props> = ({price, date, link}) => {
         setCurrentModal(QrModal);
     };
 
+
     return (
         <div className={styles.promoCard}>
             <div className={styles.promoCard__price}>
@@ -28,7 +29,7 @@ const PromoCard: FC<Props> = ({price, date, link}) => {
                     <h5>{date}</h5>
                 </div>
                 <div className={styles.promoCard__info__item}>
-                    <p>Ссылка на товар</p>
+                    <p className={styles.greenText}>Ссылка на товар</p>
                     <h5 className={styles.greenLink}>{link}</h5>
                 </div>
             </div>

@@ -16,6 +16,7 @@
   @include primary-text;
   font-size: 20px;
   text-decoration: none;
+  padding-bottom: 20px;
 }
 
 .switchBtn:not(:last-child) {
@@ -27,6 +28,9 @@
   font-size: 20px;
   color: $c-dark;
   text-decoration: none;
+  border-bottom: 3px solid #07C88E;
+  padding-bottom: 20px;
+  opacity: 200%;
 }
 
 .switchBtnActive:not(:last-child) {

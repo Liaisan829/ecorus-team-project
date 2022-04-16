@@ -1,8 +1,8 @@
 import Footer from "../../components/Footer/Footer";
 import {Button} from "../../components/ui/Button/Button";
+import ProfileSwitcher from "../../components/ProfileSwitcher/ProfileSwitcher";
 import profile from '../../svg-icons/profile.svg';
 import styles from "./Profile.module.scss";
-import ProfileSwitcher from "../../components/ProfileSwitcher/ProfileSwitcher";
 
 export const Profile = () => {
     return (

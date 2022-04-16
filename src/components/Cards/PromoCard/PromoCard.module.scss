@@ -45,3 +45,71 @@
   }
 }
 
+@media screen and (max-width: 1250px) {
+    .promoCard {
+      flex-direction: column;
+
+      &__price {
+        margin-bottom: 20px;
+      }
+
+      &__info {
+        margin-bottom: 20px;
+      }
+    }
+}
+
+@media screen and (max-width: 850px) {
+  .promoCard {
+    &__price {
+      width: 150px;
+      height: 90px;
+    }
+
+    &__info {
+      h5 {
+        font-size: 13px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .promoCard {
+    &__info {
+      .greenLink {
+        display: none;
+      }
+
+      .greenText {
+        color: $c-green;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .promoCard {
+    &__price {
+      max-width: 350px;
+      max-height: 200px;
+      padding: 70px 100px;
+    }
+
+    &__info {
+      h5 {
+        @include primary-text;
+      }
+
+      .greenLink {
+        display: initial;
+      }
+
+      .greenText {
+        color: $c-grey;
+      }
+    }
+  }
+}
+
+

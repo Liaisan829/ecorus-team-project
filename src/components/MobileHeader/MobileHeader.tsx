@@ -38,7 +38,7 @@ export const MobileHeader = () => {
                   <p>1000</p>
                 </div>
 
-                <NavLink to={"/profile"} className={styles.actions__link}>
+                <NavLink to={"/profile/history"} className={styles.actions__link}>
                   <img src={profile} alt="profile" />
                 </NavLink>
               </>

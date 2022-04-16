@@ -1,5 +1,5 @@
 import React from 'react';
-import HistoryCard from "../../components/Cards/historyCard/historyCard";
+import HistoryCard from "../../components/Cards/HistoryCard/HistoryCard";
 import styles from './HistoryContainer.module.scss';
 
 const HistoryContainer = () => {

@@ -1,4 +1,4 @@
-import styles from './historyCard.module.scss';
+import styles from './HistoryCard.module.scss';
 import {FC} from "react";
 import currency from '../../../svg-icons/currency.svg';
 

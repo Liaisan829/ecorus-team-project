@@ -50,3 +50,86 @@
     }
   }
 }
+
+
+@media screen and (max-width: 1250px) {
+  .container {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .profile {
+    &__info {
+      padding: 20px;
+
+      img {
+        width: 120px;
+        height: 120px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1050px) {
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .profile {
+    &__info {
+      padding: 15px;
+    }
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .container {
+    max-width: 650px;
+    margin: 0 auto;
+  }
+
+  .profile {
+    &__info {
+      &__avatar {
+        min-width: 250px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .container {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .profile {
+    &__info {
+      &__avatar {
+        min-width: 200px;
+
+        h2 {
+          font-size: 20px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .container {
+    max-width: 350px;
+    margin: 0 auto;
+  }
+
+  .profile {
+    flex-direction: column;
+    &__info {
+      margin-bottom: 30px;
+      width: 90%;
+      &__avatar {
+      }
+    }
+  }
+}

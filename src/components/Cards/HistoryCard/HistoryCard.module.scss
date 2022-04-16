@@ -41,3 +41,34 @@
     color: $c-dark-grey;
   }
 }
+
+@media screen and (max-width: 1050px) {
+  .historyCard {
+    width: 32vw;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .historyCard {
+    width: 25vw;
+    flex-direction: column;
+    padding: 28px;
+
+    &__info {
+      margin-bottom: 20px;
+    }
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .historyCard {
+    width: 20vw;
+    padding: 25px;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .historyCard {
+   width: 84%;
+  }
+}
