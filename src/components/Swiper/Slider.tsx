@@ -1,5 +1,5 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import SwiperCore, { Navigation } from "swiper";
+import SwiperCore, {Autoplay, Navigation } from "swiper";
 import "swiper/scss/navigation";
 import { Card } from "../Cards/Card/Card";
 import { Icon } from "../ui/Icon/Icon";
@@ -12,6 +12,7 @@ import "./Slider.scss";
 export const Slider = () => {
 
   SwiperCore.use([Navigation]);
+  SwiperCore.use([Autoplay]);
 
   return (
     <>
@@ -31,6 +32,7 @@ export const Slider = () => {
             nextEl: ".swiper-button-next-custom"
           }}
           loop={true}
+          autoplay={true}
           slidesPerView={1}
           onSlideChange={() => {}}
           onSwiper={() => {}}

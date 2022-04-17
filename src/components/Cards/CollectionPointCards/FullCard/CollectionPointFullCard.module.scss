@@ -64,3 +64,34 @@
     height: 175px;
   }
 }
+
+@media screen and (max-width: 1120px){
+  .fullCard {
+    &__card {
+      max-width: 330px;
+    }
+
+    img {
+      width: 330px;
+      height: 150px;
+    }
+  }
+}
+
+
+@media screen and (max-width: 420px){
+  .fullCard {
+    &__card {
+      max-width: 330px;
+    }
+
+    &__back {
+      display: none;
+    }
+
+    img {
+      width: 330px;
+      height: 150px;
+    }
+  }
+}

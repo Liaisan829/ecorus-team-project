@@ -39,15 +39,12 @@
   .collectionCard{
     max-width: 327px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    margin: 16px auto 16px auto;
   }
 }
 
 @media screen and (max-width: 355px){
   .collectionCard{
-    max-width: 250px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    margin: 16px auto 16px auto;
+    max-width: 220px;
 
     img {
       width: 70px;

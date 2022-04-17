@@ -3,9 +3,17 @@ import CollectionPointCard from '../../components/Cards/CollectionPointCards/Com
 import styles from './CardsBottomSheet.module.scss';
 import {useEffect, useState} from "react";
 import {CollPoints, CollPointsModel} from "../../stores/CollPointsStore";
+import {Button} from "../../components/ui/Button/Button";
+import {useStores} from "../../utils/use-stores-hook";
+import CollCardsModal from "../../components/Modals/CollCardsModal/CollCardsModal";
 
 const CardsBottomSheet = () => {
     const [collPoints, setCollPoints] = useState<Array<CollPointsModel>>([]);
+    const { modalStore: { setCurrentModal } } = useStores();
+
+    const onOpenCardsModal = () => {
+        setCurrentModal(CollCardsModal);
+    };
 
     useEffect(() => {
         setCollPoints(CollPoints);
@@ -28,16 +36,22 @@ const CardsBottomSheet = () => {
             }
             open
         >
-            <div className={styles.cards}>
-                {collPoints.map(collPoint => (
-                    <CollectionPointCard
-                        id={collPoint.id}
-                        img={collPoint.img}
-                        address={collPoint.address}
-                        description={collPoint.description}
-                    />
-                ))}
-            </div>
+            <Button
+                type={'button'}
+                theme={''}
+                onClick={onOpenCardsModal}
+            >
+                <div className={styles.cards}>
+                    {collPoints.map(collPoint => (
+                        <CollectionPointCard
+                            id={collPoint.id}
+                            img={collPoint.img}
+                            address={collPoint.address}
+                            description={collPoint.description}
+                        />
+                    ))}
+                </div>
+            </Button>
         </BottomSheet>
     );
 };
