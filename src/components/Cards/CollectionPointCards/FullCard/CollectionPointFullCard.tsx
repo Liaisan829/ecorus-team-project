@@ -1,19 +1,14 @@
-import styles from './CollectionPointFullCard.module.scss';
 import {FC} from "react";
 import {NavLink} from "react-router-dom";
 import {Icon} from "../../../ui/Icon/Icon";
+import { CollPointsModel } from "../../../../stores/CollPointsStore";
+import styles from './CollectionPointFullCard.module.scss';
 
-interface Props {
-    id: number
-    img: any,
-    address: string,
-    phone: string,
-    timetable: string[],
-    shop: string,
-    items: string[]
+interface Props{
+    collectionPointFullCard: CollPointsModel;
 }
 
-const CollectionPointFullCard:FC<Props> = ({img, address, phone, timetable, shop, items, id}) => {
+const CollectionPointFullCard:FC<Props> = ({collectionPointFullCard}) => {
     return (
         <div className={styles.fullCard}>
             <NavLink to={'/collpoints'} className={styles.fullCard__back}>
@@ -21,16 +16,16 @@ const CollectionPointFullCard:FC<Props> = ({img, address, phone, timetable, shop
                 <p>Вернуться назад</p>
             </NavLink>
             <div className={styles.fullCard__card}>
-                <img src={img} alt="card"/>
+                <img src={collectionPointFullCard.img} alt="card"/>
                 <div className={styles.fullCard__card__info}>
-                    <h3>{address}</h3>
-                    <p>{phone}</p>
+                    <h3>{collectionPointFullCard.address}</h3>
+                    <p>{collectionPointFullCard.phone}</p>
                     <div className={styles.fullCard__card__info__time}>
-                        <p>{timetable}</p>
+                        <p>{collectionPointFullCard.timetable}</p>
                     </div>
-                    <h3>{shop}</h3>
+                    <h3>{collectionPointFullCard.shop}</h3>
                     <div className={styles.fullCard__card__info__items}>
-                        {items.map(item => (
+                        {collectionPointFullCard.items.map(item => (
                             <div className={styles.fullCard__card__info__item}>
                                 {item}
                             </div>

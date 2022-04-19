@@ -8,7 +8,7 @@ export interface Props {
     description: string
 }
 
-const CollectionPointCard:FC<Props> = ({img, address, description, id}) => {
+const CollectionPointCommonCard:FC<Props> = ({img, address, description, id}) => {
     return (
         <>
                 <div className={styles.collectionCard}>
@@ -22,4 +22,4 @@ const CollectionPointCard:FC<Props> = ({img, address, description, id}) => {
     );
 };
 
-export default CollectionPointCard;
+export default CollectionPointCommonCard;
