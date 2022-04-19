@@ -24,12 +24,21 @@
         margin-bottom: 30px;
       }
 
+      &__items {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        max-width: 400px;
+      }
+
       &__item {
-        max-width: 295px;
         border: none;
-        background: $c-light-grey;
-        padding: 0.5px;
-        border-radius: 25px;
+        background: rgba(62, 80, 114, 0.08);
+        padding: 4px 12px;
+        border-radius: 20px;
+        margin-bottom: 8px;
+        margin-right: 8px;
+        color: $c-grey;
       }
 
       h3 {

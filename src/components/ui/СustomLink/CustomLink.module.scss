@@ -8,10 +8,10 @@
   margin-top: 28px;
   color: $c-dark;
   opacity: 90%;
+  padding-bottom: 29px;
 
   &Active {
     border-bottom: 3px solid #07C88E;
-    padding-bottom: 29px;
     opacity: 200%;
   }
 }

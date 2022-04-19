@@ -5,6 +5,10 @@
   flex-direction: column;
   width: 350px;
 
+  a {
+    text-decoration: none;
+  }
+
   &__userInfo {
     display: flex;
     flex-direction: row;

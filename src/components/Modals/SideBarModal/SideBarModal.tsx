@@ -17,7 +17,7 @@ export const SideBarModal = observer(() => {
   return (
     <Modal title="" onClose={clearCurrentModal}>
       <div className={styles.side_bar}>
-        <div className={styles.side_bar__userInfo}>
+        <NavLink to={'/profile/history'} onClick={onLinkClick} className={styles.side_bar__userInfo}>
           <img src={profile} alt="profile" />
 
           <div className={styles.side_bar__userInfo__userName}>
@@ -28,7 +28,7 @@ export const SideBarModal = observer(() => {
               <p>1000</p>
             </div>
           </div>
-        </div>
+        </NavLink>
 
         <nav className={styles.side_bar__nav}>
           <NavLink onClick={onLinkClick} to={"/"} className={styles.side_bar__nav__link}>Главная</NavLink>

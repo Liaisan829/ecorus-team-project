@@ -29,8 +29,12 @@ const CollectionPointFullCard:FC<Props> = ({img, address, phone, timetable, shop
                         <p>{timetable}</p>
                     </div>
                     <h3>{shop}</h3>
-                    <div className={styles.fullCard__card__info__item}>
-                        <h4>{items}</h4>
+                    <div className={styles.fullCard__card__info__items}>
+                        {items.map(item => (
+                            <div className={styles.fullCard__card__info__item}>
+                                {item}
+                            </div>
+                        ))}
                     </div>
                 </div>
             </div>
