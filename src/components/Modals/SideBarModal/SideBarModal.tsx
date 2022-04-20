@@ -17,18 +17,19 @@ export const SideBarModal = observer(() => {
   return (
     <Modal title="" onClose={clearCurrentModal}>
       <div className={styles.side_bar}>
-        <NavLink to={'/profile/history'} onClick={onLinkClick} className={styles.side_bar__userInfo}>
-          <img src={profile} alt="profile" />
+        {localStorage.getItem("user") ?
+          <NavLink to={"/profile/history"} onClick={onLinkClick} className={styles.side_bar__userInfo}>
+            <img src={profile} alt="profile" />
 
-          <div className={styles.side_bar__userInfo__userName}>
-            <h6>Алексей Петрович</h6>
+            <div className={styles.side_bar__userInfo__userName}>
+              <h6>Алексей Петрович</h6>
 
-            <div className={styles.side_bar__userInfo__balance}>
-              <img src={currency} alt="currency" />
-              <p>1000</p>
+              <div className={styles.side_bar__userInfo__balance}>
+                <img src={currency} alt="currency" />
+                <p>1000</p>
+              </div>
             </div>
-          </div>
-        </NavLink>
+          </NavLink> : null}
 
         <nav className={styles.side_bar__nav}>
           <NavLink onClick={onLinkClick} to={"/"} className={styles.side_bar__nav__link}>Главная</NavLink>

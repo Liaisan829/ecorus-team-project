@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
+import { NavLink } from "react-router-dom";
 import { BottomSheet } from "react-spring-bottom-sheet";
 import CollectionPointCommonCard
   from "../../components/Cards/CollectionPointCards/CommonCard/CollectionPointCommonCard";
 import { CollPoints, CollPointsModel } from "../../stores/CollPointsStore";
-import { Button } from "../../components/ui/Button/Button";
 import { useStores } from "../../utils/use-stores-hook";
 import CollCardsModal from "../../components/Modals/CollCardsModal/CollCardsModal";
 import styles from "./CardsBottomSheet.module.scss";
@@ -31,28 +31,25 @@ const CardsBottomSheet = () => {
         maxHeight - 150
       ]}
       header={
-        <div className={styles.sortingButtons}>
+        <div className={styles.cards__header}>
           Показать 12 пунктов сбора
         </div>
       }
       open
     >
-      <Button
-        type={"button"}
-        theme={""}
-        onClick={onOpenCardsModal}
-      >
+
+      {collPoints.map(collPoint => (
         <div className={styles.cards}>
-          {collPoints.map(collPoint => (
+          <NavLink to={`/collpoints/${collPoint.id}`} onClick={onOpenCardsModal}>
             <CollectionPointCommonCard
               id={collPoint.id}
               img={collPoint.img}
               address={collPoint.address}
               description={collPoint.description}
             />
-          ))}
+          </NavLink>
         </div>
-      </Button>
+      ))}
     </BottomSheet>
   );
 };
