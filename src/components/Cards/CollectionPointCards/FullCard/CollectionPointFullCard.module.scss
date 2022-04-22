@@ -74,10 +74,14 @@
   }
 }
 
-@media screen and (max-width: 1120px){
+@media screen and (max-width: 1120px) {
   .fullCard {
     &__card {
       max-width: 330px;
+    }
+
+    &__back {
+      display: none;
     }
 
     img {
@@ -88,14 +92,10 @@
 }
 
 
-@media screen and (max-width: 420px){
+@media screen and (max-width: 420px) {
   .fullCard {
     &__card {
       max-width: 330px;
-    }
-
-    &__back {
-      display: none;
     }
 
     img {

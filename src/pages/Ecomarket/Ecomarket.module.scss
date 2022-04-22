@@ -63,6 +63,11 @@
   .productCards {
     max-width: 570px;
   }
+
+  .skeletonItem {
+    margin-bottom: 8px;
+    width: 140px;
+  }
 }
 
 @media screen and (max-width: 1050px) {
@@ -97,15 +102,20 @@
       margin: 0 auto;
     }
   }
+
+  .productCards {
+    margin-left: 100px;
+  }
 }
 
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 720px) {
   .container {
-    max-width: 350px;
+    max-width: 500px;
   }
+
   .ecomarket {
     &__content {
-      max-width: 350px;
+      max-width: 500px;
 
       &__filter {
         display: none;
@@ -122,8 +132,23 @@
   }
 
   .productCards {
-    max-width: 350px;
+    max-width: 500px;
     margin-left: 0;
   }
 }
 
+@media screen and (max-width: 420px) {
+  .container {
+    max-width: 350px;
+  }
+  .ecomarket {
+    &__content {
+      max-width: 350px;
+    }
+  }
+
+  .productCards {
+    max-width: 350px;
+    margin-left: 0;
+  }
+}

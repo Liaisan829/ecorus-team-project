@@ -117,6 +117,22 @@
   }
 }
 
+@media screen and (max-width: 620px) {
+  .container {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  .profile {
+    flex-direction: column;
+
+    &__info {
+      margin-bottom: 30px;
+      margin-right: 0;
+    }
+  }
+}
+
 @media screen and (max-width: 420px) {
   .container {
     max-width: 350px;
@@ -124,10 +140,10 @@
   }
 
   .profile {
-    flex-direction: column;
+
     &__info {
-      margin-bottom: 30px;
       width: 90%;
+
       &__avatar {
       }
     }

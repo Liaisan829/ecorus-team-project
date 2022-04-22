@@ -1,6 +1,5 @@
-import styles from "./Checkbox.module.scss";
-
 import {FC} from "react";
+import styles from "./Checkbox.module.scss";
 
 interface Props{
   title: string;

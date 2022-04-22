@@ -3,6 +3,7 @@
 .footer {
   border-top: 1px solid $c-light-grey;
   padding: 30px;
+  margin-top: auto;
 
   &__container {
     max-width: 1200px;
@@ -30,6 +31,8 @@
 
 @media screen and (max-width: 1250px) {
   .footer {
+    margin-top: auto;
+
     &__container {
       max-width: 1000px;
       margin: 0 auto;

@@ -82,6 +82,12 @@ button {
   cursor: pointer;
 }
 
+@media screen and (max-width: 620px){
+  .overlay{
+    background: $c-white;
+  }
+}
+
 @media screen and (max-width: 420px) {
   .overlay {
     background: $c-white;

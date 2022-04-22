@@ -5,8 +5,6 @@ import { Ecomarket } from "./pages/Ecomarket/Ecomarket";
 import { CollectionPoints } from "./pages/CollectionPoints/CollectionPoints";
 import { AboutService } from "./pages/AboutService/AboutService";
 import { Profile } from "./pages/Profile/Profile";
-import Header from "./components/Header/Header";
-import { MobileHeader } from "./components/MobileHeader/MobileHeader";
 import PromocodeContainer from "./containers/PromocodeContainer/PromocodeContainer";
 import HistoryContainer from "./containers/HistoryContainer/HistoryContainer";
 import CollPointsFullContainer from "./containers/CollPointsFullContainer/CollPointsFullContainer";
@@ -15,8 +13,6 @@ import "./App.scss";
 const App = () => {
   return (
     <>
-      <Header />
-      <MobileHeader />
       <Routes>
         <Route path="/" element={<MainPage />} />
         <Route path="/profile" element={<Profile />}>
@@ -30,8 +26,6 @@ const App = () => {
         <Route path="/aboutservice" element={<AboutService />} />
       </Routes>
     </>
-
-
   );
 };
 

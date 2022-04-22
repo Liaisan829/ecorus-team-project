@@ -1,6 +1,6 @@
-import styles from './HistoryCard.module.scss';
 import {FC} from "react";
 import currency from '../../../svg-icons/currency.svg';
+import styles from './HistoryCard.module.scss';
 
 interface Props {
     address: string,

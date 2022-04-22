@@ -14,7 +14,6 @@ interface CardProps {
 export const Card: FC<CardProps> = ({ cardText, cardHeadline, buttonText, img, type, bgColor }) => {
 
   const onServiceConditionClick = () => {
-    //console.log("pressed the service condition button");
   };
 
   return (
@@ -24,11 +23,11 @@ export const Card: FC<CardProps> = ({ cardText, cardHeadline, buttonText, img, t
           <h1>{cardHeadline}</h1>
           <p>{cardText}</p>
           <Button
-              type={type}
-              onClick={onServiceConditionClick}
-              disabled={false}
-              theme={"green"}
-              children={buttonText} />
+            type={type}
+            onClick={onServiceConditionClick}
+            disabled={false}
+            theme={"green"}
+            children={buttonText} />
         </div>
         <img src={img} alt="serviceCondition" />
       </div>

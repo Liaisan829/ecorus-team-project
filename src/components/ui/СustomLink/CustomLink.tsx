@@ -1,7 +1,7 @@
-import styles from "./CustomLink.module.scss";
+import { Link, useMatch, useResolvedPath } from "react-router-dom";
 import cn from "classnames/bind";
 import classNames from "classnames/bind";
-import { Link, useMatch, useResolvedPath } from "react-router-dom";
+import styles from "./CustomLink.module.scss";
 
 classNames();
 

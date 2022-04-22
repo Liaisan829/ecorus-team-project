@@ -67,8 +67,15 @@
   }
 }
 
+@media screen and (max-width: 620px) {
+  .historyCard {
+    width: 60vw;
+    padding: 25px;
+  }
+}
+
 @media screen and (max-width: 420px) {
   .historyCard {
-   width: 84%;
+    width: 84%;
   }
 }

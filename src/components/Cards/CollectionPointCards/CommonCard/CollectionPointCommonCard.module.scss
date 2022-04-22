@@ -19,31 +19,38 @@
       @include primary-text;
       color: $c-dark-grey;
     }
+
     p {
       @include primary-text;
     }
   }
 }
 
-@media screen and (max-width: 1120px){
-  .collectionCard{
+@media screen and (max-width: 1120px) {
+  .collectionCard {
     width: 300px;
 
-    img{
+    img {
       width: 90px;
     }
   }
 }
 
-@media screen and (max-width: 420px){
-  .collectionCard{
-    max-width: 327px;
+@media screen and (max-width: 620px) {
+  .collectionCard {
+    max-width: 350px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   }
 }
 
-@media screen and (max-width: 355px){
-  .collectionCard{
+@media screen and (max-width: 420px) {
+  .collectionCard {
+    max-width: 327px;
+  }
+}
+
+@media screen and (max-width: 355px) {
+  .collectionCard {
     max-width: 220px;
 
     img {

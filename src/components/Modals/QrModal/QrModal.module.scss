@@ -47,29 +47,33 @@
   }
 }
 
-
-@media screen and (max-width: 1250px){
-  .overlay{
-    &__popup{
+@media screen and (max-width: 1250px) {
+  .overlay {
+    &__popup {
       max-width: 350px;
       padding: 40px;
     }
   }
 }
 
-@media screen and (max-width: 1050px){
-  .overlay{
-    &__popup{
+@media screen and (max-width: 1050px) {
+  .overlay {
+    &__popup {
       max-width: 300px;
       padding: 35px;
     }
   }
 }
 
-@media screen and (max-width: 420px){
-  .overlay{
-    background: white;
-    &__popup{
+@media screen and (max-width: 620px) {
+  .overlay {
+    background: $c-white;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .overlay {
+    &__popup {
       max-width: 340px;
       padding: 30px;
     }

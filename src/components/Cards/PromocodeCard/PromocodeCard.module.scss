@@ -109,29 +109,53 @@
       }
     }
   }
+}
 
-  @media screen and (max-width: 420px) {
-    .promocodeCard {
-      width: 350px;
+@media screen and (max-width: 720px) {
+  .promocodeCard {
+    width: 200px;
 
-      &__info {
-        width: 230px;
-        margin: 0 auto;
+    &__info {
+      padding: 60px 20px 20px;
 
-        &__button {
-          width: 200px;
-        }
+      &__text {
+        margin-bottom: 40px;
+      }
 
-        &__balance {
-          flex-direction: row;
-        }
+      &__button {
+        width: 120px;
+      }
+    }
+  }
+;
+}
 
-        &__text {
-          p {
-            @include primary-text;
-            color: $c-dark;
-            font-weight: 400;
-          }
+@media screen and (max-width: 420px) {
+  .promocodeCard {
+    width: 350px;
+
+    &__info {
+      width: 230px;
+      margin: 0 auto;
+      padding-top: 140px;
+
+      &__text {
+        margin-bottom: 60px;
+      }
+
+      &__button {
+        width: 200px;
+      }
+
+      &__balance {
+        flex-direction: row;
+      }
+
+      &__text {
+        p {
+          @include primary-text;
+          color: $c-dark;
+          font-weight: 400;
         }
       }
     }

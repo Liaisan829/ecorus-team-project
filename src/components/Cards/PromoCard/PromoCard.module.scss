@@ -46,17 +46,17 @@
 }
 
 @media screen and (max-width: 1250px) {
-    .promoCard {
-      flex-direction: column;
+  .promoCard {
+    flex-direction: column;
 
-      &__price {
-        margin-bottom: 20px;
-      }
-
-      &__info {
-        margin-bottom: 20px;
-      }
+    &__price {
+      margin-bottom: 20px;
     }
+
+    &__info {
+      margin-bottom: 20px;
+    }
+  }
 }
 
 @media screen and (max-width: 850px) {
@@ -88,6 +88,16 @@
   }
 }
 
+@media screen and (max-width: 620px) {
+  .promoCard {
+    &__price {
+      max-width: 400px;
+      max-height: 300px;
+      padding: 70px 100px;
+    }
+  }
+}
+
 @media screen and (max-width: 420px) {
   .promoCard {
     &__price {
@@ -111,5 +121,3 @@
     }
   }
 }
-
-

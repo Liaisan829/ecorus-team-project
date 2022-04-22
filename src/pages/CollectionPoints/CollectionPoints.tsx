@@ -1,7 +1,8 @@
 import { NavLink, Outlet } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Map from "../../components/Map/Map";
-import CollectionPointCommonCard from "../../components/Cards/CollectionPointCards/CommonCard/CollectionPointCommonCard";
+import CollectionPointCommonCard
+  from "../../components/Cards/CollectionPointCards/CommonCard/CollectionPointCommonCard";
 import SearchInput from "../../components/ui/SearchInput/SearchInput";
 import DropDownList from "../../components/ui/DropDownList/DropDownList";
 import { Button } from "../../components/ui/Button/Button";
@@ -9,6 +10,7 @@ import { Icon } from "../../components/ui/Icon/Icon";
 import { CollectionPointsBottomSheet } from "../../containers/CollectionPointsBottomSheet/CollectionPointsBottomSheet";
 import CardsBottomSheet from "../../containers/CardsBottomSheet/CardsBottomSheet";
 import { CollPointsModel, CollPoints } from "../../stores/CollPointsStore";
+import { BaseLayout } from "../../components/BaseLayout/BaseLayout";
 import styles from "./CollectionPoints.module.scss";
 
 export const CollectionPoints = () => {
@@ -24,7 +26,7 @@ export const CollectionPoints = () => {
   }, []);
 
   return (
-    <>
+    <BaseLayout>
       <div className={styles.mapPage}>
         <section className={styles.mapPage__info}>
 
@@ -72,7 +74,7 @@ export const CollectionPoints = () => {
         <Map />
       </div>
       <CollectionPointsBottomSheet isOpen={isOpen} />
-      <CardsBottomSheet/>
-    </>
+      <CardsBottomSheet />
+    </BaseLayout>
   );
 };

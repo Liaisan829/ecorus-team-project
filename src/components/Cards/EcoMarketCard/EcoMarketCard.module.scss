@@ -77,12 +77,22 @@
   }
 }
 
-@media screen and (max-width: 850px){
-  .section{
+@media screen and (max-width: 850px) {
+  .section {
     width: 300px;
 
-    &__img{
+    &__img {
       width: 300px;
+    }
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .section {
+    width: 200px;
+
+    &__img {
+      width: 200px;
     }
   }
 }
@@ -92,7 +102,7 @@
     width: 350px;
     margin: 0 auto 30px auto;
 
-    &__img{
+    &__img {
       width: 350px;
     }
   }

@@ -1,9 +1,12 @@
-import styles from './AboutService.module.scss';
+import { BaseLayout } from "../../components/BaseLayout/BaseLayout";
+import styles from "./AboutService.module.scss";
 
 export const AboutService = () => {
-  return(
+  return (
+    <BaseLayout>
       <div className={styles.container}>
-          About Service Page
+        About Service Page
       </div>
-  )
-}
+    </BaseLayout>
+  );
+};

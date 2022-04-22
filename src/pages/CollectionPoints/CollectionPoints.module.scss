@@ -112,17 +112,16 @@
   }
 }
 
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 620px) {
   .mapPage {
     &__info {
-      max-width: 250px;
+      max-width: 350px;
       width: 100%;
       margin: 0 auto;
 
       &__top {
-        max-width: 250px;
+        max-width: 350px;
         width: 100%;
-        margin: 30px auto 0 auto;
       }
 
       &__filterBtn {
@@ -140,6 +139,22 @@
   }
 }
 
+@media screen and (max-width: 420px) {
+  .mapPage {
+    &__info {
+      max-width: 260px;
+      width: 100%;
+      margin: 0 auto;
+
+      &__top {
+        max-width: 260px;
+        width: 100%;
+        margin: 30px auto 0 auto;
+      }
+    }
+  }
+}
+
 @media screen and (max-width: 355px) {
   .mapPage {
     &__info {
@@ -151,14 +166,6 @@
         max-width: 200px;
         width: 100%;
         margin: 30px auto 0 auto;
-      }
-
-      &__filterBtn {
-        display: initial;
-      }
-
-      &__cards {
-        display: none;
       }
     }
   }

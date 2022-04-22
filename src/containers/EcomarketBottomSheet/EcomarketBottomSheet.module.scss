@@ -12,7 +12,7 @@
   display: none;
 }
 
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 720px) {
   .filter {
     display: initial;
   }
@@ -23,7 +23,11 @@
     &__btn {
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+      width: 300px;
+
+      :first-child {
+        margin-bottom: 5px;
+      }
     }
   }
 }

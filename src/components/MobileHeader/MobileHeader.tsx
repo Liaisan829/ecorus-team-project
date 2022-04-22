@@ -1,14 +1,14 @@
 import { NavLink } from "react-router-dom";
 import { Button } from "../ui/Button/Button";
 import { Icon } from "../ui/Icon/Icon";
+import { useStores } from "../../utils/use-stores-hook";
+import { LoginModal } from "../Modals/LoginModal/LoginModal";
+import { SideBarModal } from "../Modals/SideBarModal/SideBarModal";
 import logo from "../../svg-icons/logo.svg";
 import currency from "../../svg-icons/currency.svg";
 import profile from "../../svg-icons/profile.svg";
 import burger_menu from "../../svg-icons/burger-menu.svg";
 import styles from "./MobileHeader.module.scss";
-import { useStores } from "../../utils/use-stores-hook";
-import { LoginModal } from "../Modals/LoginModal/LoginModal";
-import { SideBarModal } from "../Modals/SideBarModal/SideBarModal";
 
 export const MobileHeader = () => {
   const { modalStore: { setCurrentModal } } = useStores();
