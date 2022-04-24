@@ -80,13 +80,18 @@
       max-width: 330px;
     }
 
-    &__back {
-      display: none;
-    }
 
     img {
       width: 330px;
       height: 150px;
+    }
+  }
+}
+
+@media screen and (max-width: 620px) {
+  .fullCard {
+    &__back {
+      display: none;
     }
   }
 }

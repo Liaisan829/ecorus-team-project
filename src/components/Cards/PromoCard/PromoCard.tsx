@@ -11,7 +11,7 @@ interface Props {
 }
 
 const PromoCard: FC<Props> = ({price, date, link}) => {
-    const { modalStore: { setCurrentModal } } = useStores();
+    const {modalStore: {setCurrentModal}} = useStores();
 
     const onGetPromocodeClick = () => {
         setCurrentModal(QrModal);

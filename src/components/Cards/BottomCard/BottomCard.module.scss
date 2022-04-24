@@ -38,25 +38,6 @@
   }
 }
 
-.skeletonImg {
-  margin-left: 55px;
-  border-radius: 10px;
-}
-
-.skeletonBtn {
-  margin-top: 60px;
-}
-
-.skeletonItem {
-  margin-top: 15px;
-  margin-bottom: 10px;
-}
-
-.skeletonBlock {
-  display: flex;
-  flex-direction: row;
-}
-
 @media screen and (max-width: 1250px) {
   .skeletonBlock {
     margin-left: -40px;
@@ -83,15 +64,6 @@
       width: 150px;
     }
   }
-  //не применяются стили к скелетону
-  .skeletonImg {
-    margin-left: 5px;
-  }
-  .skeletonItem {
-    margin-left: 10px;
-    width: 50px;
-  }
-
 }
 
 @media screen and (max-width: 1050px) {
@@ -140,14 +112,14 @@
 
 @media screen and (max-width: 720px) {
   .informBlock {
-    width: 290px;
+    max-width: 200px;
 
     &__info {
       margin-top: -10px;
     }
 
     img {
-        display: none;
+      display: none;
     }
   }
 }
@@ -156,7 +128,6 @@
   .informBlock {
     max-width: 420px;
     background: $c-white;
-    align-items: flex-end;
 
     &__info {
       &__text {
@@ -165,8 +136,14 @@
         flex-direction: column;
         justify-content: space-between;
       }
+
+      &__cardButton {
+        margin-bottom: 10px;
+      }
     }
+
     img {
+      display: initial;
       width: 250px;
       height: 150px;
     }

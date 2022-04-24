@@ -4,20 +4,25 @@
   display: none;
 }
 
+@media screen and (max-width: 620px) {
+  .bottomSheet {
+    display: initial;
+
+    &__btn {
+      display: flex;
+      flex-direction: column;
+      width: 300px;
+    }
+  }
+}
+
 @media screen and (max-width: 420px) {
   .filter {
-    display: initial;
     padding-left: 10px;
   }
 
   .bottomSheet {
     display: initial;
     z-index: 9;
-
-    &__btn {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
   }
 }

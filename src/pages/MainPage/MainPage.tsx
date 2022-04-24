@@ -1,5 +1,5 @@
 import { Slider } from "../../components/Swiper/Slider";
-import { BaseLayout } from "../../components/BaseLayout/BaseLayout";
+import { BaseLayout } from "../../components/Layout/BaseLayout/BaseLayout";
 import { BottomCard } from "../../components/Cards/BottomCard/BottomCard";
 import ecomarket from "../../svg-icons/ecomarket.svg";
 import collpoints from "../../svg-icons/collpoints.svg";

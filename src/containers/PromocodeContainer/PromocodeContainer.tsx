@@ -18,7 +18,7 @@ const PromocodeContainer = () => {
                 date={'25.09.2021'}
                 link={'adidas.com/clothes/WddfJfsf7dt6fsHFIuj5пdfsZFu...'}
             />
-            
+
         </>
     );
 };

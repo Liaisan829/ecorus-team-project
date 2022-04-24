@@ -1,4 +1,4 @@
-import { BaseLayout } from "../../components/BaseLayout/BaseLayout";
+import { BaseLayout } from "../../components/Layout/BaseLayout/BaseLayout";
 import styles from "./AboutService.module.scss";
 
 export const AboutService = () => {

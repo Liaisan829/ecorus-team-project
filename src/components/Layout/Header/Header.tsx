@@ -1,12 +1,12 @@
-import {useStores} from "../../utils/use-stores-hook";
+import {useStores} from "../../../utils/use-stores-hook";
 import {NavLink} from "react-router-dom";
-import {Button} from "../ui/Button/Button";
-import {CustomLink} from "../ui/СustomLink/CustomLink";
-import {LoginModal} from "../Modals/LoginModal/LoginModal";
-import {Icon} from "../ui/Icon/Icon";
-import currency from "../../svg-icons/currency.svg";
-import profile from "../../svg-icons/profile.svg";
-import logo from "../../svg-icons/logo.svg";
+import {Button} from "../../ui/Button/Button";
+import {CustomLink} from "../../ui/СustomLink/CustomLink";
+import {LoginModal} from "../../Modals/LoginModal/LoginModal";
+import {Icon} from "../../ui/Icon/Icon";
+import currency from "../../../svg-icons/currency.svg";
+import profile from "../../../svg-icons/profile.svg";
+import logo from "../../../svg-icons/logo.svg";
 import styles from "./Header.module.scss";
 
 

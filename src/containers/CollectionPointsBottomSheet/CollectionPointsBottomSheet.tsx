@@ -35,12 +35,6 @@ export const CollectionPointsBottomSheet: FC<Props> = ({isOpen}) => {
                         onClick={() => setOpen(false)}
                         children={"Применить"}
                     />
-
-                    <Button
-                        type={"button"}
-                        theme={"grey"}
-                        children={"Сбросить фильтры"}
-                    />
                 </div>
             }
         >

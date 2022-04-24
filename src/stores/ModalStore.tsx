@@ -1,22 +1,22 @@
-import { makeAutoObservable } from "mobx";
-import { MainStore } from "./MainStore";
+import {makeAutoObservable} from "mobx";
+import {MainStore} from "./MainStore";
 
 export class ModalStore {
-  currentModal = null;
+    currentModal = null;
 
-  constructor(mainStore: MainStore) {
-    this.currentModal = null;
+    constructor(mainStore: MainStore) {
+        this.currentModal = null;
 
-    makeAutoObservable(this);
-  }
+        makeAutoObservable(this);
+    }
 
-  clearCurrentModal = () => {
-    this.currentModal = null;
-  };
+    clearCurrentModal = () => {
+        this.currentModal = null;
+    };
 
-  setCurrentModal = (modal: any) => {
-    this.currentModal = modal;
-  };
+    setCurrentModal = (modal: any) => {
+        this.currentModal = modal;
+    };
 
 
 }
