@@ -7,8 +7,6 @@
   width: 290px;
   border: 1px solid $c-light-grey;
   border-radius: 17px;
-  position: sticky;
-  top: 5px;
 
   &__btn {
     display: flex;
@@ -37,13 +35,5 @@
 @media screen and (max-width: 1050px) {
   .filter {
     max-width: 250px;
-  }
-}
-
-@media screen and (max-width: 420px) {
-  .filter {
-    &__btn {
-      display: none;
-    }
   }
 }
